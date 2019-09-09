@@ -8,7 +8,7 @@ def sigmoid_activation(x):
 class task_1_GA_controller(Controller):
 	def __init__(self):
 		# Number of hidden neurons
-		self.n_hidden = [10]
+		self.n_hidden = [50]
 
 	def control(self, inputs,controller):
 		# Normalises the input using min-max scaling
