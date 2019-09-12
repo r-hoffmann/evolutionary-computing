@@ -1,13 +1,13 @@
 """
 2-input XOR example -- this is most likely the simplest possible example.
 """
-import neat, os, sys, time, visualize
+import neat, os, pickle, sys, time, visualize
 import numpy as np
 sys.path.insert(0, 'evoman')
 from environment import Environment
 from controllers import task_1_NEAT_controller
 
-enemy = 1
+enemy = 8
 
 experiment_name = 'task_1_NEAT_{}'.format(enemy)
 
@@ -16,7 +16,7 @@ if not os.path.exists(experiment_name):
 
 # initializes simulation in individual evolution mode, for single static enemy.
 env = Environment(experiment_name=experiment_name,
-                  enemies=[1],
+                  enemies=[enemy],
                   playermode="ai",
                   player_controller=task_1_NEAT_controller(),
                   enemymode="static",
@@ -56,10 +56,10 @@ def run(config_file):
     p.add_reporter(neat.StdOutReporter(True))
     stats = neat.StatisticsReporter()
     p.add_reporter(stats)
-    p.add_reporter(neat.Checkpointer(5))
+    p.add_reporter(neat.Checkpointer(5, filename_prefix='neat-checkpoint-{}-'.format(enemy)))
 
     # Run for up to x generations.
-    winner = p.run(eval_genomes, 10)
+    winner = p.run(eval_genomes, 100)
 
     # Display the winning genome.
     print('\nBest genome:\n{!s}'.format(winner))
@@ -90,12 +90,13 @@ def run(config_file):
         2: 'jump', 
         3: 'shoot', 
         4: 'release'} 
-    visualize.draw_net(config, winner, True, node_names=node_names, filename="NEAT/DiGraph")
-    visualize.plot_stats(stats, ylog=False, view=True, filename='NEAT/avg_fitness.svg')
-    visualize.plot_species(stats, view=True, filename='NEAT/speciation.svg')
+    visualize.draw_net(config, winner, True, node_names=node_names, filename="{}/DiGraph".format(experiment_name))
+    visualize.plot_stats(stats, ylog=False, view=True, filename='{}/avg_fitness.svg'.format(experiment_name))
+    visualize.plot_species(stats, view=True, filename='{}/speciation.svg'.format(experiment_name))
 
-    p = neat.Checkpointer.restore_checkpoint('neat-checkpoint-4')
-    p.run(eval_genomes, 100)
+    # Save to fs.
+    with open('{}/best.pkl'.format(experiment_name), 'wb') as fid:
+        pickle.dump(winner, fid)
 
 if __name__ == '__main__':
     # Determine path to configuration file. This path manipulation is
