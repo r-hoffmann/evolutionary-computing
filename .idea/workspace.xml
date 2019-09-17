@@ -1,0 +1,442 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="6604ab76-fe73-4fc4-ba6d-2225bd11085b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Task 1/NEAT/DiGraph" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task 1/NEAT/DiGraph.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task 1/NEAT/avg_fitness.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task 1/NEAT/config-NEAT" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task 1/NEAT/speciation.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task 1/evoman/environment_without_rendering.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task 1/task_1_NEAT.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task 1/task_1_NEAT2_1/DiGraph" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task 1/task_1_NEAT2_1/DiGraph.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task 1/task_1_NEAT2_1/avg_fitness.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task 1/task_1_NEAT2_1/best.pkl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task 1/task_1_NEAT2_1/evoman_logs.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task 1/task_1_NEAT2_1/speciation.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task 1/task_1_NEAT2_2/DiGraph" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task 1/task_1_NEAT2_2/DiGraph.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task 1/task_1_NEAT2_2/avg_fitness.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task 1/task_1_NEAT2_2/best.pkl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task 1/task_1_NEAT2_2/evoman_logs.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task 1/task_1_NEAT2_2/speciation.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task 1/task_1_NEAT2_3/DiGraph" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task 1/task_1_NEAT2_3/DiGraph.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task 1/task_1_NEAT2_3/avg_fitness.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task 1/task_1_NEAT2_3/best.pkl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task 1/task_1_NEAT2_3/evoman_logs.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task 1/task_1_NEAT2_3/speciation.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task 1/task_1_NEAT2_4/DiGraph" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task 1/task_1_NEAT2_4/DiGraph.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task 1/task_1_NEAT2_4/avg_fitness.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task 1/task_1_NEAT2_4/best.pkl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task 1/task_1_NEAT2_4/evoman_logs.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task 1/task_1_NEAT2_4/speciation.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task 1/task_1_NEAT2_5/DiGraph" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task 1/task_1_NEAT2_5/DiGraph.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task 1/task_1_NEAT2_5/avg_fitness.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task 1/task_1_NEAT2_5/best.pkl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task 1/task_1_NEAT2_5/evoman_logs.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task 1/task_1_NEAT2_5/speciation.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task 1/task_1_NEAT2_6/DiGraph" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task 1/task_1_NEAT2_6/DiGraph.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task 1/task_1_NEAT2_6/avg_fitness.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task 1/task_1_NEAT2_6/best.pkl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task 1/task_1_NEAT2_6/evoman_logs.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task 1/task_1_NEAT2_6/speciation.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task 1/task_1_NEAT2_7/DiGraph" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task 1/task_1_NEAT2_7/DiGraph.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task 1/task_1_NEAT2_7/avg_fitness.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task 1/task_1_NEAT2_7/best.pkl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task 1/task_1_NEAT2_7/evoman_logs.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task 1/task_1_NEAT2_7/speciation.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task 1/task_1_NEAT2_8/DiGraph" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task 1/task_1_NEAT2_8/DiGraph.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task 1/task_1_NEAT2_8/avg_fitness.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task 1/task_1_NEAT2_8/best.pkl" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task 1/task_1_NEAT2_8/evoman_logs.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task 1/task_1_NEAT2_8/speciation.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task 1/task_1_NEAT2_config" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task 1/task_1_NEAT_1/avg_vs_best.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task 1/task_1_NEAT_1/evoman_logs.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task 1/task_1_NEAT_1/speciation.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task 1/task_1_NEAT_2/avg_vs_best.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task 1/task_1_NEAT_2/evoman_logs.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task 1/task_1_NEAT_2/speciation.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task 1/task_1_NEAT_3/avg_vs_best.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task 1/task_1_NEAT_3/evoman_logs.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task 1/task_1_NEAT_3/speciation.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task 1/task_1_NEAT_4/best_vs_avg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task 1/task_1_NEAT_4/evoman_logs.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task 1/task_1_NEAT_4/speciation.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task 1/task_1_NEAT_5/avg_vs_best.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task 1/task_1_NEAT_5/evoman_logs.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task 1/task_1_NEAT_5/speciation.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task 1/task_1_NEAT_6/best_vs_avg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task 1/task_1_NEAT_6/evoman_logs.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task 1/task_1_NEAT_6/speciation.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task 1/task_1_NEAT_7/avg_vs_best.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task 1/task_1_NEAT_7/evoman_logs.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task 1/task_1_NEAT_7/speciation.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task 1/task_1_NEAT_8/best_vs_avg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task 1/task_1_NEAT_8/evoman_logs.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task 1/task_1_NEAT_8/speciation.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task 1/visualize.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Task 1/controllers.py" beforeDir="false" afterPath="$PROJECT_DIR$/Task 1/controllers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Task 1/framework.py" beforeDir="false" afterPath="$PROJECT_DIR$/Task 1/framework.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Task 1/task_1_GA.py" beforeDir="false" afterPath="$PROJECT_DIR$/Task 1/task_1_GA.py" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="1472022129">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="5" />
+          <entry key="project.open.time.0" value="1" />
+          <entry key="project.open.time.10" value="2" />
+          <entry key="project.open.time.11" value="1" />
+          <entry key="project.open.time.13" value="1" />
+          <entry key="project.open.time.8" value="1" />
+          <entry key="project.opened" value="6" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="md" value="1" />
+          <entry key="py" value="12" />
+          <entry key="txt" value="4" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="Markdown" value="1" />
+          <entry key="PLAIN_TEXT" value="4" />
+          <entry key="Python" value="12" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="py" value="10569" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="Python" value="10569" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor />
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Task 1/evoman/environment.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="28" column="25" selection-start-line="28" selection-start-column="21" selection-end-line="28" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Task 1/controllers.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="10" column="27" selection-start-line="10" selection-start-column="27" selection-end-line="10" selection-end-column="27" />
+              <folding>
+                <element signature="e#0#33#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Task 1/show_best_GA.py">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Task 1/task_1_GA.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="353">
+              <caret line="105" column="56" selection-start-line="105" selection-start-column="56" selection-end-line="105" selection-end-column="78" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Task 1/task_1_GA_1/best.txt">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Task 1/test_code3.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-22">
+              <caret line="151" column="19" selection-start-line="151" selection-start-column="19" selection-end-line="151" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Task 1/framework.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="6" column="34" selection-start-line="6" selection-start-column="34" selection-end-line="6" selection-end-column="34" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Task 1/evoman/controller.py">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>limits</find>
+      <find>dom_</find>
+      <find>norm</find>
+      <find>enemy</find>
+      <find>evaluate</find>
+      <find>n_vars</find>
+      <find>get_num</find>
+      <find>play</find>
+      <find>evaluat</find>
+      <find>reproduction_su</find>
+      <find>all_fitn</find>
+      <find>reproduction_success_rate</find>
+      <find>offspring</find>
+      <find>len</find>
+      <find>child</find>
+      <find>select_parents</find>
+      <find>amount_of_tournaments</find>
+      <find>random</find>
+      <find>determine_pro</find>
+      <find>print</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/Task 1/task_1_GA.py" />
+        <option value="$PROJECT_DIR$/Task 1/controllers.py" />
+        <option value="$PROJECT_DIR$/Task 1/test_code2.py" />
+        <option value="$PROJECT_DIR$/Task 1/test_code.py" />
+        <option value="$PROJECT_DIR$/Task 1/test_code3.py" />
+        <option value="$PROJECT_DIR$/Task 1/framework.py" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" fullScreen="true">
+    <option name="width" value="1440" />
+    <option name="height" value="900" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="project" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="project" type="462c0819:PsiDirectoryNode" />
+              <item name="Task 1" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="project" type="462c0819:PsiDirectoryNode" />
+              <item name="Task 1" type="462c0819:PsiDirectoryNode" />
+              <item name="evoman" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="project" type="462c0819:PsiDirectoryNode" />
+              <item name="Task 1" type="462c0819:PsiDirectoryNode" />
+              <item name="task_1_GA_1" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Task 1" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6604ab76-fe73-4fc4-ba6d-2225bd11085b" name="Default Changelist" comment="" />
+      <created>1568039642477</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1568039642477</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24947146" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Python Console" order="10" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Task 1/task_1_GA_2/evoman_paramstate.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Task 1/task_1_GA_2/best.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Task 1/task_1_GA_2/gen.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Task 1/evoman/enemy8.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor />
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Task 1/show_best_GA.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Task 1/task_1_GA_1/best.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Task 1/task_1_GA.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="353">
+          <caret line="105" column="56" selection-start-line="105" selection-start-column="56" selection-end-line="105" selection-end-column="78" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Task 1/test_code2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="4" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Task 1/test_code.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2460">
+          <caret line="164" column="13" selection-start-line="164" selection-start-column="13" selection-end-line="164" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Task 1/test_code3.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-22">
+          <caret line="151" column="19" selection-start-line="151" selection-start-column="19" selection-end-line="151" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Task 1/evoman/controller.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Task 1/controllers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="27" selection-start-line="10" selection-start-column="27" selection-end-line="10" selection-end-column="27" />
+          <folding>
+            <element signature="e#0#33#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Task 1/evoman/environment.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="28" column="25" selection-start-line="28" selection-start-column="21" selection-end-line="28" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Task 1/framework.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="34" selection-start-line="6" selection-start-column="34" selection-end-line="6" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

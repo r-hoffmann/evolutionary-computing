@@ -12,7 +12,7 @@ sys.path.insert(0, 'evoman')
 from environment import Environment
 from controllers import task_1_GA_controller
 
-experiment_name = 'task_1_GA'
+experiment_name = 'task_1_test_GA'
 
 if not os.path.exists(experiment_name):
     os.makedirs(experiment_name)
@@ -40,8 +40,8 @@ n_hidden = 10
 n_vars = (env.get_num_sensors()+1)*n_hidden + (n_hidden+1)*5 # multilayer with 10 hidden neurons
 dom_u = 1
 dom_l = -1
-npop = 100
-gens = 30
+npop = 10
+gens = 3
 mutation = 0.2
 last_best = 0
 
