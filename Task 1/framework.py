@@ -37,19 +37,20 @@ def determine_fitness(x):
 # import packages
 import numpy as np
 import random
+import matplotlib.pyplot as plt
 
 # set parameters
 # symbolic
 parent_selection_type = 'tournament'
 tournament_type = 'weighted'
-keep_best_solution = 'true' # not yet implemented
+keep_best_solution = 'true'
 selection_fitness_score = 2 # fitness = 0, player life = 1, enemy life = 2, runt time = 3
 crossover_weight = 'random'
 survival_mechanism = 'weighted probability'
 # numeric
-fitness_evaluations = 2
+fitness_evaluations = 10
 hidden_layers = 10
-population_size = 8
+population_size = 10
 edge_domain = [-1,1]
 tournament_size = 2
 parents_per_offspring = 2
@@ -152,7 +153,11 @@ def live_and_let_die(fitnesses,population):
             # give each individual a survival score based on their fitness and a  random number
             # add 1 to make sure not most of them are 0
             survival_scores.append(np.random.rand()*(individual[selection_fitness_score]+1))
-    # determine the fitness value at the population size
+    if keep_best_solution == 'true':
+        # change the survival score of the fittest individual to the highest
+        index_topfit = np.argmax(fitnesses[:,selection_fitness_score])
+        survival_scores[index_topfit] = max(survival_scores) + 1
+    # determine the fitness value of the ordered population of the individual at the population size
     ordered_survival_scores = survival_scores.copy()
     ordered_survival_scores.sort(reverse=True)
     survival_threshold = ordered_survival_scores[population_size]
@@ -168,7 +173,12 @@ def live_and_let_die(fitnesses,population):
             individual_nr += 1
     return fitnesses,population
 
-
+# return the mean, std and max fitness
+def save_fitness(fitnesses):
+    mean_fitn = np.mean(fitnesses)
+    std_fitn = np.std(fitnesses)
+    max_fitn = max(fitnesses)
+    return [mean_fitn,std_fitn,max_fitn]
 
 # initialize population
 # make a list of integers to be able to randomize the order of the population without losing the connectedness of individuals and fitness
@@ -179,6 +189,8 @@ edges = (env.get_num_sensors() + 1) * hidden_layers + 5 * (hidden_layers + 1) # 
 survived_population = np.random.uniform(edge_domain[0], edge_domain[1], (population_size, edges))
 # determine and make an array of the fitnesses of the initial population
 survived_fitnesses = determine_fitness(survived_population)
+# make an empty array to store fitness values
+fitness_record = np.array([0,0,0])
 
 # run through evaluations for a fixed amount of iterations
 for evaluation in range(fitness_evaluations): # or while enemy is unbeaten
@@ -194,3 +206,10 @@ for evaluation in range(fitness_evaluations): # or while enemy is unbeaten
     new_population_fitness = np.concatenate((survived_fitnesses, fitness_children))
     # remove the appropriate amount of individuals to sustain a fixed population size
     survived_fitnesses, survived_population = live_and_let_die(new_population_fitness, oversized_population)
+    # store the fitness- mean, standard deviation and maximum for plotting
+    fitness_record = np.vstack([fitness_record,save_fitness(survived_fitnesses[:,selection_fitness_score])])
+
+plt.plot(fitness_record[:,0])
+plt.plot(fitness_record[:,1])
+plt.plot(fitness_record[:,2])
+plt.show()
