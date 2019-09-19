@@ -26,11 +26,16 @@ def play_evoman(env, x):
 # enemy fitness score = (100 - enemy life)
 def determine_fitness(x):
     population_fitnesses = np.array(list(map(lambda y: play_evoman(env,y), x)))
+    # add column to add fitness score type
+    z = np.zeros((population_fitnesses.shape[0], 1))
+    population_fitnesses = np.append(population_fitnesses, z, axis=1)
     for individual_fitnesses in population_fitnesses:
         if individual_fitnesses[0] < 1:
             individual_fitnesses[0] = 1
         # rotate scores such that decreasing enemy life increases the score
         individual_fitnesses[2] = 100 - individual_fitnesses[2]
+        # add aditional score .9 (100 - enemy life) + .1 player life
+        individual_fitnesses[4] = .9 * individual_fitnesses[2] + .1 * individual_fitnesses[1]
     return population_fitnesses
 ################################
 
@@ -42,18 +47,16 @@ import matplotlib.pyplot as plt
 # set parameters
 # symbolic
 parent_selection_type = 'tournament'
-tournament_type = 'weighted'
 keep_best_solution = 'true'
-selection_fitness_score = 2 # fitness = 0, player life = 1, enemy life = 2, runt time = 3
+fitness_order = [2,4,0,'STOP'] # fitness = 0, player life = 1, enemy life = 2, run time = 3, lives = 4
 crossover_weight = 'random'
 survival_mechanism = 'weighted probability'
-change_fitness_function = 'True'
 # numeric
-max_fitness_evaluations = 1
+max_fitness_evaluations = 5
 hidden_layers = 10
-population_size = 3
+population_size = 10
 edge_domain = [-1,1]
-tournament_size = 1
+tournament_size = 2
 parents_per_offspring = 2
 mutation_probability = .2
 reproductivity = 2 # amount of children per breeding group
@@ -178,13 +181,23 @@ def live_and_let_die(fitnesses,population):
 
 # return the mean, std and max fitness
 def save_fitness(fitnesses):
-    mean_fitn = np.mean(fitnesses)
-    std_fitn = np.std(fitnesses)
-    max_fitn = max(fitnesses)
-    return [mean_fitn,std_fitn,max_fitn]
+    # store in colums the mean, std and max of all the 5 fitness measures in rows
+    fitnesses_statistics = []
+    for fitness_definition in range(fitnesses.shape[1]):
+        mean_fitn = np.mean(fitnesses[:,fitness_definition])
+        std_fitn = np.std(fitnesses[:,fitness_definition])
+        max_fitn = max(fitnesses[:,fitness_definition])
+        fitnesses_statistics.append([mean_fitn, std_fitn, max_fitn])
+    # add a third dimension to be able to add new time points
+    fitnesses_statistics = np.array(fitnesses_statistics)
+    fitnesses_statistics = np.transpose(fitnesses_statistics)
+    fitnesses_statistics = list(fitnesses_statistics)
+    fitnesses_statistics = [fitnesses_statistics]
+    fitnesses_statistics = np.array(fitnesses_statistics)
+    return fitnesses_statistics
 
 # plot the fitness development
-# input is a list as created by save_fitness()
+# input is a list as created by save_fitness(), but choose a fitness measure
 def plot_fitness(fitness_record):
     # create lists of mean plus and minus standard deviations
     std_mean = [[], [], []]
@@ -206,19 +219,22 @@ def plot_fitness(fitness_record):
 integer_list = generate_integers(population_size)
 # set the amount of edges in the neural network
 edges = (env.get_num_sensors() + 1) * hidden_layers + 5 * (hidden_layers + 1) # not sure why this should be the right amount of edges
+# set the first fitness type to select on
+fitness_type = 0
+selection_fitness_score = fitness_order[fitness_type]
 # generate an initial population
 survived_population = np.random.uniform(edge_domain[0], edge_domain[1], (population_size, edges))
 # determine and make an array of the fitnesses of the initial population
 survived_fitnesses = determine_fitness(survived_population)
 # make an empty array to store fitness values
-fitness_record = np.array([0,0,0])
+#fitness_record = np.array([0,0,0,0,0])
+# save the initial fitness
+fitness_record = save_fitness(survived_fitnesses)
 
-# run through evaluations for a fixed amount of iterations
-for evaluation in range(max_fitness_evaluations): # or while enemy is unbeaten
-    # if a criterium is reached, change the fitness score
-    if change_fitness_function == 'True':
-        if fitness_record[evaluation+1,0] + fitness_record[evaluation+1,1] > 100:
-            selection_fitness_score = 0
+
+# run through evaluations up to a maximum amount of iterations
+evaluation_nr = 0
+while selection_fitness_score != 'STOP' and evaluation_nr < max_fitness_evaluations:
     # select the parents
     parents = select_parents(survived_fitnesses,survived_population)
     # make the children
@@ -231,11 +247,22 @@ for evaluation in range(max_fitness_evaluations): # or while enemy is unbeaten
     new_population_fitness = np.concatenate((survived_fitnesses, fitness_children))
     # remove the appropriate amount of individuals to sustain a fixed population size
     survived_fitnesses, survived_population = live_and_let_die(new_population_fitness, oversized_population)
+    print('the population size is:\n',len(survived_population))
     # store the fitness- mean, standard deviation and maximum for plotting
-    fitness_record = np.vstack([fitness_record,save_fitness(survived_fitnesses[:,selection_fitness_score])])
-    print(fitness_record)
-    print(fitness_record[evaluation+1,0] + fitness_record[evaluation+1,1])
+    fitness_record = np.append(fitness_record,save_fitness(survived_fitnesses),axis=0)
+    # if a criterium is reached, change the fitness score
+    if fitness_record[evaluation_nr+1,0,fitness_type] + fitness_record[evaluation_nr+1,1,fitness_type] > 100:
+        fitness_type += 1
+        selection_fitness_score = fitness_order[fitness_type]
+    # increase the evaluation number with 1
+    evaluation_nr += 1
 
+"""
+fitness_record stores the mean, std and max fitness of the 5 definitions of fitness during different time points
+The first dimension is time
+the second dimension is mean, std and max
+the third gives the kind of fitness (fitness = 0, player life = 1, enemy life = 2, run time = 3, lives = 4)
+"""
 
 # plot the fitness over time
-plot_fitness(fitness_record)
+plot_fitness(fitness_record[:,:,0])
