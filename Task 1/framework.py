@@ -47,14 +47,16 @@ keep_best_solution = 'true'
 selection_fitness_score = 2 # fitness = 0, player life = 1, enemy life = 2, runt time = 3
 crossover_weight = 'random'
 survival_mechanism = 'weighted probability'
+change_fitness_function = 'True'
 # numeric
-fitness_evaluations = 10
+max_fitness_evaluations = 1
 hidden_layers = 10
-population_size = 10
+population_size = 3
 edge_domain = [-1,1]
-tournament_size = 2
+tournament_size = 1
 parents_per_offspring = 2
 mutation_probability = .2
+reproductivity = 2 # amount of children per breeding group
 
 
 # generate a list of integers up to the population size
@@ -105,9 +107,10 @@ def breed(reproducing_individuals):
     children = []
     for breeding_group in range(int(len(reproducing_individuals)/parents_per_offspring)):
         parents = reproducing_individuals[breeding_group:breeding_group+parents_per_offspring]
-        unmutated_child = crossover(parents)
-        mutated_child = mutate(unmutated_child)
-        children.append(mutated_child)
+        for birth in range(reproductivity):
+            unmutated_child = crossover(parents)
+            mutated_child = mutate(unmutated_child)
+            children.append(mutated_child)
     return np.asarray(children)
 
 # crossover the parents to create a child
@@ -180,6 +183,24 @@ def save_fitness(fitnesses):
     max_fitn = max(fitnesses)
     return [mean_fitn,std_fitn,max_fitn]
 
+# plot the fitness development
+# input is a list as created by save_fitness()
+def plot_fitness(fitness_record):
+    # create lists of mean plus and minus standard deviations
+    std_mean = [[], [], []]
+    for time_point in fitness_record:
+        for pos_neg in [-1, 1]:
+            std_mean[pos_neg].append(time_point[0] + pos_neg * time_point[1])
+    plt.plot(fitness_record[:, 0], label='average')
+    plt.plot(std_mean[-1], label='-1 sd')
+    plt.plot(std_mean[1], label='+1 sd')
+    plt.plot(fitness_record[:, 2], label='best')
+    plt.legend()  # bbox_to_anchor=(1.01, 1), loc=2, borderaxespad=0.) #outside the frame
+    plt.xlabel('fitness evaluation')
+    plt.ylabel('fitness score')
+    plt.show()
+
+
 # initialize population
 # make a list of integers to be able to randomize the order of the population without losing the connectedness of individuals and fitness
 integer_list = generate_integers(population_size)
@@ -193,7 +214,11 @@ survived_fitnesses = determine_fitness(survived_population)
 fitness_record = np.array([0,0,0])
 
 # run through evaluations for a fixed amount of iterations
-for evaluation in range(fitness_evaluations): # or while enemy is unbeaten
+for evaluation in range(max_fitness_evaluations): # or while enemy is unbeaten
+    # if a criterium is reached, change the fitness score
+    if change_fitness_function == 'True':
+        if fitness_record[evaluation+1,0] + fitness_record[evaluation+1,1] > 100:
+            selection_fitness_score = 0
     # select the parents
     parents = select_parents(survived_fitnesses,survived_population)
     # make the children
@@ -208,8 +233,9 @@ for evaluation in range(fitness_evaluations): # or while enemy is unbeaten
     survived_fitnesses, survived_population = live_and_let_die(new_population_fitness, oversized_population)
     # store the fitness- mean, standard deviation and maximum for plotting
     fitness_record = np.vstack([fitness_record,save_fitness(survived_fitnesses[:,selection_fitness_score])])
+    print(fitness_record)
+    print(fitness_record[evaluation+1,0] + fitness_record[evaluation+1,1])
 
-plt.plot(fitness_record[:,0])
-plt.plot(fitness_record[:,1])
-plt.plot(fitness_record[:,2])
-plt.show()
+
+# plot the fitness over time
+plot_fitness(fitness_record)
