@@ -5,12 +5,18 @@ sys.path.insert(0, 'evoman')
 sys.path.insert(0, '..')
 from environment_without_rendering import Environment
 
-
 class Algorithm:
     def __init__(self, parameters):
-        # initializes environment with ai player using random controller, playing against static enemy
-        self.env = Environment(experiment_name=self.parameters['experiment_name'])
         self.parameters = parameters
+        self.experiment_name = self.parameters['experiment_name']
+        # initializes environment with ai player using random controller, playing against static enemy
+        self.env = Environment(experiment_name=self.parameters['experiment_name'],
+                  enemies=self.parameters['enemies'],
+                  playermode="ai",
+                  player_controller=self.parameters['player_controller'],
+                  enemymode="static",
+                  level=2,
+                  speed="fastest")
 
     def step(self):
         parents = self.parent_selection()

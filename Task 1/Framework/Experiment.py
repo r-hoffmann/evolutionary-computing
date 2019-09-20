@@ -1,7 +1,9 @@
 import os
 
 from Framework.GeneticAlgorithm import GeneticAlgorithm
+from Framework.NeatAlgorithm import NeatAlgorithm
 from Framework.Framework import Framework
+from Framework.PlayerNeatController import PlayerNeatController
 
 class Experiment:
     def __init__(self, experiment_name, algorithm, parameters=dict()):
@@ -13,7 +15,11 @@ class Experiment:
             os.makedirs(self.experiment_name)
 
         if algorithm=='GA':
+            self.parameters['player_controller'] = None
             self.algorithm = GeneticAlgorithm(parameters)
+        elif algorithm=='NEAT':
+            self.parameters['player_controller'] = PlayerNeatController()
+            self.algorithm = NeatAlgorithm(parameters)
         else:
             raise ValueError('{} is not an algorithm'.format(algorithm))
         
