@@ -15,9 +15,9 @@ class GeneticAlgorithm(Algorithm):
         self.crossover_weight = 'random'
         self.survival_mechanism = 'weighted probability'
         # numeric
-        self.max_fitness_evaluations = 5
-        self.hidden_layers = 10
-        self.population_size = 10
+        self.max_fitness_evaluations = 100
+        self.hidden_layers = 1
+        self.population_size = 20
         self.edge_domain = [-1,1]
         self.tournament_size = 2
         self.parents_per_offspring = 2
@@ -78,15 +78,20 @@ class GeneticAlgorithm(Algorithm):
             parents = self.tournament(population_fitness, population)
         else:
             print('Error: no appropriate parent selection method selected')
+#        print(parents[0])
+#        print(len(parents[0]))
         return parents
 
     # create the children from the selected parents
     def breed(self, parents):
         children = []
         for breeding_group in range(int(len(parents)/self.parents_per_offspring)):
-            parents = parents[breeding_group:breeding_group+self.parents_per_offspring]
+            print("Number parents: " + str(len(parents)))
+            print("Number breeding pairs: " + str(int(len(parents)/self.parents_per_offspring)))
+            print("Breeding group: " + str(breeding_group))
+            picked_parents = parents[breeding_group*self.parents_per_offspring:breeding_group*self.parents_per_offspring+self.parents_per_offspring]
             for _ in range(self.reproductivity):
-                unmutated_child = self.crossover(parents)
+                unmutated_child = self.crossover(picked_parents)
                 mutated_child = self.mutate(unmutated_child)
                 children.append(mutated_child)
         return np.asarray(children)
@@ -94,6 +99,8 @@ class GeneticAlgorithm(Algorithm):
     # crossover the parents to create a child
     def crossover(self, parents):
         # initiate child as list of zeros of the same length as the information contained in a single parent
+#        print(parents)
+#        print("Length parent 0: " + str(len(parents[0])))
         child = np.zeros(len(parents[0]))
         # go through all genes
         for gene_nr in range(len(parents[0])):
