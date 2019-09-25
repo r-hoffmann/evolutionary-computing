@@ -9,6 +9,7 @@ class GeneticAlgorithm(Algorithm):
         super().__init__(parameters)
         # set parameters
         # symbolic
+        # TO CHANGE THE TYPE OF ENEMY: Change 'enemies' in environment_without_rendering
         self.parent_selection_type = 'tournament'
         self.keep_best_solution = True
         self.fitness_order = [2,4,0,'STOP'] # fitness = 0, player life = 1, enemy life = 2, run time = 3, lives = 4
@@ -17,7 +18,7 @@ class GeneticAlgorithm(Algorithm):
         # numeric
         self.max_fitness_evaluations = 100
         self.hidden_layers = 1
-        self.population_size = 20
+        self.population_size = 100 # > tournament_size * parents_per_offspring
         self.edge_domain = [-1,1]
         self.tournament_size = 2
         self.parents_per_offspring = 2
@@ -51,9 +52,12 @@ class GeneticAlgorithm(Algorithm):
         # save the initial fitness
         self.fitness_record = self.save_fitness(self.survived_fitnesses)
 
+
         self.evaluation_nr = 0
         while self.stop_condition():
             self.step()
+            #print('the evaluation number is:',self.evaluation_nr)
+            #print('the self.survived_population now looks like:\n',self.survived_population)
         self.plot_fitness()
 
     # perform a tournament to choose the parents that reproduce
@@ -64,7 +68,7 @@ class GeneticAlgorithm(Algorithm):
         for tournament_number in range(int(self.population_size/self.tournament_size)):
             fitnesses_tournament = []
             for individual_nr in range(self.tournament_size):
-                shuffled_population_position = tournament_number + individual_nr
+                shuffled_population_position = tournament_number*self.tournament_size + individual_nr
                 fitnesses_tournament.append(population_fitness[self.integer_list[shuffled_population_position]][self.selection_fitness_score])
             #select winner of tournament
             #store population position of winner
@@ -86,21 +90,22 @@ class GeneticAlgorithm(Algorithm):
     def breed(self, parents):
         children = []
         for breeding_group in range(int(len(parents)/self.parents_per_offspring)):
-            print("Number parents: " + str(len(parents)))
-            print("Number breeding pairs: " + str(int(len(parents)/self.parents_per_offspring)))
-            print("Breeding group: " + str(breeding_group))
+            #print("Number parents: " + str(len(parents)))
+            #print("Number breeding pairs: " + str(int(len(parents)/self.parents_per_offspring)))
+            #print("Breeding group: " + str(breeding_group))
             picked_parents = parents[breeding_group*self.parents_per_offspring:breeding_group*self.parents_per_offspring+self.parents_per_offspring]
+            #print('the picked parents in breeding group %i are:\n' % breeding_group, picked_parents)
             for _ in range(self.reproductivity):
                 unmutated_child = self.crossover(picked_parents)
+                # print('the unmutated child nr %i in bg %i looks like \n' % (_,breeding_group), unmutated_child)
                 mutated_child = self.mutate(unmutated_child)
                 children.append(mutated_child)
+        #print('the children at the end of breed(self,parents) look like:\n', children)
         return np.asarray(children)
 
     # crossover the parents to create a child
     def crossover(self, parents):
         # initiate child as list of zeros of the same length as the information contained in a single parent
-#        print(parents)
-#        print("Length parent 0: " + str(len(parents[0])))
         child = np.zeros(len(parents[0]))
         # go through all genes
         for gene_nr in range(len(parents[0])):
@@ -207,5 +212,16 @@ class GeneticAlgorithm(Algorithm):
         if self.fitness_record[self.evaluation_nr+1,0,self.fitness_type] + self.fitness_record[self.evaluation_nr+1,1,self.fitness_type] > 100:
             self.fitness_type += 1
             self.selection_fitness_score = self.fitness_order[self.fitness_type]
+            print('the fitness score now in use is %i' % self.selection_fitness_score)
         # increase the evaluation number with 1
         self.evaluation_nr += 1
+        print('we are at evaluation number %i' % self.evaluation_nr)
+
+    def determine_unique_numbers(self, array):
+        # store the amount of unique elements per column
+        unique_elements = []
+        for column_nr in range(len(array[0])):
+            set_column = set(array[:, column_nr])
+            unique_list = list(set_column)
+            unique_elements.append(len(unique_list))
+        return unique_elements

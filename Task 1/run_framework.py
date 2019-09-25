@@ -2,7 +2,7 @@ import os
 from Framework.Experiment import Experiment
 
 experiment_name = 'experiment_name'
-algorithm = 'NEAT'
+algorithm = 'GA'
 
 parameters = {
     'enemies': [1],
