@@ -14,11 +14,11 @@ class GeneticAlgorithm(Algorithm):
         self.keep_best_solution = True
         self.fitness_order = [2,4,0,'STOP'] # fitness = 0, player life = 1, enemy life = 2, run time = 3, lives = 4
         self.crossover_weight = 'random'
-        self.survival_mechanism = 'weighted probability'
+        self.survival_mechanism = 'replace worst'
         # numeric
-        self.max_fitness_evaluations = 100
+        self.max_fitness_evaluations = 2
         self.hidden_layers = 1
-        self.population_size = 100 # > tournament_size * parents_per_offspring
+        self.population_size = 4 # > tournament_size * parents_per_offspring
         self.edge_domain = [-1,1]
         self.tournament_size = 2
         self.parents_per_offspring = 2
@@ -56,8 +56,6 @@ class GeneticAlgorithm(Algorithm):
         self.evaluation_nr = 0
         while self.stop_condition():
             self.step()
-            #print('the evaluation number is:',self.evaluation_nr)
-            #print('the self.survived_population now looks like:\n',self.survived_population)
         self.plot_fitness()
 
     # perform a tournament to choose the parents that reproduce
@@ -82,25 +80,17 @@ class GeneticAlgorithm(Algorithm):
             parents = self.tournament(population_fitness, population)
         else:
             print('Error: no appropriate parent selection method selected')
-#        print(parents[0])
-#        print(len(parents[0]))
         return parents
 
     # create the children from the selected parents
     def breed(self, parents):
         children = []
         for breeding_group in range(int(len(parents)/self.parents_per_offspring)):
-            #print("Number parents: " + str(len(parents)))
-            #print("Number breeding pairs: " + str(int(len(parents)/self.parents_per_offspring)))
-            #print("Breeding group: " + str(breeding_group))
             picked_parents = parents[breeding_group*self.parents_per_offspring:breeding_group*self.parents_per_offspring+self.parents_per_offspring]
-            #print('the picked parents in breeding group %i are:\n' % breeding_group, picked_parents)
             for _ in range(self.reproductivity):
                 unmutated_child = self.crossover(picked_parents)
-                # print('the unmutated child nr %i in bg %i looks like \n' % (_,breeding_group), unmutated_child)
                 mutated_child = self.mutate(unmutated_child)
                 children.append(mutated_child)
-        #print('the children at the end of breed(self,parents) look like:\n', children)
         return np.asarray(children)
 
     # crossover the parents to create a child
@@ -146,6 +136,9 @@ class GeneticAlgorithm(Algorithm):
                 # give each individual a survival score based on their fitness and a  random number
                 # add 1 to make sure not most of them are 0
                 survival_scores.append(np.random.rand()*(individual[self.selection_fitness_score]+1))
+        elif self.survival_mechanism == 'replace worst':
+            for individual in fitnesses:
+                survival_scores.append(individual[self.selection_fitness_score] + 1)
         if self.keep_best_solution:
             # change the survival score of the fittest individual to the highest
             index_topfit = np.argmax(fitnesses[:,self.selection_fitness_score])
@@ -156,7 +149,7 @@ class GeneticAlgorithm(Algorithm):
         survival_threshold = ordered_survival_scores[self.population_size]
         individual_nr = 0
         # remove individuals with a too low survival score, also removing their fitness and survival score
-        while individual_nr < len(population):
+        while self.population_size < len(population):
             if survival_scores[individual_nr] <= survival_threshold:
                 # remove the individuals and fitnesses fo those who died
                 population = np.delete(population, individual_nr, 0)

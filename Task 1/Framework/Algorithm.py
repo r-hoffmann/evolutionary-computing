@@ -27,8 +27,8 @@ class Algorithm:
         #print('the number of unique numbers in unmutated children are:',self.determine_unique_numbers(np.array(children)))
         mutated_children = self.mutation(children)
         self.survivor_selection(children)
-        print('there are %i individuals in the survived population' % len(children))
-        print('the number of unique numbers in survivors are:',self.determine_unique_numbers(np.array(children)))
+        #print('there are %i individuals in the survived population' % len(children))
+        #print('the number of unique numbers in survivors are:',self.determine_unique_numbers(np.array(children)))
 
 
     def play_evoman(self, x):
