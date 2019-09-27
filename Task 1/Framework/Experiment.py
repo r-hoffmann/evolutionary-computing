@@ -4,7 +4,7 @@ from Framework.GeneticAlgorithm import GeneticAlgorithm
 from Framework.NeatAlgorithm import NeatAlgorithm
 from Framework.Framework import Framework
 from Framework.PlayerNeatController import PlayerNeatController
-from IslandExperiment import IslandExperiment
+from Framework.IslandExperiment import IslandExperiment
 
 class Experiment:
     def __init__(self, experiment_name, algorithm, parameters=dict()):

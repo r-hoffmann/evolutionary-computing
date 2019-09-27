@@ -34,7 +34,7 @@ class GeneticAlgorithm(Algorithm):
     def stop_condition(self):
         return self.selection_fitness_score != 'STOP' and self.evaluation_nr < self.max_fitness_evaluations
 
-    def run(self):
+    def init_run(self):
         # initialize population
         # make a list of integers to be able to randomize the order of the population without losing the connectedness of individuals and fitness
         self.generate_integers()
@@ -55,6 +55,9 @@ class GeneticAlgorithm(Algorithm):
         record_of_all_fitnesses_each_generation = [np.ndarray.tolist(self.survived_fitnesses)]
 
         self.evaluation_nr = 0
+
+    def run(self):
+        self.init_run()
         while self.stop_condition():
             self.step()
             record_of_all_fitnesses_each_generation.append(np.ndarray.tolist(self.survived_fitnesses))
