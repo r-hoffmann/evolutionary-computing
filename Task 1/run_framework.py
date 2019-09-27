@@ -22,11 +22,11 @@ if algorithm == 'GA':
         'fitness_threshold': [60, 60, 75, 100],  # set the value which the mean must exceed before the next kind of fitness comes in use
         'crossover_weight' : 'random',
         'survival_mechanism' : 'replace worst',
-        'max_fitness_evaluations' : 2,
-        'hidden_layers' : 1,
-        'population_size' : 2,  # > tournament_size * parents_per_offspring
+        'max_fitness_evaluations' : 50,
+        'hidden_neurons' : 10,
+        'population_size' : 100,  # > tournament_size * parents_per_offspring
         'edge_domain' : [-1, 1],
-        'tournament_size' : 1,
+        'tournament_size' : 2,
         'parents_per_offspring' : 2,
         'mutation_probability' : .2,
         'reproductivity' : 2  # amount of children per breeding group

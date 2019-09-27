@@ -17,7 +17,7 @@ class GeneticAlgorithm(Algorithm):
         self.survival_mechanism = self.parameters['survival_mechanism']
         # numeric
         self.max_fitness_evaluations = self.parameters['max_fitness_evaluations']
-        self.hidden_layers = self.parameters['hidden_layers']
+        self.hidden_neurons = self.parameters['hidden_neurons']
         self.population_size = self.parameters['population_size']
         self.edge_domain = self.parameters['edge_domain']
         self.tournament_size = self.parameters['tournament_size']
@@ -39,7 +39,7 @@ class GeneticAlgorithm(Algorithm):
         # make a list of integers to be able to randomize the order of the population without losing the connectedness of individuals and fitness
         self.generate_integers()
         # set the amount of edges in the neural network
-        edges = (self.env.get_num_sensors() + 1) * self.hidden_layers + 5 * (self.hidden_layers + 1) # not sure why this should be the right amount of edges
+        edges = (self.env.get_num_sensors() + 1) * self.hidden_neurons + 5 * (self.hidden_neurons + 1) # not sure why this should be the right amount of edges
         # set the first fitness type to select on
         self.fitness_type = 0
         self.selection_fitness_score = self.fitness_order[self.fitness_type]
