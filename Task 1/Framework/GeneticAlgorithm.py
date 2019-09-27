@@ -9,21 +9,20 @@ class GeneticAlgorithm(Algorithm):
         super().__init__(parameters)
         # set parameters
         # symbolic
-        # TO CHANGE THE TYPE OF ENEMY: Change 'enemies' in environment_without_rendering
-        self.parent_selection_type = 'tournament'
-        self.keep_best_solution = True
-        self.fitness_order = [2,4,0,'STOP'] # fitness = 0, player life = 1, enemy life = 2, run time = 3, lives = 4
-        self.crossover_weight = 'random'
-        self.survival_mechanism = 'replace worst'
+        self.parent_selection_type = self.parameters['parent_selection_type']
+        self.keep_best_solution = self.parameters['keep_best_solution']
+        self.fitness_order = self.parameters['fitness_order']
+        self.crossover_weight = self.parameters['crossover_weight']
+        self.survival_mechanism = self.parameters['survival_mechanism']
         # numeric
-        self.max_fitness_evaluations = 2
-        self.hidden_layers = 1
-        self.population_size = 4 # > tournament_size * parents_per_offspring
-        self.edge_domain = [-1,1]
-        self.tournament_size = 2
-        self.parents_per_offspring = 2
-        self.mutation_probability = .2
-        self.reproductivity = 2 # amount of children per breeding group
+        self.max_fitness_evaluations = self.parameters['max_fitness_evaluations']
+        self.hidden_layers = self.parameters['hidden_layers']
+        self.population_size = self.parameters['population_size']
+        self.edge_domain = self.parameters['edge_domain']
+        self.tournament_size = self.parameters['tournament_size']
+        self.parents_per_offspring = self.parameters['parents_per_offspring']
+        self.mutation_probability = self.parameters['mutation_probability']
+        self.reproductivity = self.parameters['reproductivity']
 
     # generate a list of integers up to the population size
     def generate_integers(self):
