@@ -1,4 +1,5 @@
-# import packages 
+# record_of_all_fitnesses_each_generation stores all fitnesses of all individuals in
+# import packages
 import os, random, sys
 import numpy as np
 from Framework.Algorithm import Algorithm
@@ -48,13 +49,15 @@ class GeneticAlgorithm(Algorithm):
         self.survived_fitnesses = self.determine_fitness(self.survived_population)
         # make an empty array to store fitness values
         #fitness_record = np.array([0,0,0,0,0])
-        # save the initial fitness
+        # save the initial fitness mean, std and max
         self.fitness_record = self.save_fitness(self.survived_fitnesses)
-
+        # save all fitnesses:
+        record_of_all_fitnesses_each_generation = [np.ndarray.tolist(self.survived_fitnesses)]
 
         self.evaluation_nr = 0
         while self.stop_condition():
             self.step()
+            record_of_all_fitnesses_each_generation.append(np.ndarray.tolist(self.survived_fitnesses))
         self.plot_fitness()
 
     # perform a tournament to choose the parents that reproduce
@@ -200,8 +203,8 @@ class GeneticAlgorithm(Algorithm):
         
         # store the fitness- mean, standard deviation and maximum for plotting
         self.fitness_record = np.append(self.fitness_record, self.save_fitness(self.survived_fitnesses),axis=0)
-        # if a criterium is reached, change the fitness score
-        if self.fitness_record[self.evaluation_nr+1,0,self.fitness_type] + self.fitness_record[self.evaluation_nr+1,1,self.fitness_type] > 100:
+        # if the mean fitness score exceeds a preselected numer, change the fitness score used
+        if self.fitness_record[self.evaluation_nr+1,0,self.fitness_type] > self.parameters['fitness_threshold'][self.fitness_type]:
             self.fitness_type += 1
             self.selection_fitness_score = self.fitness_order[self.fitness_type]
             print('the fitness score now in use is %i' % self.selection_fitness_score)

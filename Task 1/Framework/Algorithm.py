@@ -51,7 +51,7 @@ class Algorithm:
             # add aditional score .9 (100 - enemy life) + .1 player life
             individual_fitnesses[4] = .9 * individual_fitnesses[2] + .1 * individual_fitnesses[1]
         return population_fitnesses
-    
+
     # plot the fitness development
     # input is a list as created by save_fitness(), but choose a fitness measure
     def plot_fitness(self):

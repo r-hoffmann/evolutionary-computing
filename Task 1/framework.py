@@ -52,7 +52,7 @@ fitness_order = [2,4,0,'STOP'] # fitness = 0, player life = 1, enemy life = 2, r
 crossover_weight = 'random'
 survival_mechanism = 'weighted probability'
 # numeric
-max_fitness_evaluations = 5
+max_fitness_evaluations = 5 # number of generations
 hidden_layers = 10
 population_size = 10
 edge_domain = [-1,1]
