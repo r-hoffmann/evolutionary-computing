@@ -13,8 +13,6 @@ class IslandExperiment:
         self.parameters = parameters
         self.parameters['experiment_name'] = experiment_name
         self.islands = []
-        self.num_islands = 2
-        self.migrations = 5
         
         # if not os.path.exists(self.experiment_name):
         #     os.makedirs(self.experiment_name)
@@ -93,13 +91,13 @@ class IslandExperiment:
 
     def run(self):
 
-        for i in range(self.num_islands):
+        for i in range(self.parameters['num_islands']):
             island = GeneticAlgorithm(self.parameters)
             island.init_run()
             self.islands.append(island)
         
-        for m in range(self.migrations):
-            for i in range(10):
+        for m in range(self.parameters['migrations']):
+            for i in range(self.parameters['evaluations_before_migration']):
                 for island in self.islands:
                     island.step()
             print('Migrating...')

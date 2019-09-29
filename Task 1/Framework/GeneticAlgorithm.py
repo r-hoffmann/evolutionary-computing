@@ -2,6 +2,8 @@
 # import packages
 import os, random, sys
 import numpy as np
+import sys
+import pickle
 from Framework.Algorithm import Algorithm
 
 class GeneticAlgorithm(Algorithm):
@@ -24,6 +26,7 @@ class GeneticAlgorithm(Algorithm):
         self.parents_per_offspring = self.parameters['parents_per_offspring']
         self.mutation_probability = self.parameters['mutation_probability']
         self.reproductivity = self.parameters['reproductivity']
+        self.record_of_all_fitnesses_each_generation = []
 
     # generate a list of integers up to the population size
     def generate_integers(self):
@@ -52,7 +55,7 @@ class GeneticAlgorithm(Algorithm):
         # save the initial fitness mean, std and max
         self.fitness_record = self.save_fitness(self.survived_fitnesses)
         # save all fitnesses:
-        record_of_all_fitnesses_each_generation = [np.ndarray.tolist(self.survived_fitnesses)]
+        #record_of_all_fitnesses_each_generation = [np.ndarray.tolist(self.survived_fitnesses)]
 
         self.evaluation_nr = 0
 
@@ -60,7 +63,13 @@ class GeneticAlgorithm(Algorithm):
         self.init_run()
         while self.stop_condition():
             self.step()
-            record_of_all_fitnesses_each_generation.append(np.ndarray.tolist(self.survived_fitnesses))
+            self.record_of_all_fitnesses_each_generation.append(np.ndarray.tolist(self.survived_fitnesses))
+
+        #save a record of all fitnesses of all individuals in all generations to a pickle file
+        pickle_out = open('fitness_record_GA_enemy'+sys.argv[1]+'_run'+sys.argv[2]+'.pickle', 'wb')
+        pickle.dump(self.record_of_all_fitnesses_each_generation, pickle_out)
+        pickle_out.close()
+
         self.plot_fitness()
 
     # perform a tournament to choose the parents that reproduce
