@@ -19,6 +19,7 @@ class SmartPopulation(neat.Population):
 
 		k = 0
 		best_genome_generations = 0
+		all_fitnesses = []
 		while best_genome_generations < generations_while_not_improving:
 			k += 1
 
@@ -34,6 +35,7 @@ class SmartPopulation(neat.Population):
 					best = g
 					best_genome_generations = 0
 			self.reporters.post_evaluate(self.config, self.population, self.species, best)
+			all_fitnesses.append([genome.fitness for genome in itervalues(self.population)])
 
 			# Track the best genome ever seen.
 			if self.best_genome is None or best.fitness > self.best_genome.fitness:
@@ -74,7 +76,7 @@ class SmartPopulation(neat.Population):
 		if self.config.no_fitness_termination:
 			self.reporters.found_solution(self.config, self.generation, self.best_genome)
 
-		return self.best_genome
+		return self.best_genome, all_fitnesses
 
 class NeatAlgorithm(Algorithm):
 	def __init__(self, parameters):
@@ -111,7 +113,7 @@ class NeatAlgorithm(Algorithm):
 		p.add_reporter(neat.Checkpointer(5, filename_prefix='neat-checkpoint-{}-'.format(self.parameters['enemies'][0])))
 
 		# Run for up to x generations.
-		winner = p.run(self.eval_genomes, self.parameters['generations_while_not_improving'])
+		winner, all_fitnesses = p.run(self.eval_genomes, self.parameters['generations_while_not_improving'])
 
 		# Display the winning genome.
 		print('\nBest genome:\n{!s}'.format(winner))
@@ -149,5 +151,8 @@ class NeatAlgorithm(Algorithm):
 		visualize.plot_species(stats, view=True, filename='{}/speciation.svg'.format(self.experiment_name))
 
 		# Save to fs.
+		with open('{}/all_fitnesses.pkl'.format(experiment_name), 'wb') as fid:
+			pickle.dump(all_fitnesses, fid)
+
 		with open('{}/best.pkl'.format(experiment_name), 'wb') as fid:
 			pickle.dump(winner, fid)
