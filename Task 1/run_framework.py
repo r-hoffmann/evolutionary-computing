@@ -4,20 +4,19 @@ import os
 import sys
 from Framework.Experiment import Experiment
 
-experiment_name = 'experiment_name'
-algorithm = 'GA'
+algorithm = 'NEAT'
+experiment_name = '{}_{}_{}'.format(algorithm, sys.argv[1], sys.argv[2])
 
 if algorithm == 'NEAT':
     parameters = {
-        'enemies': [1],
+        'enemies': sys.argv[1],
         'config_file': os.path.join(os.path.dirname(__file__), 'NEAT', 'config-NEAT'),
-        'generations': 5
+        'generations_while_not_improving': 25
     }
 
 if algorithm == 'GA':
     # The code should be executed by running: python run_framework.py [enemy number] [number of the simulation]
     parameters = {
-        #'enemies': [1],
         'enemies': sys.argv[1],
         'parent_selection_type': 'tournament',
         'keep_best_solution' : True,

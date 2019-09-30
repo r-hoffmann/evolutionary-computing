@@ -2,7 +2,6 @@ import os
 
 from Framework.GeneticAlgorithm import GeneticAlgorithm
 from Framework.NeatAlgorithm import NeatAlgorithm
-from Framework.Framework import Framework
 from Framework.PlayerNeatController import PlayerNeatController
 from Framework.IslandExperiment import IslandExperiment
 

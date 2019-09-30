@@ -3,7 +3,6 @@ import numpy as np
 import random
 from Framework.GeneticAlgorithm import GeneticAlgorithm
 #from Framework.NeatAlgorithm import NeatAlgorithm
-from Framework.Framework import Framework
 from Framework.PlayerNeatController import PlayerNeatController
 
 #The corresponding algorithm.run() method must be changed to return population
