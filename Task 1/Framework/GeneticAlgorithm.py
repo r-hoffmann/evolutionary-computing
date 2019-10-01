@@ -1,3 +1,5 @@
+# create new folders by if not os.path.exists(self.experiment_name):
+
 # record_of_all_fitnesses_each_generation stores all fitnesses of all individuals in
 # import packages
 import os, random, sys
