@@ -18,19 +18,6 @@ class Algorithm:
                   level=2,
                   speed="fastest")
 
-    def step(self):
-        parents = self.parent_selection()
-        #print('there are %i parents' % len(parents))
-        #print('the number of unique numbers in parents are:',self.determine_unique_numbers(np.array(parents)))
-        children = self.recombination(parents)
-        #print('there are %i unmutated children' % len(children))
-        #print('the number of unique numbers in unmutated children are:',self.determine_unique_numbers(np.array(children)))
-        mutated_children = self.mutation(children)
-        self.survivor_selection(children)
-        #print('there are %i individuals in the survived population' % len(children))
-        #print('the number of unique numbers in survivors are:',self.determine_unique_numbers(np.array(children)))
-
-
     def play_evoman(self, x):
         fitness_scores = self.env.play(pcont=x)
         return fitness_scores

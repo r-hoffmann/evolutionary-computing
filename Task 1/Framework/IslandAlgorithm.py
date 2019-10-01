@@ -15,21 +15,23 @@ class IslandAlgorithm(Algorithm):
         self.islands = []
         
     def run(self):
-        for i in range(self.num_islands):
-            island = GeneticAlgorithm(self.parameters)
+        for _ in range(self.num_islands):
+            print('Init island {}'.format(_))
+            island_parameters = self.parameters.copy()
+            island_parameters['population_size'] //= self.num_islands
+            island = GeneticAlgorithm(island_parameters)
             island.init_run()
             self.islands.append(island)
-        print('test')
-        for m in range(self.migrations):
-            self.migrate()
-            for i in range(self.max_fitness_evaluations / self.migrations):
-                print(m, i)
+            
+        for _ in range(self.migrations):
+            for _ in range(self.max_fitness_evaluations // self.migrations):
                 for island in self.islands:
                     island.step()
+            self.migrate()
 
     def migrate(self):
         print('migrating')
-        if self.parameters['migration_type'] == 'exchange':
+        if self.parameters['migration_type'] == 'copy':
             valid = False
             migration_island_indices = list(range(self.num_islands))
             while not valid:
@@ -39,37 +41,17 @@ class IslandAlgorithm(Algorithm):
                         valid = False
                         break
                 valid = True
-            migration_islands = []
+            
             for i, x in enumerate(migration_island_indices):
                 from_island = self.islands[i]
                 to_island = self.islands[x]
-                migrants = [[x, i] for x in enumerate(from_island.survived_fitnesses)]
-                print(sorted(migrants))
-            
+                migrants_indices = sorted([[x[0], i] for i, x in enumerate(from_island.survived_fitnesses)], reverse=True)[:self.parameters['migration_size']]
+                to_replace_indices = sorted([[x[0], i] for i, x in enumerate(to_island.survived_fitnesses)])[:self.parameters['migration_size']]
 
-            print(migration_islands)
+                for z, y in zip(migrants_indices, to_replace_indices):
+                    to_island.survived_fitnesses[y[1]] = to_island.survived_fitnesses[z[1]].copy()
+                    to_island.survived_population[y[1]] = to_island.survived_population[z[1]].copy()
+                    print('index {} of island {} replaces index {} of island {}. Fitness {}.'.format(z[1], i, y[1], x, z[0]))
 
-            for island in self.islands:
-                migration_island = random.choice()
-            island1 = random.choice(self.islands)
-            island2 = random.choice(self.islands)
-            island3 = random.choice(self.islands)
-            island4 = random.choice(self.islands)
-
-            while island2 == island1:
-                island2 = random.choice(self.islands)
-            
-            while island3 == island1 or island3 == island2:
-                island3 = random.choice(self.islands)
-
-            while island4 == island1 or island4 == island2 or island4 == island3:
-                island2 = random.choice(self.islands)
-
-            rand = random.sample(range(0, island1.population_size), 2)
-            for i in rand:
-                island2.survived_population[i], island1.survived_population[i] = island1.survived_population[i], island2.survived_population[i]
-                island2.survived_fitnesses[i], island1.survived_fitnesses[i] = island1.survived_fitnesses[i], island2.survived_fitnesses[i]
-                island4.survived_population[i], island3.survived_population[i] = island3.survived_population[i], island4.survived_population[i]
-                island4.survived_fitnesses[i], island3.survived_fitnesses[i] = island3.survived_fitnesses[i], island4.survived_fitnesses[i]
-        elif self.parameters['migration_type'] == 'copy':
-            pass
+        elif self.parameters['migration_type'] == 'exchange':
+            raise NotImplementedError()

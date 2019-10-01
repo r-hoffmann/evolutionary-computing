@@ -4,7 +4,7 @@ import os
 import sys
 from Framework.Experiment import Experiment
 
-algorithm = 'Island'
+algorithm = 'GA'
 experiment_name = '{}_{}_{}'.format(algorithm, sys.argv[1], sys.argv[2])
 
 if algorithm == 'NEAT':
@@ -26,7 +26,7 @@ if algorithm == 'GA':
         'crossover_weight' : 'random',
         'survival_mechanism' : 'replace worst',
         'max_fitness_evaluations' : 100,
-        'hidden_neurons' : 10,
+        'hidden_neurons' : 50,
         'population_size' : 100,  # > tournament_size * parents_per_offspring
         'edge_domain' : [-1, 1],
         'tournament_size' : 1,
@@ -35,14 +35,12 @@ if algorithm == 'GA':
         'reproductivity' : 2  # amount of children per breeding group
     }
 
-
-
 if algorithm == 'Island':
     parameters = {
         'num_islands' : 4, # > 1, else gets stuck in a while statement in IslandExperiment.migrate
-        'migrations' : 10,
+        'migrations' : 50,
         'migration_size': 2,
-        'migration_type': 'exchange', # exchange or copy
+        'migration_type': 'copy', # exchange or copy
         'evaluations_before_migration' : 1,
         'enemies': sys.argv[1],
         'parent_selection_type': 'tournament',
@@ -52,7 +50,7 @@ if algorithm == 'Island':
         'crossover_weight' : 'random',
         'survival_mechanism' : 'replace worst',
         'max_fitness_evaluations' : 100,
-        'hidden_neurons' : 10,
+        'hidden_neurons' : 50,
         'population_size' : 100,  # > tournament_size * parents_per_offspring
         'edge_domain' : [-1, 1],
         'tournament_size' : 1,
