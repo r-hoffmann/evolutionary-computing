@@ -70,6 +70,14 @@ class GeneticAlgorithm(Algorithm):
         pickle.dump(self.record_of_all_fitnesses_each_generation, pickle_out)
         pickle_out.close()
 
+        #save the best solution
+        fitnesses = self.survived_fitnesses[:,0]
+        index = np.where(fitnesses == np.amax(fitnesses))[0][0]
+        fittest_individual = self.survived_population[index]
+        pickle_out = open('best_solution_GA_enemy'+sys.argv[1]+'_run'+sys.argv[2]+'.pickle', 'wb')
+        pickle.dump(fittest_individual, pickle_out)
+        pickle_out.close()
+
         self.plot_fitness()
 
     # perform a tournament to choose the parents that reproduce
