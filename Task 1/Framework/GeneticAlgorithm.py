@@ -42,20 +42,13 @@ class GeneticAlgorithm(Algorithm):
         # make a list of integers to be able to randomize the order of the population without losing the connectedness of individuals and fitness
         self.generate_integers()
         # set the amount of edges in the neural network
-        edges = (self.env.get_num_sensors() + 1) * self.hidden_neurons + 5 * (self.hidden_neurons + 1) # not sure why this should be the right amount of edges
+        edges = self.env.get_num_sensors() * self.hidden_neurons + 5 * self.hidden_neurons # not sure why this should be the right amount of edges
         # set the first fitness type to select on
         self.fitness_type = 0
         self.selection_fitness_score = self.fitness_order[self.fitness_type]
         # generate an initial population
         self.survived_population = np.random.uniform(self.edge_domain[0], self.edge_domain[1], (self.population_size, edges))
-        # determine and make an array of the fitnesses of the initial population
-        self.survived_fitnesses = self.determine_fitness(self.survived_population)
-        # make an empty array to store fitness values
-        #fitness_record = np.array([0,0,0,0,0])
-        # save the initial fitness mean, std and max
-        self.fitness_record = self.save_fitness(self.survived_fitnesses)
-        # save all fitnesses:
-        #record_of_all_fitnesses_each_generation = [np.ndarray.tolist(self.survived_fitnesses)]
+        
 
         self.evaluation_nr = 0
 
