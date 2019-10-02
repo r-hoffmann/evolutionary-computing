@@ -1,5 +1,5 @@
 from __future__ import print_function
-import neat, os, visualize
+import neat, os, pickle, visualize
 
 from neat.reporting import ReporterSet
 from neat.math_util import mean
@@ -8,19 +8,13 @@ from neat.six_util import iteritems, itervalues
 from Framework.Algorithm import Algorithm
 
 class SmartPopulation(neat.Population):
-	def run(self, fitness_function, generations_while_not_improving=25):
-		"""
-		Run population until there is no better genome in last g generations
-		See super class for details.
-		"""
-
+	def run(self, fitness_function, n=None):
 		if self.config.no_fitness_termination and (n is None):
 			raise RuntimeError("Cannot have no generational limit with no fitness termination")
 
 		k = 0
-		best_genome_generations = 0
 		all_fitnesses = []
-		while best_genome_generations < generations_while_not_improving:
+		while n is None or k < n:
 			k += 1
 
 			self.reporters.start_generation(self.generation)
@@ -33,7 +27,6 @@ class SmartPopulation(neat.Population):
 			for g in itervalues(self.population):
 				if best is None or g.fitness > best.fitness:
 					best = g
-					best_genome_generations = 0
 			self.reporters.post_evaluate(self.config, self.population, self.species, best)
 			all_fitnesses.append([genome.fitness for genome in itervalues(self.population)])
 
@@ -71,7 +64,6 @@ class SmartPopulation(neat.Population):
 			self.reporters.end_generation(self.config, self.population, self.species)
 
 			self.generation += 1
-			best_genome_generations += 1
 
 		if self.config.no_fitness_termination:
 			self.reporters.found_solution(self.config, self.generation, self.best_genome)
@@ -110,10 +102,10 @@ class NeatAlgorithm(Algorithm):
 		p.add_reporter(neat.StdOutReporter(True))
 		stats = neat.StatisticsReporter()
 		p.add_reporter(stats)
-		p.add_reporter(neat.Checkpointer(5, filename_prefix='neat-checkpoint-{}-'.format(self.parameters['enemies'][0])))
+		# p.add_reporter(neat.Checkpointer(5, filename_prefix='neat-checkpoint-{}-'.format(self.parameters['enemies'][0])))
 
 		# Run for up to x generations.
-		winner, all_fitnesses = p.run(self.eval_genomes, self.parameters['generations_while_not_improving'])
+		winner, all_fitnesses = p.run(self.eval_genomes, self.parameters['max_fitness_evaluations'])
 
 		# Display the winning genome.
 		print('\nBest genome:\n{!s}'.format(winner))
@@ -147,12 +139,12 @@ class NeatAlgorithm(Algorithm):
 		}
 
 		visualize.draw_net(config, winner, True, node_names=node_names, filename="{}/DiGraph".format(self.experiment_name))
-		visualize.plot_stats(stats, ylog=False, view=True, filename='{}/avg_fitness.svg'.format(self.experiment_name))
-		visualize.plot_species(stats, view=True, filename='{}/speciation.svg'.format(self.experiment_name))
+		visualize.plot_stats(stats, ylog=False, view=False, filename='{}/avg_fitness.svg'.format(self.experiment_name))
+		visualize.plot_species(stats, view=False, filename='{}/speciation.svg'.format(self.experiment_name))
 
 		# Save to fs.
-		with open('{}/all_fitnesses.pkl'.format(experiment_name), 'wb') as fid:
+		with open('{}/all_fitnesses.pkl'.format(self.experiment_name), 'wb') as fid:
 			pickle.dump(all_fitnesses, fid)
 
-		with open('{}/best.pkl'.format(experiment_name), 'wb') as fid:
+		with open('{}/best.pkl'.format(self.experiment_name), 'wb') as fid:
 			pickle.dump(winner, fid)
