@@ -1,6 +1,5 @@
-import os
+import os, pickle, random
 import numpy as np
-import random
 from Framework.Algorithm import Algorithm
 from Framework.GeneticAlgorithm import GeneticAlgorithm
 
@@ -22,12 +21,24 @@ class IslandAlgorithm(Algorithm):
             island = GeneticAlgorithm(island_parameters)
             island.init_run()
             self.islands.append(island)
-            
+        
+        all_fitnesses = []
         for _ in range(self.migrations):
             for _ in range(self.max_fitness_evaluations // self.migrations):
                 for island in self.islands:
                     island.step()
+                    all_fitnesses.append([fitness for island in self.islands for fitness in island.survived_fitnesses])
             self.migrate()
+
+        # Save to fs.
+        with open('{}/all_fitnesses.pkl'.format(self.experiment_name), 'wb') as fid:
+            pickle.dump(all_fitnesses, fid)
+
+        result = sorted([[x[0], index, island] for island, island_class in enumerate(self.islands) for index, x in enumerate(island_class.survived_fitnesses)], reverse=True)[0]
+        _, index, island = result
+        fittest_individual = self.islands[island].survived_population[index]
+        with open('{}/best.pkl'.format(self.experiment_name), 'wb') as fid:
+            pickle.dump(fittest_individual, fid)
 
     def migrate(self):
         print('migrating')
