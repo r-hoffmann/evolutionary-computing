@@ -55,4 +55,6 @@ class Algorithm:
         plt.legend()  # bbox_to_anchor=(1.01, 1), loc=2, borderaxespad=0.) #outside the frame
         plt.xlabel('fitness evaluation')
         plt.ylabel('fitness score')
-        plt.show()
+        plt.savefig('task_1_GA_' +  sys.argv[1] + '/fitness_record_GA_enemy' + sys.argv[1]+'_run' + sys.argv[2] + '.png')
+        plt.close()
+        #plt.show()

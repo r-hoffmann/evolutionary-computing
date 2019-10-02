@@ -74,7 +74,7 @@ class GeneticAlgorithm(Algorithm):
             self.record_of_all_fitnesses_each_generation.append(np.ndarray.tolist(self.survived_fitnesses))
 
         #save a record of all fitnesses of all individuals in all generations to a pickle file
-        pickle_out = open('fitness_record_GA_enemy'+sys.argv[1]+'_run'+sys.argv[2]+'.pickle', 'wb')
+        pickle_out = open('task_1_GA_' +  sys.argv[1] + '/fitness_record_GA_enemy'+sys.argv[1]+'_run'+sys.argv[2]+'.pickle', 'wb')
         pickle.dump(self.record_of_all_fitnesses_each_generation, pickle_out)
         pickle_out.close()
 
@@ -82,7 +82,7 @@ class GeneticAlgorithm(Algorithm):
         fitnesses = self.survived_fitnesses[:,0]
         index = np.where(fitnesses == np.amax(fitnesses))[0][0]
         fittest_individual = self.survived_population[index]
-        pickle_out = open('best_solution_GA_enemy'+sys.argv[1]+'_run'+sys.argv[2]+'.pickle', 'wb')
+        pickle_out = open('task_1_GA_' +  sys.argv[1] + '/best_solution_GA_enemy'+ sys.argv[1]+'_run'+sys.argv[2]+'.pickle', 'wb')
         pickle.dump(fittest_individual, pickle_out)
         pickle_out.close()
 
