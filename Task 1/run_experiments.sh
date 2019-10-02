@@ -11,8 +11,8 @@ START_N=1;
 read -p "Have you read the comment in this file? <y/N> " prompt
 if [[ $prompt == "y" || $prompt == "Y" || $prompt == "yes" || $prompt == "Yes" ]]
 then
-    experiment='NEAT';
-    for ((E=1;E<=8;E++)); do
+    experiment='Island';
+    for ((E=6;E<=7;E++)); do
         for ((N=START_N;N<=MAX_N;N++)); do
             python run_framework.py $E $N &
             echo "Started $experiment on $E. Trial $N.";

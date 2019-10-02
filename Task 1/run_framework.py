@@ -4,7 +4,7 @@ import os
 import sys
 from Framework.Experiment import Experiment
 
-algorithm = 'GA'
+algorithm = 'Island'
 experiment_name = '{}_{}_{}'.format(algorithm, sys.argv[1], sys.argv[2])
 
 """
@@ -26,7 +26,6 @@ if algorithm == 'NEAT':
     parameters = {
         'enemies': sys.argv[1],
         'config_file': os.path.join(os.path.dirname(__file__), 'NEAT', 'config-NEAT'),
-        'generations_while_not_improving': 25,
         'max_fitness_evaluations' : 100
     }
 
@@ -53,7 +52,7 @@ if algorithm == 'GA':
 if algorithm == 'Island':
     parameters = {
         'num_islands' : 4, # > 1, else gets stuck in a while statement in IslandExperiment.migrate
-        'migrations' : 50,
+        'migrations' : 10,
         'migration_size': 2,
         'migration_type': 'copy', # exchange or copy
         'evaluations_before_migration' : 1,
