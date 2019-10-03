@@ -55,7 +55,6 @@ if algorithm == 'Island':
         'migrations' : 10,
         'migration_size': 2,
         'migration_type': 'copy', # exchange or copy
-        'evaluations_before_migration' : 1,
         'enemies': sys.argv[1],
         'parent_selection_type': 'tournament',
         'keep_best_solution' : True,
@@ -67,7 +66,7 @@ if algorithm == 'Island':
         'hidden_neurons' : 50,
         'population_size' : 100,  # > tournament_size * parents_per_offspring
         'edge_domain' : [-1, 1],
-        'tournament_size' : 1,
+        'tournament_size' : 2,
         'parents_per_offspring' : 2,
         'mutation_probability' : .2,
         'reproductivity' : 2  # amount of children per breeding group
