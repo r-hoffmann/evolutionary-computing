@@ -18,7 +18,7 @@ then
             echo "Started $experiment on $E. Trial $N.";
         done
         wait 
-        echo "All experiments on $enemy are finished.";
+        echo "All experiments on $E are finished.";
     done
 else
   exit 0
