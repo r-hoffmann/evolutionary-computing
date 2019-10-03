@@ -5,7 +5,7 @@ import pandas as pd
 
 
 #algorithms = ["GA", "Island", "NEAT"]
-algorithms = ["GA"]
+algorithms = ["GA", "NEAT"]
 
 for i in [5,6,7]:
 	for j in range(1,11):
@@ -19,10 +19,14 @@ for algorithm in algorithms:
 		for j in range(1,11):
 			#print(i, j)
 			#print("../" + str(algorithm) + "_" + str(i) + "_" + str(j) + "/fitness_record_" + str(algorithm) + "_enemy" + str(i) + "_run" + str(j) + ".pickle")
-			fitness_record = pickle.load(open("../" + str(algorithm) + "_" + str(i) + "_" + str(j) + "/fitness_record_" + str(algorithm) + "_enemy" + str(i) + "_run" + str(j) + ".pickle", "rb"))
-			final_fitness_list = []
-			for k in fitness_record[-1]:
-				final_fitness_list.append(k[0])
+			if algorithm=='GA':
+				fitness_record = pickle.load(open("../" + str(algorithm) + "_" + str(i) + "_" + str(j) + "/fitness_record_" + str(algorithm) + "_enemy" + str(i) + "_run" + str(j) + ".pickle", "rb"))
+				final_fitness_list = []
+				for k in fitness_record[-1]:
+					final_fitness_list.append(k[0])
+			else:
+				final_fitness_list = pickle.load(open("../{}_{}_{}/all_fitnesses.pkl".format(algorithm, i, j), "rb"))			
+			
 			best_fitness_list.append(max(final_fitness_list))
 			mean_fitness_list.append(np.mean(final_fitness_list))
 		final_dict[str(algorithm)+str(i)+"_best"] = best_fitness_list
@@ -54,10 +58,14 @@ for algorithm in algorithms:
 		for j in range(1,11):
 			#print(i, j)
 			#print("../" + str(algorithm) + "_" + str(i) + "_" + str(j) + "/fitness_record_" + str(algorithm) + "_enemy" + str(i) + "_run" + str(j) + ".pickle")
-			fitness_record = pickle.load(open("../" + str(algorithm) + "_" + str(i) + "_" + str(j) + "/fitness_record_" + str(algorithm) + "_enemy" + str(i) + "_run" + str(j) + ".pickle", "rb"))
-			final_fitness_list = []
-			for k in fitness_record[-1]:
-				final_fitness_list.append(k[0])
+			if algorithm=='GA':
+				fitness_record = pickle.load(open("../" + str(algorithm) + "_" + str(i) + "_" + str(j) + "/fitness_record_" + str(algorithm) + "_enemy" + str(i) + "_run" + str(j) + ".pickle", "rb"))
+				final_fitness_list = []
+				for k in fitness_record[-1]:
+					final_fitness_list.append(k[0])
+			else:
+				final_fitness_list = pickle.load(open("../{}_{}_{}/all_fitnesses.pkl".format(algorithm, i, j), "rb"))	
+
 			best_fitness_list.append(max(final_fitness_list))
 			mean_fitness_list.append(np.mean(final_fitness_list))
 		mean_best_fitness.append(np.mean(best_fitness_list))
