@@ -1,8 +1,9 @@
-import os, pickle, visualize
+import os, pickle#, visualize
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 import seaborn as sns
+from matplotlib.pyplot import figure
 
 class PlotResults:
     def __init__(self, algorithms=["GA", "Island", "NEAT"], enemies=[5,6,7]):
@@ -33,7 +34,7 @@ class PlotResults:
         plt.scatter([6 for i in range(10)], final_dict["NEAT6_best"], s = 15 )
         plt.scatter([7 for i in range(10)], final_dict["NEAT7_best"], s = 15 )
         plt.xticks([5,6,7])
-        plt.show()
+        #plt.show()
         plt.close()
 
         all_evals = []
@@ -42,6 +43,7 @@ class PlotResults:
             std_best_fitness = []
             mean_mean_fitness = []
             std_mean_fitness = []
+
             for i in [5,6,7]:
                 best_fitness_list = []
                 mean_fitness_list = []
@@ -59,31 +61,39 @@ class PlotResults:
             all_evals.append(mean_mean_fitness)
             all_evals.append(std_mean_fitness)
 
+        #figure(figsize=(2, 3))
+
+        cheat_solution = -.3
         for i, algorithm in enumerate(algorithms):
             df = pd.DataFrame({
                             "enemy": [5,6,7],
                             "algorithm": algorithm, 
                             "best":all_evals[i*2], 
                             "sd":all_evals[i*2+1]})
-            plt.errorbar(df['enemy'], df['best'], yerr=df['sd'], ls='None', marker='o', label=algorithm)
+            #print(df['enemy']+.1)
+            plt.errorbar(df['enemy']+cheat_solution, df['best'], yerr=df['sd'], ls='None', marker='o', label=algorithm)
+            cheat_solution += .3
         ax = plt.gca()
         ax.xaxis.set_ticks([5,6,7])
         plt.xlabel("enemy")
-        plt.ylabel("best")
+        plt.ylabel("best fitness")
         plt.legend()
         plt.show()
 
+        #figure(figsize=(2, 3))
+        cheat_solution = -.3
         for i, algorithm in enumerate(algorithms):
             df = pd.DataFrame({
                             "enemy": [5,6,7],
                             "algorithm": algorithm, 
                             "mean":all_evals[i*2+2], 
                             "sd":all_evals[i*2+3]})
-            plt.errorbar(df['enemy'], df['mean'], yerr=df['sd'], ls='None', marker='o', label=algorithm)
+            plt.errorbar(df['enemy']+cheat_solution, df['mean'], yerr=df['sd'], ls='None', marker='o', label=algorithm)
+            cheat_solution += .3
         ax = plt.gca()
         ax.xaxis.set_ticks([5,6,7])
         plt.xlabel("enemy")
-        plt.ylabel("mean")
+        plt.ylabel("mean fitness")
         plt.legend()
         plt.show()
 
@@ -134,6 +144,6 @@ class PlotResults:
         plt.savefig(os.path.join(os.path.dirname(__file__), "../combined_plots/{}_{}.png".format(algorithm, enemy)))
         plt.close()
         #plt.show()
-        if algorithm=='NEAT':
-            visualize.plot_species(stats, view=False, filename='{}_{}_{}/speciation.svg'.format(algorithm, enemy, trial))
+        #if algorithm=='NEAT':
+        #    visualize.plot_species(stats, view=False, filename='{}_{}_{}/speciation.svg'.format(algorithm, enemy, trial))
             # visualize.draw_net(config, winner, True, node_names=node_names, filename="{}/DiGraph".format(self.experiment_name))
