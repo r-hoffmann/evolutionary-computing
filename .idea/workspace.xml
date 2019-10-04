@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6604ab76-fe73-4fc4-ba6d-2225bd11085b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Task 1/Framework/TestStochasticity.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Task 1/analyze_stochasticity.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Task 1/Framework/Experiment.py" beforeDir="false" afterPath="$PROJECT_DIR$/Task 1/Framework/Experiment.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Task 1/Framework/GeneticAlgorithm.py" beforeDir="false" afterPath="$PROJECT_DIR$/Task 1/Framework/GeneticAlgorithm.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Task 1/run_framework.py" beforeDir="false" afterPath="$PROJECT_DIR$/Task 1/run_framework.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Task 1/Framework/PlotResults.py" beforeDir="false" afterPath="$PROJECT_DIR$/Task 1/Framework/PlotResults.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -26,13 +22,14 @@
           <entry key="project.open.time.13" value="1" />
           <entry key="project.open.time.31" value="1" />
           <entry key="project.open.time.8" value="1" />
-          <entry key="project.opened" value="7" />
+          <entry key="project.open.time.9" value="1" />
+          <entry key="project.opened" value="8" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="md" value="1" />
-          <entry key="py" value="14" />
+          <entry key="py" value="19" />
           <entry key="txt" value="4" />
         </counts>
       </usages-collector>
@@ -40,36 +37,61 @@
         <counts>
           <entry key="Markdown" value="1" />
           <entry key="PLAIN_TEXT" value="4" />
-          <entry key="Python" value="14" />
+          <entry key="Python" value="19" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="11382" />
+          <entry key="py" value="11779" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Python" value="11382" />
+          <entry key="Python" value="11779" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Task 1/Framework/GeneticAlgorithm.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="302">
+            <state relative-caret-position="237">
               <caret line="79" column="86" selection-start-line="79" selection-start-column="86" selection-end-line="79" selection-end-column="86" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Task 1/visualize.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-734">
+              <folding>
+                <element signature="e#0#11#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Task 1/test_code.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="150">
+              <caret line="10" column="26" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Task 1/plot_results.py">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Task 1/Framework/TestStochasticity.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="327">
+            <state relative-caret-position="735">
               <caret line="53" column="50" selection-start-line="53" selection-start-column="50" selection-end-line="53" selection-end-column="50" />
             </state>
           </provider>
@@ -78,7 +100,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Task 1/run_framework.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="271">
+            <state relative-caret-position="615">
               <caret line="43" column="30" selection-start-line="43" selection-start-column="30" selection-end-line="43" selection-end-column="30" />
               <folding>
                 <element signature="e#83#92#0" expanded="true" />
@@ -90,10 +112,22 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Task 1/analyze_stochasticity.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
+            <state relative-caret-position="315">
               <caret line="22" column="119" selection-start-line="22" selection-start-column="119" selection-end-line="22" selection-end-column="119" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Task 1/Framework/PlotResults.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="353">
+              <caret line="80" column="18" lean-forward="true" selection-start-line="80" selection-start-column="18" selection-end-line="80" selection-end-column="18" />
+              <folding>
+                <element signature="e#0#29#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -110,11 +144,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>dom_</find>
-      <find>norm</find>
-      <find>enemy</find>
-      <find>evaluate</find>
-      <find>n_vars</find>
       <find>get_num</find>
       <find>play</find>
       <find>evaluat</find>
@@ -140,6 +169,11 @@
       <find>init</find>
       <find>task</find>
       <find>self.fitness</find>
+      <find>visualize</find>
+      <find>get_all</find>
+      <find>final</find>
+      <find>show</find>
+      <find>final_fitness_list</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -156,9 +190,10 @@
         <option value="$PROJECT_DIR$/Task 1/Framework/Experiment.py" />
         <option value="$PROJECT_DIR$/Task 1/Framework/TestStochasticity.py" />
         <option value="$PROJECT_DIR$/Task 1/run_framework.py" />
-        <option value="$PROJECT_DIR$/Task 1/test_code.py" />
         <option value="$PROJECT_DIR$/Task 1/Framework/GeneticAlgorithm.py" />
         <option value="$PROJECT_DIR$/Task 1/analyze_stochasticity.py" />
+        <option value="$PROJECT_DIR$/Task 1/test_code.py" />
+        <option value="$PROJECT_DIR$/Task 1/Framework/PlotResults.py" />
       </list>
     </option>
   </component>
@@ -183,42 +218,6 @@
               <item name="project" type="b2602c69:ProjectViewProjectNode" />
               <item name="project" type="462c0819:PsiDirectoryNode" />
               <item name="Task 1" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="project" type="462c0819:PsiDirectoryNode" />
-              <item name="Task 1" type="462c0819:PsiDirectoryNode" />
-              <item name="evoman" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="project" type="462c0819:PsiDirectoryNode" />
-              <item name="Task 1" type="462c0819:PsiDirectoryNode" />
-              <item name="Framework" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="project" type="462c0819:PsiDirectoryNode" />
-              <item name="Task 1" type="462c0819:PsiDirectoryNode" />
-              <item name="Test stochasticity_5_1" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="project" type="462c0819:PsiDirectoryNode" />
-              <item name="Task 1" type="462c0819:PsiDirectoryNode" />
-              <item name="Test stochasticity_6_1" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="project" type="462c0819:PsiDirectoryNode" />
-              <item name="Task 1" type="462c0819:PsiDirectoryNode" />
-              <item name="TestStochasticity_6_1" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="project" type="462c0819:PsiDirectoryNode" />
-              <item name="Task 1" type="462c0819:PsiDirectoryNode" />
-              <item name="TestStochasticity_7_1" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -263,6 +262,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24947146" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.24947146" />
@@ -377,9 +377,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="762">
           <caret line="57" column="25" selection-start-line="57" selection-start-column="21" selection-end-line="57" selection-end-column="25" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -387,32 +384,26 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
           <caret line="15" column="24" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="44" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Task 1/test_code.py">
+    <entry file="file://$PROJECT_DIR$/Task 1/Framework/GeneticAlgorithm.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="13" selection-start-column="13" selection-end-column="13" />
+        <state relative-caret-position="237">
+          <caret line="79" column="86" selection-start-line="79" selection-start-column="86" selection-end-line="79" selection-end-column="86" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Task 1/analyze_stochasticity.py">
+    <entry file="file://$PROJECT_DIR$/Task 1/Framework/TestStochasticity.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="119" selection-start-line="22" selection-start-column="119" selection-end-line="22" selection-end-column="119" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="735">
+          <caret line="53" column="50" selection-start-line="53" selection-start-column="50" selection-end-line="53" selection-end-column="50" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Task 1/run_framework.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
+        <state relative-caret-position="615">
           <caret line="43" column="30" selection-start-line="43" selection-start-column="30" selection-end-line="43" selection-end-column="30" />
           <folding>
             <element signature="e#83#92#0" expanded="true" />
@@ -420,17 +411,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Task 1/Framework/TestStochasticity.py">
+    <entry file="file://$PROJECT_DIR$/Task 1/analyze_stochasticity.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="327">
-          <caret line="53" column="50" selection-start-line="53" selection-start-column="50" selection-end-line="53" selection-end-column="50" />
+        <state relative-caret-position="315">
+          <caret line="22" column="119" selection-start-line="22" selection-start-column="119" selection-end-line="22" selection-end-column="119" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Task 1/Framework/GeneticAlgorithm.py">
+    <entry file="file://$PROJECT_DIR$/Task 1/visualize.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="302">
-          <caret line="79" column="86" selection-start-line="79" selection-start-column="86" selection-end-line="79" selection-end-column="86" />
+        <state relative-caret-position="-734">
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Task 1/plot_results.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Task 1/test_code.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="26" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Task 1/Framework/PlotResults.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="353">
+          <caret line="80" column="18" lean-forward="true" selection-start-line="80" selection-start-column="18" selection-end-line="80" selection-end-column="18" />
+          <folding>
+            <element signature="e#0#29#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
