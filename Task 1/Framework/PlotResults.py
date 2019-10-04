@@ -14,65 +14,6 @@ class PlotResults:
 		self.other_graphs()
 
 	def other_graphs(self):
-		final_dict = {}
-		for algorithm in self.algorithms:
-			for i in self.enemies:
-				best_fitness_list = []
-				mean_fitness_list = []
-				for j in range(1,11):
-					final_fitness_list = self.get_last_generation_data(algorithm, i, j)
-					
-					best_fitness_list.append(max(final_fitness_list))
-					mean_fitness_list.append(np.mean(final_fitness_list))
-				final_dict[str(algorithm)+str(i)+"_best"] = best_fitness_list
-				final_dict[str(algorithm)+str(i)+"_mean"] = mean_fitness_list
-		# plt.plot()
-		# plt.scatter([5 for i in range(10)], final_dict["GA5_best"], s = 15 )
-		# plt.scatter([6 for i in range(10)], final_dict["GA6_best"], s = 15 )
-		# plt.scatter([7 for i in range(10)], final_dict["GA7_best"], s = 15 )
-		# plt.scatter([5 for i in range(10)], final_dict["Island5_best"], s = 15 )
-		# plt.scatter([6 for i in range(10)], final_dict["Island6_best"], s = 15 )
-		# plt.scatter([7 for i in range(10)], final_dict["Island7_best"], s = 15 )
-		# plt.scatter([5 for i in range(10)], final_dict["NEAT5_best"], s = 15 )
-		# plt.scatter([6 for i in range(10)], final_dict["NEAT6_best"], s = 15 )
-		# plt.scatter([7 for i in range(10)], final_dict["NEAT7_best"], s = 15 )
-		# plt.xticks(self.enemies)
-		# #plt.show()
-		# plt.close()
-
-		all_evals = []
-		for algorithm in self.algorithms:
-			mean_best_fitness = []
-			std_best_fitness = []
-			mean_mean_fitness = []
-			std_mean_fitness = []
-
-			for i in self.enemies:
-				best_fitness_list = []
-				mean_fitness_list = []
-				for j in range(1,11):
-					final_fitness_list = self.get_last_generation_data(algorithm, i, j)
-					best_fitness_list.append(max(final_fitness_list))
-					mean_fitness_list.append(np.mean(final_fitness_list))
-				mean_best_fitness.append(np.mean(best_fitness_list))
-				std_best_fitness.append(np.std(best_fitness_list))
-				mean_mean_fitness.append(np.mean(mean_fitness_list))
-				std_mean_fitness.append(np.std(mean_fitness_list))
-
-		plt.plot()
-		plt.scatter([5 for i in range(10)], final_dict["GA5_best"], s = 15 )
-		plt.scatter([6 for i in range(10)], final_dict["GA6_best"], s = 15 )
-		plt.scatter([7 for i in range(10)], final_dict["GA7_best"], s = 15 )
-		plt.scatter([5 for i in range(10)], final_dict["Island5_best"], s = 15 )
-		plt.scatter([6 for i in range(10)], final_dict["Island6_best"], s = 15 )
-		plt.scatter([7 for i in range(10)], final_dict["Island7_best"], s = 15 )
-		plt.scatter([5 for i in range(10)], final_dict["NEAT5_best"], s = 15 )
-		plt.scatter([6 for i in range(10)], final_dict["NEAT6_best"], s = 15 )
-		plt.scatter([7 for i in range(10)], final_dict["NEAT7_best"], s = 15 )
-		plt.xticks(self.enemies)
-		# plt.show()
-		plt.close()
-
 		all_evals = []
 		for algorithm in self.algorithms:
 			mean_best_fitness = []
@@ -90,6 +31,7 @@ class PlotResults:
 				std_best_fitness.append(np.std(best_fitness_list))
 				mean_mean_fitness.append(np.mean(mean_fitness_list))
 				std_mean_fitness.append(np.std(mean_fitness_list))
+				print('the mean best fitness of algorithm %s for enemy %i is %f' % (algorithm,i,np.mean(best_fitness_list)))
 
 			all_evals.append(mean_best_fitness)
 			all_evals.append(std_best_fitness)
@@ -102,9 +44,10 @@ class PlotResults:
 			df = pd.DataFrame({
 							"enemy": self.enemies,
 							"algorithm": algorithm, 
-							"best":all_evals[i*2], 
-							"sd":all_evals[i*2+1]})
+							"best":all_evals[i*4], 
+							"sd":all_evals[i*4+1]})
 			#print(df['enemy']+.1)
+			print(all_evals[i*2])
 			plt.errorbar(df['enemy']+cheat_solution, df['best'], yerr=df['sd'], ls='None', marker='o', label=algorithm)
 			cheat_solution += .3
 		ax = plt.gca()
@@ -112,6 +55,7 @@ class PlotResults:
 		plt.xlabel("enemy")
 		plt.ylabel("best fitness")
 		plt.legend()
+		plt.savefig(os.path.join(os.path.dirname(__file__), "../combined_plots/algorithms_best.png"))
 		plt.show()
 
 		#figure(figsize=(2, 3))
@@ -120,8 +64,8 @@ class PlotResults:
 			df = pd.DataFrame({
 							"enemy": self.enemies,
 							"algorithm": algorithm, 
-							"mean":all_evals[i*2+2], 
-							"sd":all_evals[i*2+3]})
+							"mean":all_evals[i*4+2], 
+							"sd":all_evals[i*4+3]})
 			plt.errorbar(df['enemy']+cheat_solution, df['mean'], yerr=df['sd'], ls='None', marker='o', label=algorithm)
 			cheat_solution += .3
 		ax = plt.gca()
@@ -129,34 +73,7 @@ class PlotResults:
 		plt.xlabel("enemy")
 		plt.ylabel("mean fitness")
 		plt.legend()
-		plt.show()
-
-		for i, algorithm in enumerate(self.algorithms):
-			df = pd.DataFrame({
-							"enemy": self.enemies,
-							"algorithm": algorithm, 
-							"best":all_evals[i*2], 
-							"sd":all_evals[i*2+1]})
-			plt.errorbar(df['enemy'], df['best'], yerr=df['sd'], ls='None', marker='o', label=algorithm)
-		ax = plt.gca()
-		ax.xaxis.set_ticks(self.enemies)
-		plt.xlabel("enemy")
-		plt.ylabel("best")
-		plt.legend()
-		plt.show()
-
-		for i, algorithm in enumerate(self.algorithms):
-			df = pd.DataFrame({
-							"enemy": self.enemies,
-							"algorithm": algorithm, 
-							"mean":all_evals[i*2+2], 
-							"sd":all_evals[i*2+3]})
-			plt.errorbar(df['enemy'], df['mean'], yerr=df['sd'], ls='None', marker='o', label=algorithm)
-		ax = plt.gca()
-		ax.xaxis.set_ticks(self.enemies)
-		plt.xlabel("enemy")
-		plt.ylabel("mean")
-		plt.legend()
+		plt.savefig(os.path.join(os.path.dirname(__file__), "../combined_plots/algorithms_mean.png"))
 		plt.show()
 
 	def get_all_data(self, algorithm, enemy, trial):
