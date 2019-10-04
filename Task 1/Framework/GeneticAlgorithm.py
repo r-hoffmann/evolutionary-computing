@@ -77,6 +77,7 @@ class GeneticAlgorithm(Algorithm):
         pickle_out = open('task_1_GA_' +  sys.argv[1] + '/fitness_record_GA_enemy'+sys.argv[1]+'_run'+sys.argv[2]+'.pickle', 'wb')
         pickle.dump(self.record_of_all_fitnesses_each_generation, pickle_out)
         pickle_out.close()
+        print('the fitnesses look like\n',self.record_of_all_fitnesses_each_generation)
 
         #save the best solution
         fitnesses = self.survived_fitnesses[:,0]

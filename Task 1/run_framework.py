@@ -4,7 +4,7 @@ import os
 import sys
 from Framework.Experiment import Experiment
 
-algorithm = 'Island'
+algorithm = 'GA'
 experiment_name = '{}_{}_{}'.format(algorithm, sys.argv[1], sys.argv[2])
 
 """
@@ -39,9 +39,9 @@ if algorithm == 'GA':
         'fitness_threshold': [100, 100],  # set the value which the mean must exceed before the next kind of fitness comes in use
         'crossover_weight' : 'random',
         'survival_mechanism' : 'replace worst',
-        'max_fitness_evaluations' : 100,
+        'max_fitness_evaluations' : 1,
         'hidden_neurons' : 50,
-        'population_size' : 100,  # > tournament_size * parents_per_offspring
+        'population_size' : 20,  # > tournament_size * parents_per_offspring
         'edge_domain' : [-1, 1],
         'tournament_size' : 2,
         'parents_per_offspring' : 2,
@@ -70,6 +70,17 @@ if algorithm == 'Island':
         'parents_per_offspring' : 2,
         'mutation_probability' : .2,
         'reproductivity' : 2  # amount of children per breeding group
+    }
+
+if algorithm == 'TestStochasticity':
+    parameters = {
+        'repetitions': 20,
+        'enemies': sys.argv[1],  # run python run_framework.py 5,6and7
+        'fitness_order': [0, 'STOP'],  # fitness = 0, player life = 1, enemy life = 2, run time = 3, lives = 4
+        'fitness_threshold': [100, 100], # set the value which the mean must exceed before the next kind of fitness comes in use
+        'hidden_neurons': 50,
+        'population_size': 1,  # > tournament_size * parents_per_offspring
+        'edge_domain': [-1, 1],
     }
 
 e = Experiment(experiment_name, algorithm, parameters)

@@ -4,6 +4,7 @@ from Framework.GeneticAlgorithm import GeneticAlgorithm
 from Framework.NeatAlgorithm import NeatAlgorithm
 from Framework.PlayerNeatController import PlayerNeatController
 from Framework.IslandAlgorithm import IslandAlgorithm
+from Framework.TestStochasticity import TestStochasticity
 
 class Experiment:
     def __init__(self, experiment_name, algorithm, parameters=dict()):
@@ -24,6 +25,9 @@ class Experiment:
         elif algorithm =='Island':
             self.parameters['player_controller'] = None
             self.algorithm = IslandAlgorithm(parameters)
+        elif algorithm == 'TestStochasticity':
+            self.parameters['player_controller'] = None
+            self.algorithm = TestStochasticity(parameters)
         else:
             raise ValueError('{} is not an algorithm'.format(algorithm))
         
