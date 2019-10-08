@@ -17,7 +17,7 @@ class Experiment:
 
         if algorithm=='GA':
             self.parameters['player_controller'] = None
-            self.algorithm = GeneticAlgorithm(parameters)
+            self.algorithm = GeneticAlgorithmIndividualClass(parameters)
             
         elif algorithm=='NEAT':
             self.parameters['player_controller'] = PlayerNeatController()

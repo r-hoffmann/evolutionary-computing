@@ -41,9 +41,9 @@ if algorithm == 'GA':
         'survival_mechanism' : '(μ, λ) Selection',
         'max_fitness_evaluations' : 1,
         'hidden_neurons' : 1,
-        'population_size' : 7,  # >= tournament_size * parents_per_offspring
+        'population_size' : 4,  # >= tournament_size * parents_per_offspring
         'edge_domain' : [-1, 1],
-        'reproductivity': 10,  # amount of children per breeding group >= parents per offspring * tournament size
+        'reproductivity': 4,  # amount of children per breeding group >= parents per offspring * tournament size
         'tournament_size' : 2, #integer
         'parents_per_offspring' : 2, #integer
         'mutation_probability' : 'flexible', #[0,1] or 'flexible'
