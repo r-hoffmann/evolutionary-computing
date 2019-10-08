@@ -39,6 +39,8 @@ class IslandAlgorithm(Algorithm):
         fittest_individual = self.islands[island].survived_population[index]
         with open('{}/best.pkl'.format(self.experiment_name), 'wb') as fid:
             pickle.dump(fittest_individual, fid)
+        
+        return fittest_individual
 
     def migrate(self):
         print('migrating')
@@ -66,3 +68,11 @@ class IslandAlgorithm(Algorithm):
 
         elif self.parameters['migration_type'] == 'exchange':
             raise NotImplementedError()
+
+    def test(self):
+        island_parameters = self.parameters.copy()
+        island_parameters['population_size'] //= self.num_islands
+        example_island = GeneticAlgorithm(island_parameters)
+        fitness = example_island.determine_fitness([self.parameters['test_model']])
+        print('Fitness trained against enemy {}, tested against enemy {} is {}.'.format(self.parameters['trained_on_enemy'], self.parameters['enemies'], fitness[0][0]))
+

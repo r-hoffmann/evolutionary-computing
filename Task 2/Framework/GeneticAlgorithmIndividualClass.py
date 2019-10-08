@@ -340,3 +340,7 @@ class GeneticAlgorithmIC(Algorithm):
         #plt.savefig('task_2_GA_' +  sys.argv[1] + '/fitness_record_GA_enemy' + sys.argv[1]+'_run' + sys.argv[2] + '.png')
         plt.show()
         plt.close()
+
+    def test(self):
+        fitness = self.determine_fitness([self.parameters['test_model']])
+        print('Fitness trained against enemy {}, tested against enemy {} is {}.'.format(self.parameters['trained_on_enemy'], self.parameters['enemies'], fitness[0][0]))

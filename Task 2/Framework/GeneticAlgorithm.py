@@ -88,6 +88,7 @@ class GeneticAlgorithm(Algorithm):
         pickle_out.close()
 
         self.plot_fitness()
+        return fittest_individual
 
     # perform a tournament to choose the parents that reproduce
     def tournament(self, population_fitness, population):

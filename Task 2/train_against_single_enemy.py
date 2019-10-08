@@ -13,9 +13,9 @@ from Framework.Experiment import Experiment
 algorithm = sys.argv[1]
 enemy = sys.argv[2]
 trial = sys.argv[3]
-max_fitness_evaluations = 1#10
+max_fitness_evaluations = 10
 hidden_neurons = 10
-population_size = 4#100
+population_size = 100
 experiment_name = '{}_{}_{}'.format(algorithm, enemy, trial)
 
 if algorithm == 'NEAT':
@@ -46,7 +46,7 @@ elif algorithm == 'GA':
 elif algorithm == 'Island':
     parameters = {
         'num_islands' : 4, # > 1, else gets stuck in a while statement in IslandExperiment.migrate
-        'migrations' : 10,
+        'migrations' : 1,
         'migration_size': 2,
         'migration_type': 'copy', # exchange or copy
         'enemies': enemy,
