@@ -31,6 +31,7 @@ if algorithm == 'NEAT':
 
 if algorithm == 'GA':
     # The code should be executed by running: python run_framework.py [enemy number] [number of the simulation]
+    # it now uses GeneticAlgorithmIndividualClass, which kills the parents of each generation to prevent the problem of accidental good fitness scores
     parameters = {
         'enemies': sys.argv[1], # run python run_framework.py 5,6and7
         'parent_selection_type': 'tournament',
