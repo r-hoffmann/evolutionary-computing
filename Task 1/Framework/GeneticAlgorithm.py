@@ -1,186 +1,247 @@
-# create new folders by if not os.path.exists(self.experiment_name):
+# I do wanna make the child a class straight away and inherit the mutation of the parents
 
-# record_of_all_fitnesses_each_generation stores all fitnesses of all individuals in
 # import packages
-import os, random, sys
+import os, random, sys, pickle
 import numpy as np
-import sys
-import pickle
+import matplotlib.pyplot as plt
 from Framework.Algorithm import Algorithm
+from Framework.Individual import Individual
 
 class GeneticAlgorithm(Algorithm):
     def __init__(self, parameters):
         self.parameters = parameters
+        self.mating_size = self.parameters['parents_per_offspring']
+        self.enemies = [self.parameters['enemies']]
         super().__init__(parameters)
-        # set parameters
-        # symbolic
-        self.parent_selection_type = self.parameters['parent_selection_type']
-        self.keep_best_solution = self.parameters['keep_best_solution']
-        self.fitness_order = self.parameters['fitness_order']
-        self.crossover_weight = self.parameters['crossover_weight']
-        self.survival_mechanism = self.parameters['survival_mechanism']
-        # numeric
-        self.max_fitness_evaluations = self.parameters['max_fitness_evaluations']
-        self.hidden_neurons = self.parameters['hidden_neurons']
-        self.population_size = self.parameters['population_size']
-        self.edge_domain = self.parameters['edge_domain']
-        self.tournament_size = self.parameters['tournament_size']
-        self.parents_per_offspring = self.parameters['parents_per_offspring']
-        self.mutation_probability = self.parameters['mutation_probability']
-        self.reproductivity = self.parameters['reproductivity']
+        self.edges = 20 * self.parameters['hidden_neurons'] + 5 * self.parameters['hidden_neurons']
+        self.population = []
+        self.children = []
         self.record_of_all_fitnesses_each_generation = []
 
-    # generate a list of integers up to the population size
-    def generate_integers(self):
-        self.integer_list = []
-        for integer in range(self.population_size):
-            self.integer_list.append(integer)
-    
-    def stop_condition(self):
-        return self.selection_fitness_score != 'STOP' and self.evaluation_nr < self.max_fitness_evaluations
+    def run(self):
+        # initialise the simulation
+        self.init_run()
+        self.evaluation_nr = 0
+        # store the initial fitnesses
+        generations_fitnesses = []
+        for individual in self.population:
+            generations_fitnesses.append(list(individual.fitness))
+        self.record_of_all_fitnesses_each_generation.append(generations_fitnesses)
+        # run the simulation until a stop condition is reached
+        while self.stop_condition():
+            print('started evaluation number %i' % self.evaluation_nr)
+            self.step()
+            self.evaluation_nr += 1
+            generations_fitnesses = []
+            #store the fitnesses of the generation
+            for individual in self.population:
+                generations_fitnesses.append(list(individual.fitness))
+            self.record_of_all_fitnesses_each_generation.append(generations_fitnesses)
+
+        self.save_results()
+
+        # plot the results to get an impression of possible improvements
+        mean_std_max = self.obtain_mean_std_max()
+        self.plot_fitness(mean_std_max)
 
     def init_run(self):
-        # initialize population
-        # make a list of integers to be able to randomize the order of the population without losing the connectedness of individuals and fitness
-        self.generate_integers()
-        # set the amount of edges in the neural network
-        edges = self.env.get_num_sensors() * self.hidden_neurons + 5 * self.hidden_neurons # not sure why this should be the right amount of edges
         # set the first fitness type to select on
-        self.fitness_type = 0
-        self.selection_fitness_score = self.fitness_order[self.fitness_type]
+        self.definition_nr = 0
+        self.fitness_definition = self.parameters['fitness_order'][self.definition_nr]
         # generate an initial population
-        self.survived_population = np.random.uniform(self.edge_domain[0], self.edge_domain[1], (self.population_size, edges))
-        # determine and make an array of the fitnesses of the initial population
-        self.survived_fitnesses = self.determine_fitness(self.survived_population)
-        # self.survived_fitnesses = np.random.randint(0, 100, size=(100, 5)) # for testing
-        # make an empty array to store fitness values
-        #fitness_record = np.array([0,0,0,0,0])
-        # save the initial fitness mean, std and max
-        self.fitness_record = self.save_fitness(self.survived_fitnesses)
-        # save all fitnesses:
-        #record_of_all_fitnesses_each_generation = [np.ndarray.tolist(self.survived_fitnesses)]
+        for _ in range(self.parameters['population_size']):
+            # add an individual
+            self.population.append(Individual())
+            # give the individual a random network
+            self.population[_].network = np.random.uniform(self.parameters['edge_domain'][0], self.parameters['edge_domain'][1],self.edges)
+            # determine the fitness of this network
+            self.population[_] = self.obtain_fitness([self.population[_]])[0]
+            # set the mutation rate
+            if self.parameters['mutation_probability'] == 'flexible':
+                self.population[_].mutation_rate = .2
+            else:
+                self.population[_].mutation_rate = self.parameters['mutation_probability']
 
-        self.evaluation_nr = 0
 
+    # don't do another generation if the stop condition is reached
+    def stop_condition(self):
+        return self.fitness_definition != 'STOP' and self.evaluation_nr < self.parameters['max_fitness_evaluations']
+
+    # taking a generation step
     def step(self):
+        # extract the networks of the population that won in sexual selection
         parents = self.parent_selection()
-        children = self.recombination(parents)
-        self.survivor_selection(children)
-        
-    def run(self):
-        self.init_run()
-        while self.stop_condition():
-            self.step()
-            self.record_of_all_fitnesses_each_generation.append(np.ndarray.tolist(self.survived_fitnesses))
+        # generate networks of children and give them a class
+        unmutated_children = self.recombination(parents)
+        # mutate the childrens networks
+        mutated_children = self.mutation(unmutated_children)
+        # change the population to only consist of children (class)
+        self.population = self.obtain_fitness(mutated_children)
+        # remove unfit individuals from the population
+        self.survivor_selection()
 
-        #save a record of all fitnesses of all individuals in all generations to a pickle file
-        pickle_out = open('task_1_GA_' +  sys.argv[1] + '/fitness_record_GA_enemy'+sys.argv[1]+'_run'+sys.argv[2]+'.pickle', 'wb')
-        pickle.dump(self.record_of_all_fitnesses_each_generation, pickle_out)
-        pickle_out.close()
-        print('the fitnesses look like\n',self.record_of_all_fitnesses_each_generation)
-
-        #save the best solution
-        fitnesses = self.survived_fitnesses[:,0]
-        index = np.where(fitnesses == np.amax(fitnesses))[0][0]
-        fittest_individual = self.survived_population[index]
-        pickle_out = open('task_1_GA_' +  sys.argv[1] + '/best_solution_GA_enemy'+ sys.argv[1]+'_run'+sys.argv[2]+'.pickle', 'wb')
-        pickle.dump(fittest_individual, pickle_out)
-        pickle_out.close()
-
-        self.plot_fitness()
-
-    # perform a tournament to choose the parents that reproduce
-    def tournament(self, population_fitness, population):
-        # match up individuals for tournament
-        reproductive_individuals = []
-        random.shuffle(self.integer_list) # randomize the integer_list to determine the tournament opponents
-        for tournament_number in range(int(self.population_size/self.tournament_size)):
-            fitnesses_tournament = []
-            for individual_nr in range(self.tournament_size):
-                shuffled_population_position = tournament_number*self.tournament_size + individual_nr
-                fitnesses_tournament.append(population_fitness[self.integer_list[shuffled_population_position]][self.selection_fitness_score])
-            #select winner of tournament
-            #store population position of winner
-            fittest_tournee = fitnesses_tournament.index(max(fitnesses_tournament))
-            reproductive_individuals.append(population[self.integer_list[tournament_number+fittest_tournee]])
-        return reproductive_individuals
-
-    # select the parents for the next population
-    def select_parents(self, population_fitness, population):
-        if self.parent_selection_type == 'tournament':
-            parents = self.tournament(population_fitness, population)
+    def parent_selection(self):
+        # select the parents
+        if self.parameters['parent_selection_type'] == 'tournament':
+            reproductive_individuals = self.tournament()
         else:
             print('Error: no appropriate parent selection method selected')
-        return parents
+        return reproductive_individuals
+
+    # perform a tournament to choose the parents that reproduce
+    def tournament(self):
+        reproductive_individuals = []
+        # match up individuals for tournament
+        # randomize the order of the population
+        random.shuffle(self.population)
+        for tournament_number in range(int(self.parameters['population_size']/self.parameters['tournament_size'])):
+            fitnesses_tournament = []
+            for tournament_pos in range(self.parameters['tournament_size']):
+                individual_nr = tournament_number*self.parameters['tournament_size']+tournament_pos
+                fitnesses_tournament.append(self.population[individual_nr].fitness[self.definition_nr])
+            winner_pos = fitnesses_tournament.index(max(fitnesses_tournament))
+            reproductive_individuals.append(self.population[winner_pos+tournament_number])
+        return reproductive_individuals
 
     # create the children from the selected parents
-    def breed(self, parents):
-        children = []
-        for breeding_group in range(int(len(parents)/self.parents_per_offspring)):
-            picked_parents = parents[breeding_group*self.parents_per_offspring:breeding_group*self.parents_per_offspring+self.parents_per_offspring]
-            for _ in range(self.reproductivity):
-                unmutated_child = self.crossover(picked_parents)
-                mutated_child = self.mutate(unmutated_child)
-                children.append(mutated_child)
-        return np.asarray(children)
-
-    # crossover the parents to create a child
-    def crossover(self, parents):
-        # initiate child as list of zeros of the same length as the information contained in a single parent
-        child = np.zeros(len(parents[0]))
-        # go through all genes
-        for gene_nr in range(len(parents[0])):
-            if self.crossover_weight == 'random':
-                # make a list of heritability strengths summing to 1
+    def recombination(self,parents):
+        unmutated_networks = []
+        mutation_rates = []
+        # go through the breeding groups / pairs
+        for breeding_group in range(int(len(parents)/self.mating_size)):
+            # make a list of the networks to cross over
+            picked_parents = parents[breeding_group*self.mating_size:breeding_group*self.mating_size+self.mating_size]
+            for _ in range(self.parameters['reproductivity']):
+                # initiate child as list of zeros of the same length as the information contained in a single parent
+                child_network = np.zeros(len(picked_parents[0].network))
+                # go through all genes
+                for gene_nr in range(len(picked_parents[0].network)):
+                    if self.parameters['crossover_weight'] == 'random':
+                        # make a list of heritability strengths summing to 1
+                        heritabilities = []
+                        devidable_proportion = 1
+                        for parent_nr in range(len(picked_parents) - 1):
+                            inheritance = np.random.rand() * devidable_proportion
+                            # give child proportional part of parent value
+                            heritabilities.append(inheritance)
+                            devidable_proportion -= inheritance
+                        # the last heritability is
+                        heritabilities.append(devidable_proportion)
+                        # randomize the heritabilities to prevent a parent from dominating the offspring values
+                        random.shuffle(heritabilities)
+                        # adapt the weight in the child's network
+                        for parent_nr in range(len(picked_parents)):
+                            child_network[gene_nr] += picked_parents[parent_nr].network[gene_nr] * heritabilities[parent_nr]
+                    else: print('crossover_weight is not defined properly and should probably be \'random\'')
+                unmutated_networks.append(child_network)
+                # recombine the mutation rate PRESENTLY ALWAYS RANDOM WEIGHT
                 heritabilities = []
-                devidable_proportion = 1
-                for parent_nr in range(len(parents)-1):
-                    inheritance = np.random.rand()*devidable_proportion
-                    # give child proportional part of parent value
-                    heritabilities.append(inheritance)
-                    devidable_proportion -= inheritance
-                heritabilities.append(devidable_proportion)
-                random.shuffle(heritabilities)  # randomize the heritabilities to prevent a parent from dominating the offsrping values
-                for parent_nr in range(len(parents)):
-                    child[gene_nr] += parents[parent_nr][gene_nr]*heritabilities[parent_nr]
-        return child
+                for parent_nr in range(len(picked_parents)):
+                    heritabilities.append(np.random.rand())
+                child_mutation_rate = 0
+                for parent_nr in range(len(heritabilities)):
+                    child_mutation_rate += heritabilities[parent_nr]/sum(heritabilities) * picked_parents[parent_nr].mutation_rate
+                mutation_rates.append(child_mutation_rate)
+        # make classes of the children
+        children = []
+        for _ in range(len(unmutated_networks)):
+            children.append(Individual())
+            children[_].network = unmutated_networks[_]
+            children[_].mutation_rate = mutation_rates[_]
+        return children
 
-    # mutate the genes of the child
-    def mutate(self, child):
-        # go through all genes of the child
-        for gene_nr in range(len(child)):
-            # mutate of random number is smaller than mutation probability
-            if np.random.rand() < self.mutation_probability:
-                # only accept new values if they are in the accepted domain
-                mutated_allele = self.edge_domain[0] - 1
-                while not(self.edge_domain[0] < mutated_allele < self.edge_domain[1]):
-                    mutated_allele = child[gene_nr] + np.random.normal(0, 1)
-                child[gene_nr] = mutated_allele
-        return child
+    # mutate the genes and mutation rate of the children
+    def mutation(self,unmutated_children):
+        for child in unmutated_children:
+            # go through all genes of the child
+            for gene_nr in range(len(child.network)):
+                # mutate of random number is smaller than mutation probability
+                if np.random.rand() < child.mutation_rate:
+                    # only accept new values if they are in the accepted domain
+                    mutated_allele = child.network[gene_nr] + np.random.normal(0, 1)
+                    while not(self.parameters['edge_domain'][0] < mutated_allele < self.parameters['edge_domain'][1]):
+                        mutated_allele = child.network[gene_nr] + np.random.normal(0, 1)
+                    child.network[gene_nr] = mutated_allele
+            # mutate the mutation rate
+            if self.parameters['mutation_probability'] == 'flexible':
+                if np.random.rand() < child.mutation_rate:
+                    mutated_rate = -1
+                    while not(0 < mutated_rate < 1):
+                        mutated_rate = child.mutation_rate + np.random.normal(0, .1)
+                    child.mutation_rate = mutated_rate
+        return unmutated_children # which are now mutated
 
+    # from the networks created by recombination and mutation make class individuals
+    def obtain_fitness(self,mutated_children):
+        for _ in range(len(mutated_children)):
+            mutated_children[_].fitness = self.determine_fitness([mutated_children[_].network])[0]
+        return mutated_children
+
+    # select the survivors to form the next generation
+    def survivor_selection(self):
+        if self.parameters['survival_mechanism'] == '(μ, λ) Selection':
+            fitnesses = []
+            for individual in self.population:
+                fitnesses.append(individual.fitness[self.fitness_definition])
+            # order the fitness scores from highest to lowest
+            fitnesses.sort(reverse=True)
+            # select the 100th fittest individual
+            fitness_threshold = fitnesses[self.parameters['population_size']-1]
+            # remove all individuals that don't reach the fitness threshold until the population size is back to normal
+            _ = 0
+            while len(self.population) > self.parameters['population_size']:
+                if self.population[_].fitness[self.fitness_definition] <= fitness_threshold:
+                    del self.population[_]
+                    #self.population.remove(self.population[_])
+                else:
+                    _ += 1
+
+    # obsolete function containing discontinued functionalities
+    """
+    def survivor_selection(self):
+        # add the children at the end of the population array
+        oversized_population = np.concatenate((self.survived_population, children))
+
+        # add the children's fitnesses at the end of the population_fitness array
+        new_population_fitness = np.concatenate((self.survived_fitnesses, self.fitness_children))
+        # remove the appropriate amount of individuals to sustain a fixed population size
+        self.survived_fitnesses, self.survived_population = self.live_and_let_die(new_population_fitness,
+                                                                                  oversized_population)
+
+        # store the fitness- mean, standard deviation and maximum for plotting
+        self.fitness_record = np.append(self.fitness_record, self.save_fitness(self.survived_fitnesses), axis=0)
+        # if the mean fitness score exceeds a preselected numer, change the fitness score used
+        if self.fitness_record[self.evaluation_nr + 1, 0, self.definition_nr] > self.parameters['fitness_threshold'][
+            self.definition_nr]:
+            self.definition_nr += 1
+            self.fitness_definition = self.parameters['fitness_order'][self.definition_nr]
+        # increase the evaluation number with 1
+        self.evaluation_nr += 1
+
+    # obsolete function containing discontinued functionalities
     # select the individuals to continue to the next generation
     def live_and_let_die(self, fitnesses, population):
         # reduce population to desired population size
         survival_scores = []
-        if self.survival_mechanism == 'weighted probability':
+        if self.parameters['survival_mechanism'] == 'weighted probability':
             for individual in fitnesses:
                 # give each individual a survival score based on their fitness and a  random number
                 # add 1 to make sure not most of them are 0
-                survival_scores.append(np.random.rand()*(individual[self.selection_fitness_score]+1))
-        elif self.survival_mechanism == 'replace worst':
+                survival_scores.append(np.random.rand()*(individual[self.fitness_definition]+1))
+        elif self.parameters['survival_mechanism'] == 'replace worst':
             for individual in fitnesses:
-                survival_scores.append(individual[self.selection_fitness_score] + 1)
-        if self.keep_best_solution:
+                survival_scores.append(individual[self.fitness_definition] + 1)
+        if self.parameters['keep_best_solution']:
             # change the survival score of the fittest individual to the highest
-            index_topfit = np.argmax(fitnesses[:,self.selection_fitness_score])
+            index_topfit = np.argmax(fitnesses[:,self.fitness_definition])
             survival_scores[index_topfit] = max(survival_scores) + 1
         # determine the fitness value of the ordered population of the individual at the population size
         ordered_survival_scores = survival_scores[:]
         ordered_survival_scores.sort(reverse=True)
-        survival_threshold = ordered_survival_scores[self.population_size]
+        survival_threshold = ordered_survival_scores[self.parameters['population_size']]
         individual_nr = 0
         # remove individuals with a too low survival score, also removing their fitness and survival score
-        while self.population_size < len(population):
+        while self.parameters['population_size'] < len(population):
             if survival_scores[individual_nr] <= survival_threshold:
                 # remove the individuals and fitnesses fo those who died
                 population = np.delete(population, individual_nr, 0)
@@ -207,39 +268,7 @@ class GeneticAlgorithm(Algorithm):
         fitnesses_statistics = np.array(fitnesses_statistics)
         return fitnesses_statistics
 
-    def parent_selection(self):
-        # select the parents
-        return self.select_parents(self.survived_fitnesses, self.survived_population)
-
-    def recombination(self, parents):
-        # make the children
-        children = self.breed(parents)
-        # evaluate the performance of the children
-        self.fitness_children = self.determine_fitness(children)
-        return children
-
-    def mutation(self, children):
-        return children
-
-    def survivor_selection(self, children):
-        # add the children at the end of the population array
-        oversized_population = np.concatenate((self.survived_population, children))
-
-        # add the children's fitnesses at the end of the population_fitness array
-        new_population_fitness = np.concatenate((self.survived_fitnesses, self.fitness_children))
-        # remove the appropriate amount of individuals to sustain a fixed population size
-        self.survived_fitnesses, self.survived_population = self.live_and_let_die(new_population_fitness, oversized_population)
-        
-        # store the fitness- mean, standard deviation and maximum for plotting
-        self.fitness_record = np.append(self.fitness_record, self.save_fitness(self.survived_fitnesses),axis=0)
-        # if the mean fitness score exceeds a preselected numer, change the fitness score used
-        if self.fitness_record[self.evaluation_nr+1,0,self.fitness_type] > self.parameters['fitness_threshold'][self.fitness_type]:
-            self.fitness_type += 1
-            self.selection_fitness_score = self.fitness_order[self.fitness_type]
-            print('the fitness score now in use is %i' % self.selection_fitness_score)
-        # increase the evaluation number with 1
-        self.evaluation_nr += 1
-        print('we are at evaluation number %i' % self.evaluation_nr)
+    """
 
     def determine_unique_numbers(self, array):
         # store the amount of unique elements per column
@@ -249,3 +278,64 @@ class GeneticAlgorithm(Algorithm):
             unique_list = list(set_column)
             unique_elements.append(len(unique_list))
         return unique_elements
+
+    def save_results(self):
+        # save a record of all fitnesses of all individuals in all generations to a pickle file
+        pickle_out = open(
+            'task_1_GA_' + sys.argv[1] + '/fitness_record_GA_enemy' + sys.argv[1] + '_run' + sys.argv[2] + '.pickle',
+            'wb')
+        pickle.dump(self.record_of_all_fitnesses_each_generation, pickle_out)
+        pickle_out.close()
+
+        # print('self.record_of_all_fitnesses_each_generation=\n',self.record_of_all_fitnesses_each_generation)
+
+        # save the best solution
+        fitnesses = []
+        for individual in self.population:
+            fitnesses.append(individual.fitness[self.fitness_definition])
+        fittest_network = self.population[fitnesses.index(max(fitnesses))].network
+        pickle_out = open(
+            'task_1_GA_' + sys.argv[1] + '/best_solution_GA_enemy' + sys.argv[1] + '_run' + sys.argv[2] + '.pickle',
+            'wb')
+        pickle.dump(fittest_network, pickle_out)
+        pickle_out.close()
+
+        # save mutation rates
+        mutation_rates = []
+        for individual in self.population:
+            mutation_rates.append(individual.mutation_rate)
+        pickle_out = open(
+            'task_1_GA_' + sys.argv[1] + '/mutation_rates_GA_enemy' + sys.argv[1] + '_run' + sys.argv[2] + '.pickle',
+            'wb')
+        pickle.dump(mutation_rates, pickle_out)
+        pickle_out.close()
+
+    def obtain_mean_std_max(self):
+        fitnesses_statistics = []
+        for generation in self.record_of_all_fitnesses_each_generation:
+            generation_fitnesses = []
+            for individual in generation:
+                # use the default fitness value
+                generation_fitnesses.append(individual[0])
+            mean_fitn = np.mean(generation_fitnesses)
+            std_fitn = np.std(generation_fitnesses)
+            max_fitn = max(generation_fitnesses)
+            fitnesses_statistics.append([mean_fitn, std_fitn, max_fitn])
+        return np.array(fitnesses_statistics)
+
+    def plot_fitness(self,analysed_fitnesses):
+        # create lists of mean plus and minus standard deviations
+        std_mean = [[], [], []]
+        for time_point in analysed_fitnesses:
+            for pos_neg in [-1, 1]:
+                std_mean[pos_neg].append(time_point[0] + pos_neg * time_point[1])
+        plt.plot(analysed_fitnesses[:, 0], label='average')
+        plt.plot(std_mean[-1], label='-1 sd')
+        plt.plot(std_mean[1], label='+1 sd')
+        plt.plot(analysed_fitnesses[:, 2], label='best')
+        plt.legend()  # bbox_to_anchor=(1.01, 1), loc=2, borderaxespad=0.) #outside the frame
+        plt.xlabel('fitness evaluation')
+        plt.ylabel('fitness score')
+        #plt.savefig('task_2_GA_' +  sys.argv[1] + '/fitness_record_GA_enemy' + sys.argv[1]+'_run' + sys.argv[2] + '.png')
+        plt.show()
+        plt.close()

@@ -8,7 +8,7 @@ algorithm = 'GA'
 experiment_name = '{}_{}_{}'.format(algorithm, sys.argv[1], sys.argv[2])
 
 """
-All algorithms should use the following parameters
+For Task 1 all algorithms should use the following parameters
 population_size : 100
 generations: 100 (fixed) (max_fitness_evaluations)
 number of runs per enemy per algorithm: 10
@@ -38,15 +38,15 @@ if algorithm == 'GA':
         'fitness_order' : [0, 'STOP'],  # fitness = 0, player life = 1, enemy life = 2, run time = 3, lives = 4
         'fitness_threshold': [100, 100],  # set the value which the mean must exceed before the next kind of fitness comes in use
         'crossover_weight' : 'random',
-        'survival_mechanism' : 'replace worst',
+        'survival_mechanism' : '(μ, λ) Selection',
         'max_fitness_evaluations' : 1,
-        'hidden_neurons' : 50,
-        'population_size' : 20,  # > tournament_size * parents_per_offspring
+        'hidden_neurons' : 1,
+        'population_size' : 7,  # >= tournament_size * parents_per_offspring
         'edge_domain' : [-1, 1],
-        'tournament_size' : 2,
-        'parents_per_offspring' : 2,
-        'mutation_probability' : .2,
-        'reproductivity' : 2  # amount of children per breeding group
+        'reproductivity': 10,  # amount of children per breeding group >= parents per offspring * tournament size
+        'tournament_size' : 2, #integer
+        'parents_per_offspring' : 2, #integer
+        'mutation_probability' : 'flexible', #[0,1] or 'flexible'
     }
 
 if algorithm == 'Island':
@@ -61,7 +61,7 @@ if algorithm == 'Island':
         'fitness_order' : [0, 'STOP'],  # fitness = 0, player life = 1, enemy life = 2, run time = 3, lives = 4
         'fitness_threshold': [100, 100],  # set the value which the mean must exceed before the next kind of fitness comes in use
         'crossover_weight' : 'random',
-        'survival_mechanism' : 'replace worst',
+        'survival_mechanism' :  'replace worst',
         'max_fitness_evaluations' : 100,
         'hidden_neurons' : 50,
         'population_size' : 100,  # > tournament_size * parents_per_offspring
