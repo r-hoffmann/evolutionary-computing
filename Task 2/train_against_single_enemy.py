@@ -41,7 +41,7 @@ elif algorithm == 'GA':
         'tournament_size' : 2,
         'parents_per_offspring' : 2,
         'mutation_probability' : .2,
-        'reproductivity' : 7  # amount of children per breeding group
+        'reproductivity' : 4  # amount of children per breeding group
     }
 elif algorithm == 'Island':
     parameters = {

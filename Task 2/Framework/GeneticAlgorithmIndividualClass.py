@@ -19,7 +19,6 @@ class GeneticAlgorithmIC(Algorithm):
         self.record_of_all_fitnesses_each_generation = []
 
     def run(self):
-        print('self.experiment_name=%s'%self.experiment_name)
         # initialise the simulation
         self.init_run()
         self.evaluation_nr = 0
@@ -44,6 +43,8 @@ class GeneticAlgorithmIC(Algorithm):
         # plot the results to get an impression of possible improvements
         #mean_std_max = self.obtain_mean_std_max()
         #self.plot_fitness(mean_std_max)
+
+        return self.fittest_network
 
     def init_run(self):
         # set the first fitness type to select on
@@ -294,11 +295,11 @@ class GeneticAlgorithmIC(Algorithm):
         fitnesses = []
         for individual in self.population:
             fitnesses.append(individual.fitness[self.fitness_definition])
-        fittest_network = self.population[fitnesses.index(max(fitnesses))].network
+        self.fittest_network = self.population[fitnesses.index(max(fitnesses))].network
         pickle_out = open(
             '' + self.experiment_name + '/best_solution_GA_enemy' + sys.argv[1] + '_run' + sys.argv[2] + '.pickle',
             'wb')
-        pickle.dump(fittest_network, pickle_out)
+        pickle.dump(self.fittest_network, pickle_out)
         pickle_out.close()
 
         # save mutation rates
