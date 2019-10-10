@@ -19,8 +19,10 @@ class Experiment:
         if algorithm=='GA':
             self.parameters['player_controller'] = None
             self.algorithm = GeneticAlgorithmIC(parameters)
-            
         elif algorithm=='NEAT':
+            self.parameters['player_controller'] = PlayerNeatController()
+            self.algorithm = NeatAlgorithm(parameters)
+        elif algorithm=='GA_package':
             self.parameters['player_controller'] = PlayerNeatController()
             self.algorithm = NeatAlgorithm(parameters)
         elif algorithm =='Island':

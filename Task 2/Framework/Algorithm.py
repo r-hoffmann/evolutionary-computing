@@ -11,12 +11,14 @@ class Algorithm:
         self.experiment_name = self.parameters['experiment_name']
         # initializes environment with ai player using random controller, playing against static enemy
         self.env = Environment(experiment_name=self.parameters['experiment_name'],
-                  enemies=self.parameters['enemies'],
-                  playermode="ai",
-                  player_controller=self.parameters['player_controller'],
-                  enemymode="static",
-                  level=2,
-                  speed="fastest")
+                               enemies=list(self.parameters['enemies']),
+                               multiplemode = self.parameters['multiplemode'],
+                               enemy_amount = self.parameters['enemy_amount'],
+                               playermode="ai",
+                               player_controller=self.parameters['player_controller'],
+                               enemymode="static",
+                               level=2,
+                               speed="fastest")
 
     def play_evoman(self, x):
         fitness_scores = self.env.play(pcont=x)
