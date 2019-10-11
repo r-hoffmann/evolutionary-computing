@@ -3,7 +3,7 @@ from Framework.Experiment import Experiment
 """
     Readme
     Use as follows:
-    python train_against_single_enemy.py algorithm enemy multiplemode enemy_amount trial
+    python train_against_multiple_enemies.py algorithm enemy multiplemode enemy_amount trial
 
     algorithm is either GA, GA_package, NEAT, Island or TestStochasticity
     enemy is any integer from 1 through 8 or a list of multiple without [] e.g. 1,3,6
