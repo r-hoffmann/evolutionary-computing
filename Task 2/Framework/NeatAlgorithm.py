@@ -138,9 +138,9 @@ class NeatAlgorithm(Algorithm):
 			4: 'release'
 		}
 
-		visualize.draw_net(config, winner, view=False, node_names=node_names, filename="{}/DiGraph".format(self.experiment_name))
-		visualize.plot_stats(stats, ylog=False, view=False, filename='{}/avg_fitness.svg'.format(self.experiment_name))
-		visualize.plot_species(stats, view=False, filename='{}/speciation.svg'.format(self.experiment_name))
+		# visualize.draw_net(config, winner, view=False, node_names=node_names, filename="{}/DiGraph".format(self.experiment_name))
+		# visualize.plot_stats(stats, ylog=False, view=False, filename='{}/avg_fitness.svg'.format(self.experiment_name))
+		# visualize.plot_species(stats, view=False, filename='{}/speciation.svg'.format(self.experiment_name))
 
 		# Save to fs.
 		with open('{}/all_fitnesses.pkl'.format(self.experiment_name), 'wb') as fid:
