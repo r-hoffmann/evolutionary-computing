@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 from Framework.Algorithm import Algorithm
 from Framework.Individual import Individual
 
-class GeneticAlgorithm(Algorithm):
+class GeneticAlgorithmIC(Algorithm):
     def __init__(self, parameters):
         self.parameters = parameters
         self.mating_size = self.parameters['parents_per_offspring']

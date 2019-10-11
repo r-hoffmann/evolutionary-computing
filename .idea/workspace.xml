@@ -3,7 +3,18 @@
   <component name="ChangeListManager">
     <list default="true" id="6604ab76-fe73-4fc4-ba6d-2225bd11085b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Task 1/Framework/PlotResults.py" beforeDir="false" afterPath="$PROJECT_DIR$/Task 1/Framework/PlotResults.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Task 1/Framework/Experiment.py" beforeDir="false" afterPath="$PROJECT_DIR$/Task 1/Framework/Experiment.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Task 1/Framework/GeneticAlgorithmIndividualClass.py" beforeDir="false" afterPath="$PROJECT_DIR$/Task 1/Framework/GeneticAlgorithmIndividualClass.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Task 1/GA_1_1/evoman_logs.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Task 1/GA_1_1/evoman_logs.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Task 1/GA_6_1/evoman_logs.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Task 1/GA_6_1/evoman_logs.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Task 1/NEAT/config-NEAT" beforeDir="false" afterPath="$PROJECT_DIR$/Task 1/NEAT/config-NEAT" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Task 1/task_1_GA_1/fitness_record_GA_enemy1_run1.pickle" beforeDir="false" afterPath="$PROJECT_DIR$/Task 1/task_1_GA_1/fitness_record_GA_enemy1_run1.pickle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Task 2/NEAT_1_1/DiGraph" beforeDir="false" afterPath="$PROJECT_DIR$/Task 2/NEAT_1_1/DiGraph" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Task 2/NEAT_1_1/DiGraph.svg" beforeDir="false" afterPath="$PROJECT_DIR$/Task 2/NEAT_1_1/DiGraph.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Task 2/NEAT_1_1/all_fitnesses.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/Task 2/NEAT_1_1/all_fitnesses.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Task 2/NEAT_1_1/avg_fitness.svg" beforeDir="false" afterPath="$PROJECT_DIR$/Task 2/NEAT_1_1/avg_fitness.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Task 2/NEAT_1_1/best.pkl" beforeDir="false" afterPath="$PROJECT_DIR$/Task 2/NEAT_1_1/best.pkl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Task 2/NEAT_1_1/speciation.svg" beforeDir="false" afterPath="$PROJECT_DIR$/Task 2/NEAT_1_1/speciation.svg" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -15,39 +26,49 @@
     <session id="1472022129">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="7" />
+          <entry key="project.closed" value="15" />
           <entry key="project.open.time.0" value="1" />
-          <entry key="project.open.time.10" value="2" />
+          <entry key="project.open.time.10" value="4" />
           <entry key="project.open.time.11" value="1" />
           <entry key="project.open.time.13" value="1" />
+          <entry key="project.open.time.14" value="1" />
           <entry key="project.open.time.31" value="1" />
-          <entry key="project.open.time.8" value="1" />
-          <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="8" />
+          <entry key="project.open.time.7" value="1" />
+          <entry key="project.open.time.8" value="4" />
+          <entry key="project.open.time.9" value="2" />
+          <entry key="project.opened" value="16" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
+          <entry key="GA_package" value="2" />
+          <entry key="config-GA_package" value="3" />
+          <entry key="config-NEAT" value="3" />
           <entry key="md" value="1" />
-          <entry key="py" value="19" />
+          <entry key="py" value="48" />
           <entry key="txt" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Markdown" value="1" />
-          <entry key="PLAIN_TEXT" value="4" />
-          <entry key="Python" value="19" />
+          <entry key="PLAIN_TEXT" value="12" />
+          <entry key="Python" value="48" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="11779" />
+          <entry key="GA_package" value="76" />
+          <entry key="config-GA_package" value="8" />
+          <entry key="config-NEAT" value="2" />
+          <entry key="dummy" value="16" />
+          <entry key="py" value="23012" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Python" value="11779" />
+          <entry key="PLAIN_TEXT" value="102" />
+          <entry key="Python" value="23012" />
         </counts>
       </usages-collector>
     </session>
@@ -55,79 +76,60 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Task 1/Framework/GeneticAlgorithm.py">
+        <entry file="file://$PROJECT_DIR$/Task 2/Framework/Algorithm.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="237">
-              <caret line="79" column="86" selection-start-line="79" selection-start-column="86" selection-end-line="79" selection-end-column="86" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Task 1/visualize.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-734">
+            <state relative-caret-position="180">
+              <caret line="14" column="37" selection-start-line="14" selection-start-column="37" selection-end-line="14" selection-end-column="37" />
               <folding>
-                <element signature="e#0#11#0" expanded="true" />
+                <element signature="e#0#10#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Task 1/test_code.py">
+        <entry file="file://$PROJECT_DIR$/Task 2/Framework/Experiment.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="26" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Task 1/plot_results.py">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Task 1/Framework/TestStochasticity.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="735">
-              <caret line="53" column="50" selection-start-line="53" selection-start-column="50" selection-end-line="53" selection-end-column="50" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Task 1/run_framework.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="615">
-              <caret line="43" column="30" selection-start-line="43" selection-start-column="30" selection-end-line="43" selection-end-column="30" />
+            <state relative-caret-position="255">
+              <caret line="24" column="35" selection-start-line="24" selection-start-column="35" selection-end-line="24" selection-end-column="35" />
               <folding>
-                <element signature="e#83#92#0" expanded="true" />
+                <element signature="e#0#9#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Task 1/analyze_stochasticity.py">
+        <entry file="file://$PROJECT_DIR$/Task 2/evoman/environment_without_rendering.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="22" column="119" selection-start-line="22" selection-start-column="119" selection-end-line="22" selection-end-column="119" />
+            <state relative-caret-position="8820">
+              <caret line="599" column="34" selection-start-line="599" selection-start-column="24" selection-end-line="599" selection-end-column="34" />
               <folding>
-                <element signature="e#0#13#0" expanded="true" />
+                <element signature="e#166#176#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Task 2/Framework/NeatAlgorithm.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2175">
+              <caret line="152" column="12" selection-start-line="152" selection-start-column="8" selection-end-line="152" selection-end-column="12" />
+              <folding>
+                <element signature="e#0#37#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Task 1/Framework/PlotResults.py">
+        <entry file="file://$PROJECT_DIR$/Task 2/train_against_multiple_enemies.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="353">
-              <caret line="80" column="18" lean-forward="true" selection-start-line="80" selection-start-column="18" selection-end-line="80" selection-end-column="18" />
+            <state relative-caret-position="-105">
+              <caret line="12" column="4" lean-forward="true" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="4" />
               <folding>
-                <element signature="e#0#29#0" expanded="true" />
+                <element signature="e#0#14#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -144,37 +146,49 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>get_num</find>
       <find>play</find>
-      <find>evaluat</find>
-      <find>reproduction_su</find>
-      <find>all_fitn</find>
-      <find>reproduction_success_rate</find>
-      <find>offspring</find>
-      <find>len</find>
-      <find>child</find>
-      <find>select_parents</find>
-      <find>amount_of_tournaments</find>
-      <find>random</find>
-      <find>determine_pro</find>
-      <find>print</find>
-      <find>make</find>
-      <find>pickle</find>
       <find>determine_fitness</find>
-      <find>survived_population</find>
-      <find>self.para</find>
-      <find>hidden</find>
-      <find>experiment_name</find>
-      <find>determine</find>
-      <find>init</find>
+      <find>record_of_all_fitnesses_each_generation</find>
+      <find>save_fitness</find>
       <find>task</find>
-      <find>self.fitness</find>
-      <find>visualize</find>
-      <find>get_all</find>
-      <find>final</find>
-      <find>show</find>
-      <find>final_fitness_list</find>
+      <find>experiment_name</find>
+      <find>self.experiment_name</find>
+      <find>save_results()</find>
+      <find>save_results</find>
+      <find>best_model</find>
+      <find>return</find>
+      <find>fittest_network</find>
+      <find>parameters['test_model']</find>
+      <find>obtain_fitness</find>
+      <find>run</find>
+      <find>config_file</find>
+      <find>enabled</find>
+      <find>hidden_NEURONS</find>
+      <find>self.enemies</find>
+      <find>self.multiplemode</find>
+      <find>enemies</find>
+      <find>multiplemode</find>
+      <find>self.multiple</find>
+      <find>enemy_amount</find>
+      <find>shuff</find>
+      <find>enemy</find>
+      <find>self.enemyn</find>
+      <find>test</find>
+      <find>print</find>
+      <find>cons_multi</find>
     </findStrings>
+    <replaceStrings>
+      <replace>self.parameters['parent_selection_type']</replace>
+      <replace>self.parameters['keep_best_solution']</replace>
+      <replace>self.parameters['fitness_order']</replace>
+      <replace>self.parameters['crossover_weight']</replace>
+      <replace>self.parameters['survival_mechanism']</replace>
+      <replace>self.parameters['hidden_neurons']</replace>
+      <replace>self.parameters['mutation_probability']</replace>
+      <replace>self.mating_size</replace>
+      <replace>self.definition_nr</replace>
+      <replace>obtain_fitness</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -187,13 +201,27 @@
         <option value="$PROJECT_DIR$/Task 1/test_code2.py" />
         <option value="$PROJECT_DIR$/Task 1/test_code3.py" />
         <option value="$PROJECT_DIR$/Task 1/framework.py" />
-        <option value="$PROJECT_DIR$/Task 1/Framework/Experiment.py" />
         <option value="$PROJECT_DIR$/Task 1/Framework/TestStochasticity.py" />
-        <option value="$PROJECT_DIR$/Task 1/run_framework.py" />
-        <option value="$PROJECT_DIR$/Task 1/Framework/GeneticAlgorithm.py" />
         <option value="$PROJECT_DIR$/Task 1/analyze_stochasticity.py" />
-        <option value="$PROJECT_DIR$/Task 1/test_code.py" />
         <option value="$PROJECT_DIR$/Task 1/Framework/PlotResults.py" />
+        <option value="$PROJECT_DIR$/Task 1/Framework/Algorithm.py" />
+        <option value="$PROJECT_DIR$/Task 1/Framework/IslandAlgorithmIC.py" />
+        <option value="$PROJECT_DIR$/Task 1/Framework/Individual.py" />
+        <option value="$PROJECT_DIR$/Task 1/Framework/testcode.py" />
+        <option value="$PROJECT_DIR$/Task 1/test_code.py" />
+        <option value="$PROJECT_DIR$/Task 1/Framework/GeneticAlgorithm.py" />
+        <option value="$PROJECT_DIR$/Task 1/run_framework.py" />
+        <option value="$PROJECT_DIR$/Task 1/Framework/GeneticAlgorithmIndividualClass.py" />
+        <option value="$PROJECT_DIR$/Task 1/Framework/Experiment.py" />
+        <option value="$PROJECT_DIR$/Task 2/Framework/GeneticAlgorithmIndividualClass.py" />
+        <option value="$PROJECT_DIR$/Task 1/NEAT/config-NEAT" />
+        <option value="$PROJECT_DIR$/Task 1/NEAT/GA_package" />
+        <option value="$PROJECT_DIR$/Task 2/Framework/Experiment.py" />
+        <option value="$PROJECT_DIR$/Task 2/Framework/Algorithm.py" />
+        <option value="$PROJECT_DIR$/Task 2/train_against_single_enemy.py" />
+        <option value="$PROJECT_DIR$/Task 2/NEAT/config-GA_package" />
+        <option value="$PROJECT_DIR$/Task 2/evoman/environment_without_rendering.py" />
+        <option value="$PROJECT_DIR$/Task 2/train_against_multiple_enemies.py" />
       </list>
     </option>
   </component>
@@ -206,7 +234,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -219,10 +246,58 @@
               <item name="project" type="462c0819:PsiDirectoryNode" />
               <item name="Task 1" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="project" type="462c0819:PsiDirectoryNode" />
+              <item name="Task 1" type="462c0819:PsiDirectoryNode" />
+              <item name="evoman" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="project" type="462c0819:PsiDirectoryNode" />
+              <item name="Task 1" type="462c0819:PsiDirectoryNode" />
+              <item name="Framework" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="project" type="462c0819:PsiDirectoryNode" />
+              <item name="Task 1" type="462c0819:PsiDirectoryNode" />
+              <item name="NEAT" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="project" type="462c0819:PsiDirectoryNode" />
+              <item name="Task 2" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="project" type="462c0819:PsiDirectoryNode" />
+              <item name="Task 2" type="462c0819:PsiDirectoryNode" />
+              <item name="evoman" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="project" type="462c0819:PsiDirectoryNode" />
+              <item name="Task 2" type="462c0819:PsiDirectoryNode" />
+              <item name="Framework" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="project" type="462c0819:PsiDirectoryNode" />
+              <item name="Task 2" type="462c0819:PsiDirectoryNode" />
+              <item name="GA_package_[1,3,6]_1" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="project" type="462c0819:PsiDirectoryNode" />
+              <item name="Task 2" type="462c0819:PsiDirectoryNode" />
+              <item name="NEAT" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -230,9 +305,14 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Task 2/NEAT" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/Task 1" />
+      <recent name="$PROJECT_DIR$/Task 1/NEAT" />
+      <recent name="$PROJECT_DIR$/Task 2/Framework" />
       <recent name="$PROJECT_DIR$/Task 1/Framework" />
+      <recent name="$PROJECT_DIR$/Task 1" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -264,7 +344,26 @@
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24947146" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24947146" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.24947146" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32961586" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="8" visible="true" weight="0.06195787" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Python Console" order="10" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24947146" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.24947146" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -275,26 +374,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.32961586" />
-      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Python Console" order="10" />
-      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-    </layout>
-    <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24947146" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="8" visible="true" weight="0.32961586" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.06195787" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Python Console" order="10" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
@@ -373,24 +453,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Task 1/Framework/Algorithm.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="762">
-          <caret line="57" column="25" selection-start-line="57" selection-start-column="21" selection-end-line="57" selection-end-column="25" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/Task 1/visualize.py">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/Task 1/Framework/Experiment.py">
+    <entry file="file://$PROJECT_DIR$/Task 1/analyze_stochasticity.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="24" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Task 1/Framework/GeneticAlgorithm.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="237">
-          <caret line="79" column="86" selection-start-line="79" selection-start-column="86" selection-end-line="79" selection-end-column="86" />
+        <state relative-caret-position="315">
+          <caret line="22" column="119" selection-start-line="22" selection-start-column="119" selection-end-line="22" selection-end-column="119" />
         </state>
       </provider>
     </entry>
@@ -401,51 +470,171 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Task 1/run_framework.py">
+    <entry file="file://$PROJECT_DIR$/Task 1/Framework/IslandAlgorithm.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Task 1/Framework/IslandAlgorithmIC.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="615">
-          <caret line="43" column="30" selection-start-line="43" selection-start-column="30" selection-end-line="43" selection-end-column="30" />
-          <folding>
-            <element signature="e#83#92#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="297">
+          <caret line="20" column="12" lean-forward="true" selection-start-line="20" selection-start-column="12" selection-end-line="20" selection-end-column="12" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Task 1/analyze_stochasticity.py">
+    <entry file="file://$PROJECT_DIR$/Task 1/Framework/testcode.py" />
+    <entry file="file://$PROJECT_DIR$/Task 1/Framework/PlotResults.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="22" column="119" selection-start-line="22" selection-start-column="119" selection-end-line="22" selection-end-column="119" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Task 1/visualize.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-734">
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="15">
+          <caret line="1" selection-start-line="1" selection-end-line="1" selection-end-column="31" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Task 1/plot_results.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Task 1/test_code.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="26" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
+        <state>
+          <caret selection-end-column="45" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Task 1/Framework/PlotResults.py">
+    <entry file="file://$PROJECT_DIR$/Task 1/test_code.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="353">
-          <caret line="80" column="18" lean-forward="true" selection-start-line="80" selection-start-column="18" selection-end-line="80" selection-end-column="18" />
+        <state relative-caret-position="105">
+          <caret line="7" column="18" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Task 1/Framework/Individual.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="30" selection-start-line="6" selection-start-column="30" selection-end-line="6" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Task 1/Framework/GeneticAlgorithm.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="24" column="37" selection-start-line="24" selection-start-column="37" selection-end-line="24" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Task 2/Framework/GeneticAlgorithm.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2535">
+          <caret line="173" column="54" selection-start-line="173" selection-start-column="50" selection-end-line="173" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Task 1/run_framework.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="41" column="8" selection-start-line="41" selection-start-column="8" selection-end-line="41" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Task 1/Framework/GeneticAlgorithmIndividualClass.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="9" column="24" selection-start-line="9" selection-start-column="24" selection-end-line="9" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Task 2/Framework/Individual.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Task 1/Framework/Experiment.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="47" selection-start-line="20" selection-start-column="47" selection-end-line="20" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Task 1/Framework/Algorithm.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="615">
+          <caret line="41" selection-start-line="41" selection-end-line="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Task 2/Framework/IslandAlgorithm.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Task 1/NEAT/config-NEAT">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="278">
+          <caret line="46" column="28" selection-start-line="46" selection-start-column="28" selection-end-line="46" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Task 2/NEAT/GA_package" />
+    <entry file="file://$PROJECT_DIR$/Task 2/Framework/GeneticAlgorithmIndividualClass.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="136" column="31" selection-start-line="136" selection-start-column="26" selection-end-line="136" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Task 2/train_against_single_enemy.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="42" selection-start-line="16" selection-start-column="42" selection-end-line="16" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Task 2/NEAT/config-NEAT">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Task 2/NEAT/config-GA_package">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="27" selection-start-line="4" selection-start-column="27" selection-end-line="4" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Task 2/Framework/Algorithm.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="14" column="37" selection-start-line="14" selection-start-column="37" selection-end-line="14" selection-end-column="37" />
           <folding>
-            <element signature="e#0#29#0" expanded="true" />
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Task 2/Framework/Experiment.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="24" column="35" selection-start-line="24" selection-start-column="35" selection-end-line="24" selection-end-column="35" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Task 2/evoman/environment_without_rendering.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8820">
+          <caret line="599" column="34" selection-start-line="599" selection-start-column="24" selection-end-line="599" selection-end-column="34" />
+          <folding>
+            <element signature="e#166#176#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Task 2/Framework/NeatAlgorithm.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2175">
+          <caret line="152" column="12" selection-start-line="152" selection-start-column="8" selection-end-line="152" selection-end-column="12" />
+          <folding>
+            <element signature="e#0#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Task 2/train_against_multiple_enemies.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-105">
+          <caret line="12" column="4" lean-forward="true" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="4" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
           </folding>
         </state>
       </provider>

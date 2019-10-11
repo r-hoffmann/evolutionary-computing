@@ -1,6 +1,7 @@
 import os
 
 from Framework.GeneticAlgorithm import GeneticAlgorithm
+from Framework.GeneticAlgorithmIndividualClass import GeneticAlgorithmIC
 from Framework.NeatAlgorithm import NeatAlgorithm
 from Framework.PlayerNeatController import PlayerNeatController
 from Framework.IslandAlgorithm import IslandAlgorithm
@@ -17,7 +18,7 @@ class Experiment:
 
         if algorithm=='GA':
             self.parameters['player_controller'] = None
-            self.algorithm = GeneticAlgorithmIndividualClass(parameters)
+            self.algorithm = GeneticAlgorithmIC(parameters)
             
         elif algorithm=='NEAT':
             self.parameters['player_controller'] = PlayerNeatController()

@@ -1,6 +1,7 @@
 [NEAT]
 fitness_criterion     = max
 fitness_threshold     = 100
+no_fitness_termination = True
 pop_size              = 100
 reset_on_extinction   = False
 
@@ -15,22 +16,22 @@ aggregation_default     = sum
 aggregation_mutate_rate = 0.0
 aggregation_options     = sum
 
-# node bias options
+# node bias options SET TO 0 FOR GA WITHOUT BIASES
 bias_init_mean          = 0.0
-bias_init_stdev         = 1.0
-bias_max_value          = 30.0
-bias_min_value          = -30.0
-bias_mutate_power       = 0.5
-bias_mutate_rate        = 0.7
-bias_replace_rate       = 0.1
+bias_init_stdev         = 0.0
+bias_max_value          = 0.0
+bias_min_value          = 0.0
+bias_mutate_power       = 0.0
+bias_mutate_rate        = 0.0
+bias_replace_rate       = 0.0
 
 # genome compatibility options
 compatibility_disjoint_coefficient = 1.0
 compatibility_weight_coefficient   = 0.5
 
 # connection add/remove rates
-conn_add_prob           = 0.5
-conn_delete_prob        = 0.5
+conn_add_prob           = 0.0
+conn_delete_prob        = 0.0
 
 # connection enable options
 enabled_default         = True
@@ -40,8 +41,8 @@ feed_forward            = True
 initial_connection      = full_nodirect
 
 # node add/remove rates
-node_add_prob           = 0.2
-node_delete_prob        = 0.2
+node_add_prob           = 0.0
+node_delete_prob        = 0.0
 
 # network parameters
 num_hidden              = 10
