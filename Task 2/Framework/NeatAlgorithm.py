@@ -8,14 +8,17 @@ from neat.six_util import iteritems, itervalues
 from Framework.Algorithm import Algorithm
 
 class SmartPopulation(neat.Population):
-	def run(self, fitness_function, n=None):
+	def run(self, fitness_function, algorithm, n=None, resume=False):
+		if resume:
+			self = algorithm.population
+		else:
+			self.k = 0
+		
 		if self.config.no_fitness_termination and (n is None):
 			raise RuntimeError("Cannot have no generational limit with no fitness termination")
 
-		k = 0
-		all_fitnesses = []
-		while n is None or k < n:
-			k += 1
+		while n is None or self.k < n:
+			self.k += 1
 
 			self.reporters.start_generation(self.generation)
 
@@ -28,7 +31,7 @@ class SmartPopulation(neat.Population):
 				if best is None or g.fitness > best.fitness:
 					best = g
 			self.reporters.post_evaluate(self.config, self.population, self.species, best)
-			all_fitnesses.append([genome.fitness for genome in itervalues(self.population)])
+			algorithm.all_fitnesses.append([genome.fitness for genome in itervalues(self.population)])
 
 			# Track the best genome ever seen.
 			if self.best_genome is None or best.fitness > self.best_genome.fitness:
@@ -64,15 +67,19 @@ class SmartPopulation(neat.Population):
 			self.reporters.end_generation(self.config, self.population, self.species)
 
 			self.generation += 1
+			algorithm.population = self
+			algorithm.best = self.best_genome
+			algorithm.dump()
 
 		if self.config.no_fitness_termination:
 			self.reporters.found_solution(self.config, self.generation, self.best_genome)
 
-		return self.best_genome, all_fitnesses
+		return self.best_genome, algorithm.all_fitnesses
 
 class NeatAlgorithm(Algorithm):
 	def __init__(self, parameters):
 		self.parameters = parameters
+		self.all_fitnesses = []
 		super().__init__(parameters)
 		self.config_file = self.parameters['config_file']
 
@@ -102,10 +109,9 @@ class NeatAlgorithm(Algorithm):
 		p.add_reporter(neat.StdOutReporter(True))
 		stats = neat.StatisticsReporter()
 		p.add_reporter(stats)
-		# p.add_reporter(neat.Checkpointer(5, filename_prefix='neat-checkpoint-{}-'.format(self.parameters['enemies'][0])))
 
 		# Run for up to x generations.
-		winner, all_fitnesses = p.run(self.eval_genomes, self.parameters['max_fitness_evaluations'])
+		winner, all_fitnesses = p.run(self.eval_genomes, self, self.parameters['max_fitness_evaluations'], self.parameters['resume'])
 
 		# Display the winning genome.
 		print('\nBest genome:\n{!s}'.format(winner))

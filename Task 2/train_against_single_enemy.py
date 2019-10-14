@@ -3,26 +3,32 @@ from Framework.Experiment import Experiment
 """
     Readme
     Use as follows:
-    python train_against_single_enemy.py algorithm enemy trial
+    python train_against_single_enemy.py algorithm enemy trial resume
 
-    algorithm is either GA, NEAT, Island or TestStochasticity
+    algorithm is GA, NEAT, Island or TestStochasticity
     enemy is any integer from 1 through 8
-    trial is any string.
+    trial is any string
+    resume is 0 or 1
 """
 
 algorithm = sys.argv[1]
 enemy = sys.argv[2]
 trial = sys.argv[3]
+if sys.argv[4] == '1':
+    resume = True
+else:
+    resume = False
 max_fitness_evaluations = 10
 hidden_neurons = 10
-population_size = 100
+population_size = 5
 experiment_name = '{}_{}_{}'.format(algorithm, enemy, trial)
 
 if algorithm == 'NEAT':
     parameters = {
         'enemies': enemy,
         'config_file': os.path.join(os.path.dirname(__file__), 'NEAT', 'config-NEAT'),
-        'max_fitness_evaluations' : max_fitness_evaluations
+        'max_fitness_evaluations' : max_fitness_evaluations,
+        'resume': resume
     }
 elif algorithm == 'GA':
     # The code should be executed by running: python run_framework.py [enemy number] [number of the simulation]
@@ -41,7 +47,8 @@ elif algorithm == 'GA':
         'tournament_size' : 2,
         'parents_per_offspring' : 2,
         'mutation_probability' : .2,
-        'reproductivity' : 4  # amount of children per breeding group
+        'reproductivity' : 4,  # amount of children per breeding group
+        'resume': resume
     }
 elif algorithm == 'Island':
     parameters = {
@@ -63,7 +70,8 @@ elif algorithm == 'Island':
         'tournament_size' : 2,
         'parents_per_offspring' : 2,
         'mutation_probability' : .2,
-        'reproductivity' : 2  # amount of children per breeding group
+        'reproductivity' : 2, # amount of children per breeding group
+        'resume': resume  
     }
 elif algorithm == 'TestStochasticity':
     parameters = {
@@ -74,6 +82,7 @@ elif algorithm == 'TestStochasticity':
         'hidden_neurons': hidden_neurons,
         'population_size': population_size,  # > tournament_size * parents_per_offspring
         'edge_domain': [-1, 1],
+        'resume': resume
     }
 
 # Train

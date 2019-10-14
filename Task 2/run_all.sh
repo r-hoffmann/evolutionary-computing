@@ -1,9 +1,11 @@
 #!/bin/bash
-for algorithm in 'GA' 'Island' 'NEAT' ; do
+for algorithm in 'GA_package' 'Island' 'NEAT' ; do
     for ((E=5;E<=8;E++)); do
-        echo "Started $algorithm on enemy $E.";
-        python train_against_single_enemy.py $algorithm $E 1;
-        wait 
+        for ((T=1;T<=10;T++)); do
+            echo "Started $algorithm on enemy $E.";
+            echo "python train_against_multiple_enemies.py $algorithm $E yes enemy_amount $T";
+            wait 
+        done
     done
     echo "All experiments with $algorithm are finished.";
 done
