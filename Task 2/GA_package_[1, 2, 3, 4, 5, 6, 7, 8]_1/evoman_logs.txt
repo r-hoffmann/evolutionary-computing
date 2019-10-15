@@ -1,0 +1,27 @@
+
+
+MESSAGE: Pygame initialized for simulation.
+
+MESSAGE: Pygame initialized for simulation.
+Fitness trained against enemy [1, 2, 3, 4, 5, 6, 7, 8], tested against enemy 1 is 21.79051384715858.
+
+MESSAGE: Pygame initialized for simulation.
+Fitness trained against enemy [1, 2, 3, 4, 5, 6, 7, 8], tested against enemy 2 is 93.88200618758324.
+
+MESSAGE: Pygame initialized for simulation.
+Fitness trained against enemy [1, 2, 3, 4, 5, 6, 7, 8], tested against enemy 3 is 30.906249799193237.
+
+MESSAGE: Pygame initialized for simulation.
+Fitness trained against enemy [1, 2, 3, 4, 5, 6, 7, 8], tested against enemy 4 is 91.63719807741367.
+
+MESSAGE: Pygame initialized for simulation.
+Fitness trained against enemy [1, 2, 3, 4, 5, 6, 7, 8], tested against enemy 5 is 90.59982739098297.
+
+MESSAGE: Pygame initialized for simulation.
+Fitness trained against enemy [1, 2, 3, 4, 5, 6, 7, 8], tested against enemy 6 is 4.023266257579426.
+
+MESSAGE: Pygame initialized for simulation.
+Fitness trained against enemy [1, 2, 3, 4, 5, 6, 7, 8], tested against enemy 7 is 66.5361681949744.
+
+MESSAGE: Pygame initialized for simulation.
+Fitness trained against enemy [1, 2, 3, 4, 5, 6, 7, 8], tested against enemy 8 is 88.86322890233346.
