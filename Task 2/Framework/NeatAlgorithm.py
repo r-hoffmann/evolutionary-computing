@@ -1,5 +1,5 @@
 from __future__ import print_function
-import neat, os, pickle, visualize
+import neat, os, pickle, visualize, random
 
 from neat.reporting import ReporterSet
 from neat.math_util import mean
@@ -21,6 +21,11 @@ class SmartPopulation(neat.Population):
 			self.k += 1
 
 			self.reporters.start_generation(self.generation)
+
+			# make a random selection of enemies
+			random.shuffle(algorithm.parameters['enemies'])
+			algorithm.env.enemies = algorithm.parameters['enemies'][0:algorithm.parameters['enemy_amount']]
+
 
 			# Evaluate all genomes using the user-provided function.
 			fitness_function(list(iteritems(self.population)), self.config)
