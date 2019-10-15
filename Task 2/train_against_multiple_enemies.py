@@ -35,7 +35,7 @@ else:
     resume = False
 max_fitness_evaluations = 100
 hidden_neurons = 10
-population_size = 100 # for NEAT and GA_package use config file
+population_size = 10 # for NEAT and GA_package use config file
 experiment_name = '{}_{}_{}'.format(algorithm, enemy, trial)
 
 if algorithm == 'NEAT':
