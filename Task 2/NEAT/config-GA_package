@@ -16,14 +16,14 @@ aggregation_default     = sum
 aggregation_mutate_rate = 0.0
 aggregation_options     = sum
 
-# node bias options SET TO 0 FOR GA WITHOUT BIASES
+# node bias options
 bias_init_mean          = 0.0
-bias_init_stdev         = 0.0
-bias_max_value          = 0.0
-bias_min_value          = 0.0
-bias_mutate_power       = 0.0
-bias_mutate_rate        = 0.0
-bias_replace_rate       = 0.0
+bias_init_stdev         = 1.0
+bias_max_value          = 30.0
+bias_min_value          = -30.0
+bias_mutate_power       = 0.5
+bias_mutate_rate        = 0.7
+bias_replace_rate       = 0.1
 
 # genome compatibility options
 compatibility_disjoint_coefficient = 1.0

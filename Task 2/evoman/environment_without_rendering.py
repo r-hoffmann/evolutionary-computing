@@ -12,7 +12,6 @@ import pygame
 from pygame.locals import *
 import struct
 import tmx
-import random
 
 from player import *
 from controller import Controller
@@ -44,7 +43,6 @@ class Environment(object):
                  overturetime=100,            # integer
                  solutions=None,              # any
                  player_controller=None,      # controller object
-                 enemy_amount=1,
                  enemy_controller=None      ):# controller object
 
 
@@ -53,7 +51,6 @@ class Environment(object):
 
         self.experiment_name = experiment_name
         self.multiplemode = multiplemode
-        self.enemy_amount = enemy_amount
         self.enemies = enemies
         self.enemyn = enemies[0] # initial current enemy
         self.loadplayer = loadplayer
@@ -583,13 +580,8 @@ class Environment(object):
     # repeats run for every enemy in list
     def multiple(self,pcont,econt):
 
-        # shuffle the enemies
-        random.shuffle(self.enemies)
-        selected_enemies = self.enemies[0:self.enemy_amount]
-
-
         vfitness, vplayerlife, venemylife, vtime = [],[],[],[]
-        for e in selected_enemies:
+        for e in self.enemies:
 
             fitness, playerlife, enemylife, time  = self.run_single(e,pcont,econt)
             vfitness.append(fitness)

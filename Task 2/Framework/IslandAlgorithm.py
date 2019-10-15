@@ -15,19 +15,26 @@ class IslandAlgorithm(Algorithm):
         
     def run(self):
         for _ in range(self.num_islands):
-            print('Init island {}'.format(_))
+            print('Init island {0} against enemy {1}'.format(_, self.parameters['enemies'][_]))
             island_parameters = self.parameters.copy()
+            island_parameters['enemies'] = [self.parameters['enemies'][_]]
             island_parameters['population_size'] //= self.num_islands
             island = GeneticAlgorithm(island_parameters)
             island.init_run()
             self.islands.append(island)
         
         all_fitnesses = []
-        for _ in range(self.migrations):
+        for n in range(self.migrations):
             for _ in range(self.max_fitness_evaluations // self.migrations):
                 for island in self.islands:
                     island.step()
                     all_fitnesses.append([fitness for island in self.islands for fitness in island.survived_fitnesses])
+            
+            result = sorted([[x[0], index, island] for island, island_class in enumerate(self.islands) for index, x in enumerate(island_class.survived_fitnesses)], reverse=True)[0]
+            _, index, island = result
+            fittest_individual = self.islands[island].survived_population[index]
+            with open('{0}/best_{1}.pkl'.format(self.experiment_name, n), 'wb') as fid:
+                pickle.dump(fittest_individual, fid)
             self.migrate()
 
         # Save to fs.

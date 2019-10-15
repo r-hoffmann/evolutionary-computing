@@ -16,7 +16,6 @@ class Algorithm:
         self.env = Environment(experiment_name=self.parameters['experiment_name'],
                                enemies=list(self.parameters['enemies']),
                                multiplemode = self.parameters['multiplemode'],
-                               enemy_amount = self.parameters['enemy_amount'],
                                playermode="ai",
                                player_controller=self.parameters['player_controller'],
                                enemymode="static",
