@@ -1,4 +1,4 @@
-import sys
+import pickle, sys
 import numpy as np
 import matplotlib.pyplot as plt
 sys.path.insert(0, 'evoman')
@@ -7,8 +7,11 @@ from environment_without_rendering import Environment
 
 class Algorithm:
     def __init__(self, parameters):
-        self.parameters = parameters
-        self.experiment_name = self.parameters['experiment_name']
+        self.experiment_name = parameters['experiment_name']
+        if parameters['resume']:
+            self.load()
+        else:
+            self.parameters = parameters
         # initializes environment with ai player using random controller, playing against static enemy
         self.env = Environment(experiment_name=self.parameters['experiment_name'],
                                enemies=list(self.parameters['enemies']),
@@ -60,3 +63,31 @@ class Algorithm:
         plt.savefig('task_1_GA_' +  sys.argv[1] + '/fitness_record_GA_enemy' + sys.argv[1]+'_run' + sys.argv[2] + '.png')
         plt.close()
         #plt.show()
+
+    def dump(self, extra=None):
+        data = {
+            'all_fitnesses': self.all_fitnesses,
+            'population': self.population,
+            'parameters': self.parameters,
+            'best': self.best
+        }
+        if extra:
+            data['extra'] = extra
+
+        with open('{}/last_generation.pkl'.format(self.experiment_name), 'wb') as fid:
+            pickle.dump(data, fid)
+        print('dumped generation to {}/last_generation.pkl'.format(self.experiment_name))
+
+    def load(self):
+        with open('{}/last_generation.pkl'.format(self.experiment_name), 'rb') as fid:
+            data = pickle.load(fid)
+        
+        self.all_fitnesses = data['all_fitnesses']
+        self.population = data['population']
+        self.parameters = data['parameters']
+        self.parameters['resume'] = True
+        
+        if 'extra' in data:
+            pass
+        print('loaded generation from {}/last_generation.pkl'.format(self.experiment_name))
+        
