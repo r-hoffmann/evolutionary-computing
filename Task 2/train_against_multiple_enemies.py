@@ -3,13 +3,14 @@ from Framework.Experiment import Experiment
 """
     Readme
     Use as follows:
-    python train_against_multiple_enemies.py algorithm enemy multiplemode enemy_amount trial
+    python train_against_multiple_enemies.py algorithm enemy multiplemode enemy_amount trial resume
 
     algorithm is either GA, GA_package, NEAT, Island or TestStochasticity
     enemy is any integer from 1 through 8 or a list of multiple without [] e.g. 1,3,6
     multiplemode is "no" or "yes"
     enemy_amount is any integer from 1 through 8
     trial is any string.
+    resume is 0 or 1
     
     Multiple enemy training doesn't save yet, it only prints
     to train GA on enemy 1,3and6:
@@ -28,6 +29,10 @@ enemy = [int(s) for s in enemy.split(',')]
 multiplemode= sys.argv[3] # "no" or "yes"
 enemy_amount = int(sys.argv[4]) # should be 3
 trial = sys.argv[5]
+if sys.argv[6] == '1':
+    resume = True
+else:
+    resume = False
 max_fitness_evaluations = 100
 hidden_neurons = 10
 population_size = 100 # for NEAT and GA_package use config file
@@ -39,7 +44,8 @@ if algorithm == 'NEAT':
         'enemy_amount': enemy_amount,
         'multiplemode': multiplemode,
         'config_file': os.path.join(os.path.dirname(__file__), 'NEAT', 'config-NEAT'),
-        'max_fitness_evaluations' : max_fitness_evaluations
+        'max_fitness_evaluations' : max_fitness_evaluations,
+        'resume': resume
     }
 
 elif algorithm == 'GA_package':
@@ -48,7 +54,8 @@ elif algorithm == 'GA_package':
         'enemy_amount': enemy_amount,
         'multiplemode': multiplemode,
         'config_file': os.path.join(os.path.dirname(__file__), 'NEAT', 'config-GA_package'),
-        'max_fitness_evaluations': max_fitness_evaluations
+        'max_fitness_evaluations': max_fitness_evaluations,
+        'resume': resume
     }
 
 elif algorithm == 'GA':
@@ -70,7 +77,8 @@ elif algorithm == 'GA':
         'tournament_size' : 2,
         'parents_per_offspring' : 2,
         'mutation_probability' : .2,
-        'reproductivity' : 4  # amount of children per breeding group
+        'reproductivity' : 4,  # amount of children per breeding group
+        'resume': resume
     }
 elif algorithm == 'Island':
     parameters = {
@@ -94,7 +102,8 @@ elif algorithm == 'Island':
         'tournament_size' : 2,
         'parents_per_offspring' : 2,
         'mutation_probability' : .2,
-        'reproductivity' : 2  # amount of children per breeding group
+        'reproductivity' : 2,  # amount of children per breeding group
+        'resume': resume
     }
 elif algorithm == 'TestStochasticity':
     parameters = {
@@ -107,6 +116,7 @@ elif algorithm == 'TestStochasticity':
         'hidden_neurons': hidden_neurons,
         'population_size': population_size,  # > tournament_size * parents_per_offspring
         'edge_domain': [-1, 1],
+        'resume': resume
     }
 
 # Train
