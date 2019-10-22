@@ -6,7 +6,7 @@ import seaborn as sns
 from matplotlib.pyplot import figure
 
 class PlotResults:
-	def __init__(self, algorithms=["GA", "Island", "NEAT"], enemies=[5,6,7]):
+	def __init__(self, algorithms=["GA_package"], enemies=[[1,2,3,4,5,6,7,8],[1,3,6,7],[1,3,6,]]):
 		self.algorithms = algorithms
 		self.enemies = enemies
 		sns.set()
@@ -77,7 +77,7 @@ class PlotResults:
 		plt.show()
 
 	def get_all_data(self, algorithm, enemy, trial):
-		if algorithm=='NEAT':
+		if algorithm=='NEAT' or 'GA_package':
 			final_fitness_list = pickle.load(open(os.path.join(os.path.dirname(__file__), "../{}_{}_{}/all_fitnesses.pkl".format(algorithm, enemy, trial)), "rb"))
 		elif algorithm=='Island':
 			fitness_record = pickle.load(open(os.path.join(os.path.dirname(__file__), "../{}_{}_{}/all_fitnesses.pkl".format(algorithm, enemy, trial)), "rb"))			
