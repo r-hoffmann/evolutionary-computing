@@ -1,0 +1,5 @@
+
+
+MESSAGE: Pygame initialized for simulation.
+
+ERROR: 'enemies' must contain more than one enemy for multiple mode.
