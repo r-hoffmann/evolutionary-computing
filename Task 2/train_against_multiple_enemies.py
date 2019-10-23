@@ -35,7 +35,7 @@ else:
     resume = False
 max_fitness_evaluations = 50
 hidden_neurons = 10
-population_size = 10 # for NEAT and GA_package use config file
+population_size = 51 # for NEAT and GA_package use config file
 experiment_name = '{}_{}_{}'.format(algorithm, enemy, trial)
 
 if algorithm == 'NEAT':
@@ -82,8 +82,8 @@ elif algorithm == 'GA':
     }
 elif algorithm == 'Island':
     parameters = {
-        'num_islands' : 4, # > 1, else gets stuck in a while statement in IslandExperiment.migrate
-        'migrations' : 1,
+        'num_islands' : 3, # > 1, else gets stuck in a while statement in IslandExperiment.migrate
+        'migrations' : 5,
         'migration_size': 2,
         'migration_type': 'copy', # exchange or copy
         'enemies': enemy,
