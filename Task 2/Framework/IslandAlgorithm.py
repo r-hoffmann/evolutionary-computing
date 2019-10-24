@@ -15,9 +15,9 @@ class IslandAlgorithm(Algorithm):
         
     def run(self):
         for _ in range(self.num_islands):
-            print('Init island {0} against enemy {1}'.format(_, self.parameters['enemies'][_]))
+            print('Init island {0} against enemies {1}'.format(_, self.parameters['enemies']))
             island_parameters = self.parameters.copy()
-            island_parameters['enemies'] = [self.parameters['enemies'][_]]
+            island_parameters['enemies'] = self.parameters['enemies']
             island_parameters['population_size'] //= self.num_islands
             island = GeneticAlgorithm(island_parameters)
             island.init_run()
