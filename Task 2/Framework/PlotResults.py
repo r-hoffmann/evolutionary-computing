@@ -6,12 +6,17 @@ import seaborn as sns
 from matplotlib.pyplot import figure
 
 class PlotResults:
-	def __init__(self, algorithms=["GA_package"], enemies=[[1,2,3,4,5,6,7,8],[1,3,6,7],[1,3,6,]]):
+	#def __init__(self, algorithms=["GA_package","NEAT"],generations = 50):
+	def __init__(self, algorithms=["GA_package"],generations = 50):
+		self.plot_title = "Enemies"
 		self.algorithms = algorithms
-		self.enemies = enemies
+		self.enemies = []
+		self.GA_package_enemies = [[1,3,6],[1,3,6,7],[1,2,3,4,5,6,7,8]]
+		self.standard_enemies = [[1,3,6]]
+		self.generations = generations
 		sns.set()
 		self.generate_combined_visualize_plots()
-		self.other_graphs()
+		# self.other_graphs()
 
 	def other_graphs(self):
 		all_evals = []
@@ -99,26 +104,41 @@ class PlotResults:
 		return final_fitness_list
 
 	def generate_combined_visualize_plots(self):
-		algorithm_colors = sns.color_palette()[:3]
-		for enemy in self.enemies:
-			for algorithm, algorithm_color in zip(self.algorithms, algorithm_colors):
+		enemy_colors = sns.color_palette()[:4]
+		color_nr = 0
+
+		for algorithm in self.algorithms:
+			if algorithm == "GA_package":
+				self.enemies = self.GA_package_enemies
+			else:
+				self.enemies = self.standard_enemies
+			for enemy, enemy_color in zip(self.enemies, enemy_colors):
 				combined_data = []
-				for generation in range(1, 101):
+				for generation in range(50):
 					combined_data.append([])
 
 				for trial in range(1, 11):
-					trial_data = self.get_all_data(algorithm, enemy, trial) 
-					for i, generation in enumerate(trial_data):
+					trial_data = self.get_all_data(algorithm, enemy, trial)
+					for i in range(50):
+						generation = trial_data[i]
+						#print('generation in',algorithm,' is',generation)
+					#for i, generation in enumerate(trial_data):
 						if algorithm=='Island':
-							if i%4==0:
-								combined_data[i//4] +=generation
+							if i%3==0:
+								combined_data[i//3] +=generation
 						else:
 							combined_data[i] += generation
+				# remove empty parts of combined data
+				#print('len(combined_data)=',len(combined_data))
+				combined_data = list(filter(None, combined_data))  # fastest
+				#print('len(combined_data) after filter=', len(combined_data))
+
 				mean_data = []
 				std_minus_data = []
 				std_plus_data = []
 				best_data = []
 				for generation in combined_data:
+					#print('generation=',generation)
 					best_data.append(np.max(generation))
 					calculated_mean = np.mean(generation)
 					calculated_std = np.std(generation)
@@ -126,12 +146,15 @@ class PlotResults:
 					std_minus_data.append(calculated_mean - calculated_std)
 					std_plus_data.append(calculated_mean + calculated_std)
 
-				plt.plot(mean_data, label=algorithm)
-				plt.plot(std_minus_data, linestyle='--', color=algorithm_color)
-				plt.plot(std_plus_data, linestyle='--', color=algorithm_color)
-				plt.plot(best_data, linestyle=':', color=algorithm_color)
-			plt.legend()
-			plt.xlabel('Fitness evaluation')
-			plt.ylabel('Fitness score')
-			plt.savefig(os.path.join(os.path.dirname(__file__), "../combined_plots/enemy_{}.png".format(enemy)))
-			plt.close()
+
+				#plt.plot(mean_data, label=algorithm)# + str(enemy))
+				plt.plot(mean_data, label= str(enemy))
+				plt.plot(std_minus_data, linestyle='--', color=sns.color_palette()[color_nr])
+				plt.plot(std_plus_data, linestyle='--', color=sns.color_palette()[color_nr])
+				plt.plot(best_data, linestyle=':', color=sns.color_palette()[color_nr])
+				color_nr+=1
+		plt.legend()
+		plt.xlabel('Fitness evaluation')
+		plt.ylabel('Fitness score')
+		plt.savefig(os.path.join(os.path.dirname(__file__), "../combined_plots/{}.png".format(self.plot_title)))
+		plt.close()
