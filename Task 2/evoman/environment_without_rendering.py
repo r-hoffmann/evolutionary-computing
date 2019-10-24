@@ -590,8 +590,8 @@ class Environment(object):
             vtime.append(time)
 
         vfitness = self.cons_multi(numpy.array(vfitness))
-        vplayerlife = self.cons_multi(numpy.array(vplayerlife))
-        venemylife = self.cons_multi(numpy.array(venemylife))
+        vplayerlife = vplayerlife
+        venemylife = venemylife
         vtime = self.cons_multi(numpy.array(vtime))
 
         return    vfitness, vplayerlife, venemylife, vtime
@@ -599,7 +599,6 @@ class Environment(object):
 
     # checks objective mode
     def play(self,pcont="None",econt="None"):
-
         if self.multiplemode == "yes":
             return self.multiple(pcont,econt)
         else:

@@ -1,0 +1,172 @@
+pygame 1.9.6
+Hello from the pygame community. https://www.pygame.org/contribute.html
+
+MESSAGE: Pygame initialized for simulation.
+Test results trial 1: Fitness 20.207744122178877, Gain: -274.9999999999999.
+
+MESSAGE: Pygame initialized for simulation.
+Test results trial 1: Fitness 20.44708810292906, Gain: -289.39999999999975.
+
+MESSAGE: Pygame initialized for simulation.
+Test results trial 1: Fitness 20.201048904736652, Gain: -274.39999999999986.
+
+MESSAGE: Pygame initialized for simulation.
+Test results trial 1: Fitness 20.377337441044734, Gain: -283.39999999999975.
+
+MESSAGE: Pygame initialized for simulation.
+Test results trial 1: Fitness 20.453429388026002, Gain: -290.5999999999997.
+1 fitness [20.207744122178877, 20.44708810292906, 20.201048904736652, 20.377337441044734, 20.453429388026002]
+1 gains [-274.9999999999999, -289.39999999999975, -274.39999999999986, -283.39999999999975, -290.5999999999997]
+
+MESSAGE: Pygame initialized for simulation.
+Test results trial 2: Fitness 18.988776013611073, Gain: -178.59999999999962.
+
+MESSAGE: Pygame initialized for simulation.
+Test results trial 2: Fitness 19.030165574137335, Gain: -191.1999999999995.
+
+MESSAGE: Pygame initialized for simulation.
+Test results trial 2: Fitness 19.004469097980298, Gain: -186.39999999999955.
+
+MESSAGE: Pygame initialized for simulation.
+Test results trial 2: Fitness 18.95662597634084, Gain: -171.3999999999997.
+
+MESSAGE: Pygame initialized for simulation.
+Test results trial 2: Fitness 18.99873710743548, Gain: -183.39999999999958.
+2 fitness [18.988776013611073, 19.030165574137335, 19.004469097980298, 18.95662597634084, 18.99873710743548]
+2 gains [-178.59999999999962, -191.1999999999995, -186.39999999999955, -171.3999999999997, -183.39999999999958]
+
+MESSAGE: Pygame initialized for simulation.
+Test results trial 3: Fitness 2.3785846733766363, Gain: -340.9999999999998.
+
+MESSAGE: Pygame initialized for simulation.
+Test results trial 3: Fitness 2.4404696180672047, Gain: -349.9999999999997.
+
+MESSAGE: Pygame initialized for simulation.
+Test results trial 3: Fitness 2.456959038980969, Gain: -349.9999999999997.
+
+MESSAGE: Pygame initialized for simulation.
+Test results trial 3: Fitness 2.4989069255577974, Gain: -357.79999999999967.
+
+MESSAGE: Pygame initialized for simulation.
+Test results trial 3: Fitness 2.602058407804371, Gain: -374.5999999999997.
+3 fitness [2.3785846733766363, 2.4404696180672047, 2.456959038980969, 2.4989069255577974, 2.602058407804371]
+3 gains [-340.9999999999998, -349.9999999999997, -349.9999999999997, -357.79999999999967, -374.5999999999997]
+
+MESSAGE: Pygame initialized for simulation.
+Test results trial 4: Fitness 16.581020220060502, Gain: -181.7999999999996.
+
+MESSAGE: Pygame initialized for simulation.
+Test results trial 4: Fitness 16.588884323579748, Gain: -189.5999999999995.
+
+MESSAGE: Pygame initialized for simulation.
+Test results trial 4: Fitness 16.571468870520363, Gain: -176.99999999999966.
+
+MESSAGE: Pygame initialized for simulation.
+Test results trial 4: Fitness 16.571468870520363, Gain: -176.99999999999966.
+
+MESSAGE: Pygame initialized for simulation.
+Test results trial 4: Fitness 16.571468870520363, Gain: -176.99999999999966.
+4 fitness [16.581020220060502, 16.588884323579748, 16.571468870520363, 16.571468870520363, 16.571468870520363]
+4 gains [-181.7999999999996, -189.5999999999995, -176.99999999999966, -176.99999999999966, -176.99999999999966]
+
+MESSAGE: Pygame initialized for simulation.
+Test results trial 5: Fitness 25.82441307571127, Gain: -230.79999999999967.
+
+MESSAGE: Pygame initialized for simulation.
+Test results trial 5: Fitness 25.76524071518095, Gain: -221.1999999999997.
+
+MESSAGE: Pygame initialized for simulation.
+Test results trial 5: Fitness 25.898493598295687, Gain: -243.99999999999972.
+
+MESSAGE: Pygame initialized for simulation.
+Test results trial 5: Fitness 25.817858195180563, Gain: -229.59999999999968.
+
+MESSAGE: Pygame initialized for simulation.
+Test results trial 5: Fitness 25.88020534601363, Gain: -240.3999999999997.
+5 fitness [25.82441307571127, 25.76524071518095, 25.898493598295687, 25.817858195180563, 25.88020534601363]
+5 gains [-230.79999999999967, -221.1999999999997, -243.99999999999972, -229.59999999999968, -240.3999999999997]
+
+MESSAGE: Pygame initialized for simulation.
+Test results trial 6: Fitness 3.8299309901146756, Gain: -333.79999999999967.
+
+MESSAGE: Pygame initialized for simulation.
+Test results trial 6: Fitness 3.907515306747449, Gain: -339.79999999999967.
+
+MESSAGE: Pygame initialized for simulation.
+Test results trial 6: Fitness 3.83702230164225, Gain: -332.59999999999974.
+
+MESSAGE: Pygame initialized for simulation.
+Test results trial 6: Fitness 3.907515306747449, Gain: -339.79999999999967.
+
+MESSAGE: Pygame initialized for simulation.
+Test results trial 6: Fitness 3.845817748043501, Gain: -334.3999999999997.
+6 fitness [3.8299309901146756, 3.907515306747449, 3.83702230164225, 3.907515306747449, 3.845817748043501]
+6 gains [-333.79999999999967, -339.79999999999967, -332.59999999999974, -339.79999999999967, -334.3999999999997]
+
+MESSAGE: Pygame initialized for simulation.
+Test results trial 7: Fitness 19.32736731570691, Gain: -143.79999999999913.
+
+MESSAGE: Pygame initialized for simulation.
+Test results trial 7: Fitness 19.32737673787556, Gain: -141.99999999999912.
+
+MESSAGE: Pygame initialized for simulation.
+Test results trial 7: Fitness 19.32213692779844, Gain: -125.79999999999919.
+
+MESSAGE: Pygame initialized for simulation.
+Test results trial 7: Fitness 19.323595002254663, Gain: -128.79999999999913.
+
+MESSAGE: Pygame initialized for simulation.
+Test results trial 7: Fitness 19.32636881324394, Gain: -132.3999999999991.
+7 fitness [19.32736731570691, 19.32737673787556, 19.32213692779844, 19.323595002254663, 19.32636881324394]
+7 gains [-143.79999999999913, -141.99999999999912, -125.79999999999919, -128.79999999999913, -132.3999999999991]
+
+MESSAGE: Pygame initialized for simulation.
+Test results trial 8: Fitness 12.756308233623734, Gain: -300.3999999999998.
+
+MESSAGE: Pygame initialized for simulation.
+Test results trial 8: Fitness 12.720383683128201, Gain: -296.1999999999998.
+
+MESSAGE: Pygame initialized for simulation.
+Test results trial 8: Fitness 12.735299423388785, Gain: -298.5999999999998.
+
+MESSAGE: Pygame initialized for simulation.
+Test results trial 8: Fitness 12.794845371892109, Gain: -305.7999999999997.
+
+MESSAGE: Pygame initialized for simulation.
+Test results trial 8: Fitness 12.720383683128201, Gain: -296.1999999999998.
+8 fitness [12.756308233623734, 12.720383683128201, 12.735299423388785, 12.794845371892109, 12.720383683128201]
+8 gains [-300.3999999999998, -296.1999999999998, -298.5999999999998, -305.7999999999997, -296.1999999999998]
+
+MESSAGE: Pygame initialized for simulation.
+Test results trial 9: Fitness 6.55987856444802, Gain: -352.7999999999997.
+
+MESSAGE: Pygame initialized for simulation.
+Test results trial 9: Fitness 6.383666727673152, Gain: -326.9999999999998.
+
+MESSAGE: Pygame initialized for simulation.
+Test results trial 9: Fitness 6.295681315081694, Gain: -315.59999999999985.
+
+MESSAGE: Pygame initialized for simulation.
+Test results trial 9: Fitness 6.348247051325863, Gain: -322.7999999999998.
+
+MESSAGE: Pygame initialized for simulation.
+Test results trial 9: Fitness 6.447392614371722, Gain: -338.99999999999966.
+9 fitness [6.55987856444802, 6.383666727673152, 6.295681315081694, 6.348247051325863, 6.447392614371722]
+9 gains [-352.7999999999997, -326.9999999999998, -315.59999999999985, -322.7999999999998, -338.99999999999966]
+
+MESSAGE: Pygame initialized for simulation.
+Test results trial 10: Fitness 22.54323887186515, Gain: -213.19999999999962.
+
+MESSAGE: Pygame initialized for simulation.
+Test results trial 10: Fitness 22.566894874296562, Gain: -216.1999999999996.
+
+MESSAGE: Pygame initialized for simulation.
+Test results trial 10: Fitness 22.566894874296562, Gain: -216.1999999999996.
+
+MESSAGE: Pygame initialized for simulation.
+Test results trial 10: Fitness 22.54323887186515, Gain: -213.19999999999962.
+
+MESSAGE: Pygame initialized for simulation.
+Test results trial 10: Fitness 22.92046377111962, Gain: -271.3999999999995.
+10 fitness [22.54323887186515, 22.566894874296562, 22.566894874296562, 22.54323887186515, 22.92046377111962]
+10 gains [-213.19999999999962, -216.1999999999996, -216.1999999999996, -213.19999999999962, -271.3999999999995]

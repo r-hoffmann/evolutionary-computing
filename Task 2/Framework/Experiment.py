@@ -7,25 +7,26 @@ from Framework.PlayerNeatController import PlayerNeatController
 from Framework.IslandAlgorithm import IslandAlgorithm
 from Framework.TestStochasticity import TestStochasticity
 
+
 class Experiment:
     def __init__(self, experiment_name, algorithm, parameters=dict()):
         self.experiment_name = experiment_name
         self.parameters = parameters
         self.parameters['experiment_name'] = experiment_name
-        
+
         if not os.path.exists(self.experiment_name):
             os.makedirs(self.experiment_name)
 
-        if algorithm=='GA':
+        if algorithm == 'GA':
             self.parameters['player_controller'] = None
             self.algorithm = GeneticAlgorithmIC(parameters)
-        elif algorithm=='NEAT':
+        elif algorithm == 'NEAT':
             self.parameters['player_controller'] = PlayerNeatController()
             self.algorithm = NeatAlgorithm(parameters)
-        elif algorithm=='GA_package':
+        elif algorithm == 'GA_package':
             self.parameters['player_controller'] = PlayerNeatController()
             self.algorithm = NeatAlgorithm(parameters)
-        elif algorithm =='Island':
+        elif algorithm == 'Island':
             self.parameters['player_controller'] = None
             self.algorithm = IslandAlgorithm(parameters)
         elif algorithm == 'TestStochasticity':
@@ -33,12 +34,10 @@ class Experiment:
             self.algorithm = TestStochasticity(parameters)
         else:
             raise ValueError('{} is not an algorithm'.format(algorithm))
-    
+
     def run(self):
         return self.algorithm.run()
 
     def test(self):
         self.algorithm.test_model = self.parameters['test_model']
-        self.algorithm.test()
-        return True
-        
+        return self.algorithm.test()

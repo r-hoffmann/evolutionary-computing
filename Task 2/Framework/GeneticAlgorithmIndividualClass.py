@@ -23,20 +23,20 @@ class GeneticAlgorithmIC(Algorithm):
         self.init_run()
         self.evaluation_nr = 0
         # store the initial fitnesses
-        generations_fitnesses = []
+        self.survived_fitnesses = []
         for individual in self.population:
-            generations_fitnesses.append(list(individual.fitness))
-        self.record_of_all_fitnesses_each_generation.append(generations_fitnesses)
+            self.survived_fitnesses.append(list(individual.fitness))
+        self.record_of_all_fitnesses_each_generation.append(self.survived_fitnesses)
         # run the simulation until a stop condition is reached
         while self.stop_condition():
             print('started evaluation number %i' % self.evaluation_nr)
             self.step()
             self.evaluation_nr += 1
-            generations_fitnesses = []
+            self.survived_fitnesses = []
             #store the fitnesses of the generation
             for individual in self.population:
-                generations_fitnesses.append(list(individual.fitness))
-            self.record_of_all_fitnesses_each_generation.append(generations_fitnesses)
+                self.survived_fitnesses.append(list(individual.fitness))
+            self.record_of_all_fitnesses_each_generation.append(self.survived_fitnesses)
 
         self.save_results()
 
@@ -172,11 +172,19 @@ class GeneticAlgorithmIC(Algorithm):
                         mutated_rate = child.mutation_rate + np.random.normal(0, .1)
                     child.mutation_rate = mutated_rate
         return unmutated_children # which are now mutated
+    
+    def determine_fitness_and_gain(self, controller):
+        f, own_life, enemy_life, _ = self.env.play(pcont=controller)
+        if self.env.multiplemode == 'yes':
+            gain = sum([x-y for x, y in zip(own_life, enemy_life)])
+        else:
+            gain = own_life - enemy_life
+        return f, gain, own_life, enemy_life
 
     # from the networks created by recombination and mutation make class individuals
     def obtain_fitness(self,mutated_children):
         for _ in range(len(mutated_children)):
-            mutated_children[_].fitness = self.determine_fitness([mutated_children[_].network])[0]
+            mutated_children[_].fitness, mutated_children[_].gain = self.determine_fitness_and_gain([mutated_children[_].network])[0]
         return mutated_children
 
     # select the survivors to form the next generation
@@ -197,80 +205,6 @@ class GeneticAlgorithmIC(Algorithm):
                     #self.population.remove(self.population[_])
                 else:
                     _ += 1
-
-    # obsolete function containing discontinued functionalities
-    """
-    def survivor_selection(self):
-        # add the children at the end of the population array
-        oversized_population = np.concatenate((self.survived_population, children))
-
-        # add the children's fitnesses at the end of the population_fitness array
-        new_population_fitness = np.concatenate((self.survived_fitnesses, self.fitness_children))
-        # remove the appropriate amount of individuals to sustain a fixed population size
-        self.survived_fitnesses, self.survived_population = self.live_and_let_die(new_population_fitness,
-                                                                                  oversized_population)
-
-        # store the fitness- mean, standard deviation and maximum for plotting
-        self.fitness_record = np.append(self.fitness_record, self.save_fitness(self.survived_fitnesses), axis=0)
-        # if the mean fitness score exceeds a preselected numer, change the fitness score used
-        if self.fitness_record[self.evaluation_nr + 1, 0, self.definition_nr] > self.parameters['fitness_threshold'][
-            self.definition_nr]:
-            self.definition_nr += 1
-            self.fitness_definition = self.parameters['fitness_order'][self.definition_nr]
-        # increase the evaluation number with 1
-        self.evaluation_nr += 1
-
-    # obsolete function containing discontinued functionalities
-    # select the individuals to continue to the next generation
-    def live_and_let_die(self, fitnesses, population):
-        # reduce population to desired population size
-        survival_scores = []
-        if self.parameters['survival_mechanism'] == 'weighted probability':
-            for individual in fitnesses:
-                # give each individual a survival score based on their fitness and a  random number
-                # add 1 to make sure not most of them are 0
-                survival_scores.append(np.random.rand()*(individual[self.fitness_definition]+1))
-        elif self.parameters['survival_mechanism'] == 'replace worst':
-            for individual in fitnesses:
-                survival_scores.append(individual[self.fitness_definition] + 1)
-        if self.parameters['keep_best_solution']:
-            # change the survival score of the fittest individual to the highest
-            index_topfit = np.argmax(fitnesses[:,self.fitness_definition])
-            survival_scores[index_topfit] = max(survival_scores) + 1
-        # determine the fitness value of the ordered population of the individual at the population size
-        ordered_survival_scores = survival_scores[:]
-        ordered_survival_scores.sort(reverse=True)
-        survival_threshold = ordered_survival_scores[self.parameters['population_size']]
-        individual_nr = 0
-        # remove individuals with a too low survival score, also removing their fitness and survival score
-        while self.parameters['population_size'] < len(population):
-            if survival_scores[individual_nr] <= survival_threshold:
-                # remove the individuals and fitnesses fo those who died
-                population = np.delete(population, individual_nr, 0)
-                fitnesses = np.delete(fitnesses,individual_nr,0)
-                del survival_scores[individual_nr]
-            else:
-                individual_nr += 1
-        return fitnesses, population
-
-    # return the mean, std and max fitness
-    def save_fitness(self, fitnesses):
-        # store in colums the mean, std and max of all the 5 fitness measures in rows
-        fitnesses_statistics = []
-        for fitness_definition in range(fitnesses.shape[1]):
-            mean_fitn = np.mean(fitnesses[:,fitness_definition])
-            std_fitn = np.std(fitnesses[:,fitness_definition])
-            max_fitn = max(fitnesses[:,fitness_definition])
-            fitnesses_statistics.append([mean_fitn, std_fitn, max_fitn])
-        # add a third dimension to be able to add new time points
-        fitnesses_statistics = np.array(fitnesses_statistics)
-        fitnesses_statistics = np.transpose(fitnesses_statistics)
-        fitnesses_statistics = list(fitnesses_statistics)
-        fitnesses_statistics = [fitnesses_statistics]
-        fitnesses_statistics = np.array(fitnesses_statistics)
-        return fitnesses_statistics
-
-    """
 
     def determine_unique_numbers(self, array):
         # store the amount of unique elements per column
@@ -343,5 +277,7 @@ class GeneticAlgorithmIC(Algorithm):
         plt.close()
 
     def test(self):
-        fitness = self.determine_fitness([self.parameters['test_model']])
-        print('Fitness trained against enemy {}, tested against enemy {} is {}.'.format(self.parameters['trained_on_enemy'], self.parameters['enemies'], fitness[0][0]))
+        fitness, gain, player_life, enemy_life = self.determine_fitness_and_gain(controller)
+        print('Test results trial {}: Fitness {}, Gain: {}.'.format(
+            self.parameters['trial'], fitness, gain))
+        return fitness, gain, player_life, enemy_life

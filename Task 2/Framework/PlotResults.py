@@ -6,12 +6,12 @@ import seaborn as sns
 from matplotlib.pyplot import figure
 
 class PlotResults:
-	def __init__(self, algorithms=["GA_package"], enemies=[[1,2,3,4,5,6,7,8],[1,3,6,7],[1,3,6,]]):
+	def __init__(self, algorithms=["GA_package", "NEAT", "Island"], enemies=[[1,3,6]]):
 		self.algorithms = algorithms
 		self.enemies = enemies
 		sns.set()
-		self.generate_combined_visualize_plots()
-		self.other_graphs()
+		self.generate_combined_fitness_plots()
+		# self.other_graphs()
 
 	def other_graphs(self):
 		all_evals = []
@@ -31,7 +31,7 @@ class PlotResults:
 				std_best_fitness.append(np.std(best_fitness_list))
 				mean_mean_fitness.append(np.mean(mean_fitness_list))
 				std_mean_fitness.append(np.std(mean_fitness_list))
-				print('the mean best fitness of algorithm %s for enemy %i is %f' % (algorithm,i,np.mean(best_fitness_list)))
+				print('the mean best fitness of algorithm %s for enemy %s is %f' % (algorithm,i,np.mean(best_fitness_list)))
 
 			all_evals.append(mean_best_fitness)
 			all_evals.append(std_best_fitness)
@@ -42,7 +42,7 @@ class PlotResults:
 		cheat_solution = -.3
 		for i, algorithm in enumerate(self.algorithms):
 			df = pd.DataFrame({
-							"enemy": self.enemies,
+							"enemy": str(self.enemies),
 							"algorithm": algorithm, 
 							"best":all_evals[i*4], 
 							"sd":all_evals[i*4+1]})
@@ -77,43 +77,38 @@ class PlotResults:
 		plt.show()
 
 	def get_all_data(self, algorithm, enemy, trial):
-		if algorithm=='NEAT' or 'GA_package':
-			final_fitness_list = pickle.load(open(os.path.join(os.path.dirname(__file__), "../{}_{}_{}/all_fitnesses.pkl".format(algorithm, enemy, trial)), "rb"))
-		elif algorithm=='Island':
+		if algorithm=='Island':
 			fitness_record = pickle.load(open(os.path.join(os.path.dirname(__file__), "../{}_{}_{}/all_fitnesses.pkl".format(algorithm, enemy, trial)), "rb"))			
 			final_fitness_list = [[k[0] for k in fitness_row] for fitness_row in fitness_record]
 		else:
-			fitness_record = pickle.load(open(os.path.join(os.path.dirname(__file__), "../{}_{}_{}/fitness_record_{}_enemy{}_run{}.pickle".format(algorithm, enemy, trial, algorithm, enemy, trial)), "rb"))
-			final_fitness_list = [[k[0] for k in fitness_row] for fitness_row in fitness_record]
+			final_fitness_list = pickle.load(open(os.path.join(os.path.dirname(__file__), "../{}_{}_{}/all_fitnesses.pkl".format(algorithm, enemy, trial)), "rb"))
 		return final_fitness_list
 	
 	def get_last_generation_data(self, algorithm, enemy, trial):
-		if algorithm=='NEAT':
-			final_fitness_list = pickle.load(open(os.path.join(os.path.dirname(__file__), "../{}_{}_{}/all_fitnesses.pkl".format(algorithm, enemy, trial)), "rb"))[-1]
-		elif algorithm=='Island':
+		if algorithm=='Island':
 			fitness_record = pickle.load(open(os.path.join(os.path.dirname(__file__), "../{}_{}_{}/all_fitnesses.pkl".format(algorithm, enemy, trial)), "rb"))			
 			final_fitness_list = [k[0] for k in fitness_record[-1]]
 		else:
-			fitness_record = pickle.load(open(os.path.join(os.path.dirname(__file__), "../{}_{}_{}/fitness_record_{}_enemy{}_run{}.pickle".format(algorithm, enemy, trial, algorithm, enemy, trial)), "rb"))
-			final_fitness_list = [k[0] for k in fitness_record[-1]]
+			final_fitness_list = pickle.load(open(os.path.join(os.path.dirname(__file__), "../{}_{}_{}/all_fitnesses.pkl".format(algorithm, enemy, trial)), "rb"))[-1]
 		return final_fitness_list
 
-	def generate_combined_visualize_plots(self):
+	def generate_combined_fitness_plots(self):
 		algorithm_colors = sns.color_palette()[:3]
 		for enemy in self.enemies:
 			for algorithm, algorithm_color in zip(self.algorithms, algorithm_colors):
 				combined_data = []
-				for generation in range(1, 101):
+				for generation in range(1, 51):
 					combined_data.append([])
 
 				for trial in range(1, 11):
 					trial_data = self.get_all_data(algorithm, enemy, trial) 
 					for i, generation in enumerate(trial_data):
 						if algorithm=='Island':
-							if i%4==0:
-								combined_data[i//4] +=generation
+							if i%3==0:
+								combined_data[i//3] += [g/8 for g in generation]
 						else:
-							combined_data[i] += generation
+							if i < 50:
+								combined_data[i] += generation
 				mean_data = []
 				std_minus_data = []
 				std_plus_data = []

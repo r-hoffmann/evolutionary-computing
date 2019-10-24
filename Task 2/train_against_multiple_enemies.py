@@ -95,6 +95,7 @@ elif algorithm == 'Island':
         'fitness_threshold': [100, 100],  # set the value which the mean must exceed before the next kind of fitness comes in use
         'crossover_weight' : 'random',
         'survival_mechanism' : 'replace worst',
+        'config_file': os.path.join(os.path.dirname(__file__), 'NEAT', 'config-GA_package'),
         'max_fitness_evaluations' : max_fitness_evaluations,
         'hidden_neurons' : hidden_neurons,
         'population_size' : population_size, 

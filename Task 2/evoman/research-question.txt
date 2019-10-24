@@ -1,0 +1,7 @@
+Task 2: Plan de cmapagne
+
+Research question:
+How can we train a neural network to defeat a computer game?
+    - Which algorithms perform well?
+    - Do we train on all enemies? If not, on which do we train? Do we train more on a particular enemy?
+    

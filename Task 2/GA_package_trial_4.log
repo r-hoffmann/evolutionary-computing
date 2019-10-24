@@ -1,0 +1,1001 @@
+pygame 1.9.6
+Hello from the pygame community. https://www.pygame.org/contribute.html
+
+MESSAGE: Pygame initialized for simulation.
+
+ ****** Running generation 0 ****** 
+
+Population's average fitness: -1.44973 stdev: 11.39429
+Best fitness: 46.46948 - size: (15, 250) - species 1 - id 10
+Average adjusted fitness: 0.261
+Mean genetic distance 3.215, standard deviation 0.906
+Population of 50 members in 1 species:
+   ID   age  size  fitness  adj fit  stag
+  ====  ===  ====  =======  =======  ====
+     1    0    50     46.5    0.261     0
+Total extinctions: 0
+Generation time: 80.348 sec
+dumped generation to GA_package_[1, 2, 3, 4, 5, 6, 7, 8]_4/last_generation.pkl
+
+ ****** Running generation 1 ****** 
+
+Population's average fitness: 0.40372 stdev: 8.40024
+Best fitness: 23.45931 - size: (15, 249) - species 1 - id 56
+Average adjusted fitness: 0.325
+Mean genetic distance 3.145, standard deviation 0.918
+Population of 50 members in 1 species:
+   ID   age  size  fitness  adj fit  stag
+  ====  ===  ====  =======  =======  ====
+     1    1    50     23.5    0.325     1
+Total extinctions: 0
+Generation time: 62.598 sec (71.473 average)
+dumped generation to GA_package_[1, 2, 3, 4, 5, 6, 7, 8]_4/last_generation.pkl
+
+ ****** Running generation 2 ****** 
+
+Population's average fitness: 12.86202 stdev: 15.61590
+Best fitness: 51.40019 - size: (15, 249) - species 1 - id 122
+Average adjusted fitness: 0.375
+Mean genetic distance 3.287, standard deviation 0.795
+Population of 50 members in 1 species:
+   ID   age  size  fitness  adj fit  stag
+  ====  ===  ====  =======  =======  ====
+     1    2    50     51.4    0.375     0
+Total extinctions: 0
+Generation time: 62.113 sec (68.353 average)
+dumped generation to GA_package_[1, 2, 3, 4, 5, 6, 7, 8]_4/last_generation.pkl
+
+ ****** Running generation 3 ****** 
+
+Population's average fitness: 6.18366 stdev: 15.37828
+Best fitness: 67.68312 - size: (15, 248) - species 1 - id 198
+Average adjusted fitness: 0.263
+Mean genetic distance 3.201, standard deviation 0.934
+Population of 50 members in 1 species:
+   ID   age  size  fitness  adj fit  stag
+  ====  ===  ====  =======  =======  ====
+     1    3    50     67.7    0.263     0
+Total extinctions: 0
+Generation time: 73.879 sec (69.734 average)
+dumped generation to GA_package_[1, 2, 3, 4, 5, 6, 7, 8]_4/last_generation.pkl
+
+ ****** Running generation 4 ****** 
+
+Population's average fitness: 1.20155 stdev: 10.94256
+Best fitness: 40.03580 - size: (15, 248) - species 1 - id 238
+Average adjusted fitness: 0.334
+Mean genetic distance 2.393, standard deviation 1.364
+Population of 50 members in 1 species:
+   ID   age  size  fitness  adj fit  stag
+  ====  ===  ====  =======  =======  ====
+     1    4    50     40.0    0.334     1
+Total extinctions: 0
+Generation time: 58.235 sec (67.434 average)
+dumped generation to GA_package_[1, 2, 3, 4, 5, 6, 7, 8]_4/last_generation.pkl
+
+ ****** Running generation 5 ****** 
+
+Population's average fitness: 23.62834 stdev: 21.98118
+Best fitness: 84.40734 - size: (15, 239) - species 1 - id 290
+Average adjusted fitness: 0.382
+Mean genetic distance 2.688, standard deviation 1.218
+Population of 50 members in 1 species:
+   ID   age  size  fitness  adj fit  stag
+  ====  ===  ====  =======  =======  ====
+     1    5    50     84.4    0.382     0
+Total extinctions: 0
+Generation time: 82.303 sec (69.913 average)
+dumped generation to GA_package_[1, 2, 3, 4, 5, 6, 7, 8]_4/last_generation.pkl
+
+ ****** Running generation 6 ****** 
+
+Population's average fitness: 13.28649 stdev: 15.38888
+Best fitness: 49.23360 - size: (15, 245) - species 1 - id 327
+Average adjusted fitness: 0.436
+Mean genetic distance 1.775, standard deviation 1.220
+Population of 50 members in 1 species:
+   ID   age  size  fitness  adj fit  stag
+  ====  ===  ====  =======  =======  ====
+     1    6    50     49.2    0.436     1
+Total extinctions: 0
+Generation time: 72.724 sec (70.314 average)
+dumped generation to GA_package_[1, 2, 3, 4, 5, 6, 7, 8]_4/last_generation.pkl
+
+ ****** Running generation 7 ****** 
+
+Population's average fitness: 10.86868 stdev: 14.96503
+Best fitness: 50.38618 - size: (15, 243) - species 1 - id 386
+Average adjusted fitness: 0.407
+Mean genetic distance 1.971, standard deviation 1.309
+Population of 50 members in 1 species:
+   ID   age  size  fitness  adj fit  stag
+  ====  ===  ====  =======  =======  ====
+     1    7    50     50.4    0.407     2
+Total extinctions: 0
+Generation time: 53.867 sec (68.258 average)
+dumped generation to GA_package_[1, 2, 3, 4, 5, 6, 7, 8]_4/last_generation.pkl
+
+ ****** Running generation 8 ****** 
+
+Population's average fitness: 8.36424 stdev: 13.81892
+Best fitness: 40.87464 - size: (15, 243) - species 1 - id 414
+Average adjusted fitness: 0.406
+Mean genetic distance 1.821, standard deviation 1.084
+Population of 50 members in 1 species:
+   ID   age  size  fitness  adj fit  stag
+  ====  ===  ====  =======  =======  ====
+     1    8    50     40.9    0.406     3
+Total extinctions: 0
+Generation time: 63.848 sec (67.768 average)
+dumped generation to GA_package_[1, 2, 3, 4, 5, 6, 7, 8]_4/last_generation.pkl
+
+ ****** Running generation 9 ****** 
+
+Population's average fitness: 12.32884 stdev: 16.57472
+Best fitness: 49.19200 - size: (15, 243) - species 1 - id 496
+Average adjusted fitness: 0.422
+Mean genetic distance 2.202, standard deviation 1.211
+Population of 50 members in 1 species:
+   ID   age  size  fitness  adj fit  stag
+  ====  ===  ====  =======  =======  ====
+     1    9    50     49.2    0.422     4
+Total extinctions: 0
+Generation time: 67.699 sec (67.761 average)
+dumped generation to GA_package_[1, 2, 3, 4, 5, 6, 7, 8]_4/last_generation.pkl
+
+ ****** Running generation 10 ****** 
+
+Population's average fitness: 2.02419 stdev: 11.47219
+Best fitness: 30.90222 - size: (15, 241) - species 1 - id 501
+Average adjusted fitness: 0.420
+Mean genetic distance 2.848, standard deviation 1.064
+Population of 50 members in 1 species:
+   ID   age  size  fitness  adj fit  stag
+  ====  ===  ====  =======  =======  ====
+     1   10    50     30.9    0.420     5
+Total extinctions: 0
+Generation time: 66.779 sec (66.404 average)
+dumped generation to GA_package_[1, 2, 3, 4, 5, 6, 7, 8]_4/last_generation.pkl
+
+ ****** Running generation 11 ****** 
+
+Population's average fitness: 21.06943 stdev: 20.41170
+Best fitness: 63.33309 - size: (15, 240) - species 1 - id 582
+Average adjusted fitness: 0.432
+Mean genetic distance 3.337, standard deviation 0.756
+Population of 50 members in 1 species:
+   ID   age  size  fitness  adj fit  stag
+  ====  ===  ====  =======  =======  ====
+     1   11    50     63.3    0.432     6
+Total extinctions: 0
+Generation time: 71.023 sec (67.247 average)
+dumped generation to GA_package_[1, 2, 3, 4, 5, 6, 7, 8]_4/last_generation.pkl
+
+ ****** Running generation 12 ****** 
+
+Population's average fitness: 16.78514 stdev: 16.39855
+Best fitness: 67.41519 - size: (15, 238) - species 1 - id 647
+Average adjusted fitness: 0.400
+Mean genetic distance 3.263, standard deviation 0.816
+Population of 50 members in 1 species:
+   ID   age  size  fitness  adj fit  stag
+  ====  ===  ====  =======  =======  ====
+     1   12    50     67.4    0.400     7
+Total extinctions: 0
+Generation time: 54.000 sec (66.436 average)
+dumped generation to GA_package_[1, 2, 3, 4, 5, 6, 7, 8]_4/last_generation.pkl
+
+ ****** Running generation 13 ****** 
+
+Population's average fitness: 14.66861 stdev: 13.83412
+Best fitness: 46.96331 - size: (15, 236) - species 1 - id 699
+Average adjusted fitness: 0.422
+Mean genetic distance 2.673, standard deviation 1.190
+Population of 50 members in 1 species:
+   ID   age  size  fitness  adj fit  stag
+  ====  ===  ====  =======  =======  ====
+     1   13    50     47.0    0.422     8
+Total extinctions: 0
+Generation time: 61.676 sec (65.215 average)
+dumped generation to GA_package_[1, 2, 3, 4, 5, 6, 7, 8]_4/last_generation.pkl
+
+ ****** Running generation 14 ****** 
+
+Population's average fitness: 10.53481 stdev: 13.21487
+Best fitness: 34.93743 - size: (15, 236) - species 1 - id 706
+Average adjusted fitness: 0.440
+Mean genetic distance 2.394, standard deviation 1.269
+Population of 50 members in 1 species:
+   ID   age  size  fitness  adj fit  stag
+  ====  ===  ====  =======  =======  ====
+     1   14    50     34.9    0.440     9
+Total extinctions: 0
+Generation time: 57.899 sec (65.182 average)
+dumped generation to GA_package_[1, 2, 3, 4, 5, 6, 7, 8]_4/last_generation.pkl
+
+ ****** Running generation 15 ****** 
+
+Population's average fitness: 9.19182 stdev: 10.89112
+Best fitness: 33.35680 - size: (15, 229) - species 1 - id 778
+Average adjusted fitness: 0.440
+Mean genetic distance 3.183, standard deviation 0.878
+Population of 50 members in 1 species:
+   ID   age  size  fitness  adj fit  stag
+  ====  ===  ====  =======  =======  ====
+     1   15    50     33.4    0.440    10
+Total extinctions: 0
+Generation time: 57.925 sec (62.744 average)
+dumped generation to GA_package_[1, 2, 3, 4, 5, 6, 7, 8]_4/last_generation.pkl
+
+ ****** Running generation 16 ****** 
+
+Population's average fitness: 11.64923 stdev: 14.15811
+Best fitness: 53.85679 - size: (15, 228) - species 1 - id 806
+Average adjusted fitness: 0.353
+Mean genetic distance 2.849, standard deviation 1.196
+Population of 50 members in 1 species:
+   ID   age  size  fitness  adj fit  stag
+  ====  ===  ====  =======  =======  ====
+     1   16    50     53.9    0.353    11
+Total extinctions: 0
+Generation time: 62.176 sec (61.689 average)
+dumped generation to GA_package_[1, 2, 3, 4, 5, 6, 7, 8]_4/last_generation.pkl
+
+ ****** Running generation 17 ****** 
+
+Population's average fitness: 20.33171 stdev: 22.61015
+Best fitness: 77.67176 - size: (15, 228) - species 1 - id 865
+Average adjusted fitness: 0.378
+Mean genetic distance 2.951, standard deviation 1.151
+Population of 50 members in 1 species:
+   ID   age  size  fitness  adj fit  stag
+  ====  ===  ====  =======  =======  ====
+     1   17    50     77.7    0.378    12
+Total extinctions: 0
+Generation time: 65.600 sec (62.863 average)
+dumped generation to GA_package_[1, 2, 3, 4, 5, 6, 7, 8]_4/last_generation.pkl
+
+ ****** Running generation 18 ****** 
+
+Population's average fitness: 9.83074 stdev: 12.51817
+Best fitness: 56.40760 - size: (15, 222) - species 1 - id 906
+Average adjusted fitness: 0.291
+Mean genetic distance 2.545, standard deviation 1.070
+Population of 50 members in 1 species:
+   ID   age  size  fitness  adj fit  stag
+  ====  ===  ====  =======  =======  ====
+     1   18    50     56.4    0.291    13
+Total extinctions: 0
+Generation time: 56.982 sec (62.176 average)
+dumped generation to GA_package_[1, 2, 3, 4, 5, 6, 7, 8]_4/last_generation.pkl
+
+ ****** Running generation 19 ****** 
+
+Population's average fitness: 11.27468 stdev: 13.54748
+Best fitness: 49.82504 - size: (15, 219) - species 1 - id 963
+Average adjusted fitness: 0.357
+Mean genetic distance 1.325, standard deviation 0.276
+Population of 50 members in 1 species:
+   ID   age  size  fitness  adj fit  stag
+  ====  ===  ====  =======  =======  ====
+     1   19    50     49.8    0.357    14
+Total extinctions: 0
+Generation time: 67.644 sec (62.171 average)
+dumped generation to GA_package_[1, 2, 3, 4, 5, 6, 7, 8]_4/last_generation.pkl
+
+ ****** Running generation 20 ****** 
+
+Population's average fitness: 8.07267 stdev: 8.95150
+Best fitness: 30.08531 - size: (15, 227) - species 1 - id 1048
+Average adjusted fitness: 0.420
+Mean genetic distance 1.296, standard deviation 0.159
+Population of 50 members in 1 species:
+   ID   age  size  fitness  adj fit  stag
+  ====  ===  ====  =======  =======  ====
+     1   20    50     30.1    0.420    15
+Total extinctions: 0
+Generation time: 58.156 sec (61.308 average)
+dumped generation to GA_package_[1, 2, 3, 4, 5, 6, 7, 8]_4/last_generation.pkl
+
+ ****** Running generation 21 ****** 
+
+Population's average fitness: 20.33739 stdev: 20.62190
+Best fitness: 69.69221 - size: (15, 221) - species 1 - id 1053
+Average adjusted fitness: 0.439
+Mean genetic distance 1.394, standard deviation 0.176
+Population of 50 members in 1 species:
+   ID   age  size  fitness  adj fit  stag
+  ====  ===  ====  =======  =======  ====
+     1   21    50     69.7    0.439    16
+Total extinctions: 0
+Generation time: 77.900 sec (61.996 average)
+dumped generation to GA_package_[1, 2, 3, 4, 5, 6, 7, 8]_4/last_generation.pkl
+
+ ****** Running generation 22 ****** 
+
+Population's average fitness: 6.35000 stdev: 12.55240
+Best fitness: 37.87832 - size: (15, 221) - species 1 - id 1108
+Average adjusted fitness: 0.368
+Mean genetic distance 1.434, standard deviation 0.179
+Population of 50 members in 1 species:
+   ID   age  size  fitness  adj fit  stag
+  ====  ===  ====  =======  =======  ====
+     1   22    50     37.9    0.368    17
+Total extinctions: 0
+Generation time: 60.395 sec (62.635 average)
+dumped generation to GA_package_[1, 2, 3, 4, 5, 6, 7, 8]_4/last_generation.pkl
+
+ ****** Running generation 23 ****** 
+
+Population's average fitness: 10.42218 stdev: 16.83068
+Best fitness: 51.87276 - size: (15, 221) - species 1 - id 1186
+Average adjusted fitness: 0.382
+Mean genetic distance 1.533, standard deviation 0.179
+Population of 50 members in 1 species:
+   ID   age  size  fitness  adj fit  stag
+  ====  ===  ====  =======  =======  ====
+     1   23    50     51.9    0.382    18
+Total extinctions: 0
+Generation time: 63.577 sec (62.825 average)
+dumped generation to GA_package_[1, 2, 3, 4, 5, 6, 7, 8]_4/last_generation.pkl
+
+ ****** Running generation 24 ****** 
+
+Population's average fitness: 11.71178 stdev: 14.66226
+Best fitness: 66.99232 - size: (15, 218) - species 1 - id 1223
+Average adjusted fitness: 0.288
+Mean genetic distance 1.517, standard deviation 0.164
+Population of 50 members in 1 species:
+   ID   age  size  fitness  adj fit  stag
+  ====  ===  ====  =======  =======  ====
+     1   24    50     67.0    0.288    19
+Total extinctions: 0
+Generation time: 61.483 sec (63.184 average)
+dumped generation to GA_package_[1, 2, 3, 4, 5, 6, 7, 8]_4/last_generation.pkl
+
+ ****** Running generation 25 ****** 
+
+Population's average fitness: 18.59238 stdev: 18.37284
+Best fitness: 58.92473 - size: (15, 213) - species 1 - id 1285
+Average adjusted fitness: 0.408
+Mean genetic distance 1.453, standard deviation 0.173
+Population of 50 members in 1 species:
+   ID   age  size  fitness  adj fit  stag
+  ====  ===  ====  =======  =======  ====
+     1   25    50     58.9    0.408    20
+Total extinctions: 0
+Generation time: 73.620 sec (64.753 average)
+dumped generation to GA_package_[1, 2, 3, 4, 5, 6, 7, 8]_4/last_generation.pkl
+
+ ****** Running generation 26 ****** 
+
+Population's average fitness: 5.19774 stdev: 9.37942
+Best fitness: 24.26315 - size: (15, 213) - species 1 - id 1339
+Average adjusted fitness: 0.430
+Mean genetic distance 1.465, standard deviation 0.177
+Population of 50 members in 1 species:
+   ID   age  size  fitness  adj fit  stag
+  ====  ===  ====  =======  =======  ====
+     1   26    50     24.3    0.430    21
+Total extinctions: 0
+Generation time: 60.225 sec (64.558 average)
+dumped generation to GA_package_[1, 2, 3, 4, 5, 6, 7, 8]_4/last_generation.pkl
+
+ ****** Running generation 27 ****** 
+
+Population's average fitness: 6.24754 stdev: 14.28719
+Best fitness: 51.71822 - size: (15, 213) - species 1 - id 1377
+Average adjusted fitness: 0.303
+Mean genetic distance 1.538, standard deviation 0.215
+Population of 50 members in 1 species:
+   ID   age  size  fitness  adj fit  stag
+  ====  ===  ====  =======  =======  ====
+     1   27    50     51.7    0.303    22
+Total extinctions: 0
+Generation time: 55.176 sec (63.516 average)
+dumped generation to GA_package_[1, 2, 3, 4, 5, 6, 7, 8]_4/last_generation.pkl
+
+ ****** Running generation 28 ****** 
+
+Population's average fitness: 7.72537 stdev: 9.40035
+Best fitness: 30.22811 - size: (15, 213) - species 1 - id 1415
+Average adjusted fitness: 0.392
+Mean genetic distance 1.622, standard deviation 0.175
+Population of 50 members in 1 species:
+   ID   age  size  fitness  adj fit  stag
+  ====  ===  ====  =======  =======  ====
+     1   28    50     30.2    0.392    23
+Total extinctions: 0
+Generation time: 51.803 sec (62.998 average)
+dumped generation to GA_package_[1, 2, 3, 4, 5, 6, 7, 8]_4/last_generation.pkl
+
+ ****** Running generation 29 ****** 
+
+Population's average fitness: 16.79603 stdev: 14.71641
+Best fitness: 47.65250 - size: (15, 213) - species 1 - id 1482
+Average adjusted fitness: 0.458
+Mean genetic distance 1.601, standard deviation 0.214
+Population of 50 members in 1 species:
+   ID   age  size  fitness  adj fit  stag
+  ====  ===  ====  =======  =======  ====
+     1   29    50     47.7    0.458    24
+Total extinctions: 0
+Generation time: 63.632 sec (62.597 average)
+dumped generation to GA_package_[1, 2, 3, 4, 5, 6, 7, 8]_4/last_generation.pkl
+
+ ****** Running generation 30 ****** 
+
+Population's average fitness: 8.00176 stdev: 12.66458
+Best fitness: 45.25227 - size: (15, 212) - species 1 - id 1536
+Average adjusted fitness: 0.412
+Mean genetic distance 1.587, standard deviation 0.165
+Population of 50 members in 1 species:
+   ID   age  size  fitness  adj fit  stag
+  ====  ===  ====  =======  =======  ====
+     1   30    50     45.3    0.412    25
+Total extinctions: 0
+Generation time: 56.923 sec (62.473 average)
+dumped generation to GA_package_[1, 2, 3, 4, 5, 6, 7, 8]_4/last_generation.pkl
+
+ ****** Running generation 31 ****** 
+
+Population's average fitness: 0.41357 stdev: 10.20743
+Best fitness: 32.10836 - size: (15, 209) - species 1 - id 1582
+Average adjusted fitness: 0.367
+Mean genetic distance 1.567, standard deviation 0.189
+Population of 50 members in 1 species:
+   ID   age  size  fitness  adj fit  stag
+  ====  ===  ====  =======  =======  ====
+     1   31    50     32.1    0.367    26
+Total extinctions: 0
+Generation time: 53.733 sec (60.057 average)
+dumped generation to GA_package_[1, 2, 3, 4, 5, 6, 7, 8]_4/last_generation.pkl
+
+ ****** Running generation 32 ****** 
+
+Population's average fitness: 9.22525 stdev: 12.51103
+Best fitness: 42.66456 - size: (15, 211) - species 1 - id 1635
+Average adjusted fitness: 0.424
+Mean genetic distance 1.594, standard deviation 0.207
+Population of 50 members in 1 species:
+   ID   age  size  fitness  adj fit  stag
+  ====  ===  ====  =======  =======  ====
+     1   32    50     42.7    0.424    27
+Total extinctions: 0
+Generation time: 68.823 sec (60.899 average)
+dumped generation to GA_package_[1, 2, 3, 4, 5, 6, 7, 8]_4/last_generation.pkl
+
+ ****** Running generation 33 ****** 
+
+Population's average fitness: 9.76695 stdev: 15.97260
+Best fitness: 57.62961 - size: (15, 210) - species 1 - id 1698
+Average adjusted fitness: 0.319
+Mean genetic distance 1.635, standard deviation 0.223
+Population of 50 members in 1 species:
+   ID   age  size  fitness  adj fit  stag
+  ====  ===  ====  =======  =======  ====
+     1   33    50     57.6    0.319    28
+Total extinctions: 0
+Generation time: 66.155 sec (61.157 average)
+dumped generation to GA_package_[1, 2, 3, 4, 5, 6, 7, 8]_4/last_generation.pkl
+
+ ****** Running generation 34 ****** 
+
+Population's average fitness: 10.13262 stdev: 11.35478
+Best fitness: 39.19542 - size: (15, 213) - species 1 - id 1728
+Average adjusted fitness: 0.400
+Mean genetic distance 1.625, standard deviation 0.197
+Population of 50 members in 1 species:
+   ID   age  size  fitness  adj fit  stag
+  ====  ===  ====  =======  =======  ====
+     1   34    50     39.2    0.400    29
+Total extinctions: 0
+Generation time: 53.721 sec (60.381 average)
+dumped generation to GA_package_[1, 2, 3, 4, 5, 6, 7, 8]_4/last_generation.pkl
+
+ ****** Running generation 35 ****** 
+
+Population's average fitness: 7.41918 stdev: 10.05753
+Best fitness: 32.29828 - size: (15, 203) - species 1 - id 1766
+Average adjusted fitness: 0.452
+Mean genetic distance 1.627, standard deviation 0.203
+Population of 50 members in 1 species:
+   ID   age  size  fitness  adj fit  stag
+  ====  ===  ====  =======  =======  ====
+     1   35    50     32.3    0.452    30
+Total extinctions: 0
+Generation time: 52.050 sec (58.224 average)
+dumped generation to GA_package_[1, 2, 3, 4, 5, 6, 7, 8]_4/last_generation.pkl
+
+ ****** Running generation 36 ****** 
+
+Population's average fitness: 5.76862 stdev: 12.48882
+Best fitness: 34.77494 - size: (15, 205) - species 1 - id 1801
+Average adjusted fitness: 0.400
+Mean genetic distance 1.644, standard deviation 0.194
+Population of 50 members in 1 species:
+   ID   age  size  fitness  adj fit  stag
+  ====  ===  ====  =======  =======  ====
+     1   36    50     34.8    0.400    31
+Total extinctions: 0
+Generation time: 59.113 sec (58.113 average)
+dumped generation to GA_package_[1, 2, 3, 4, 5, 6, 7, 8]_4/last_generation.pkl
+
+ ****** Running generation 37 ****** 
+
+Population's average fitness: 4.05877 stdev: 13.88995
+Best fitness: 41.94454 - size: (15, 206) - species 1 - id 1877
+Average adjusted fitness: 0.341
+Mean genetic distance 1.706, standard deviation 0.251
+Population of 50 members in 1 species:
+   ID   age  size  fitness  adj fit  stag
+  ====  ===  ====  =======  =======  ====
+     1   37    50     41.9    0.341    32
+Total extinctions: 0
+Generation time: 48.050 sec (57.400 average)
+dumped generation to GA_package_[1, 2, 3, 4, 5, 6, 7, 8]_4/last_generation.pkl
+
+ ****** Running generation 38 ****** 
+
+Population's average fitness: 8.67844 stdev: 13.75994
+Best fitness: 34.99606 - size: (15, 203) - species 1 - id 1921
+Average adjusted fitness: 0.469
+Mean genetic distance 1.740, standard deviation 0.214
+Population of 50 members in 1 species:
+   ID   age  size  fitness  adj fit  stag
+  ====  ===  ====  =======  =======  ====
+     1   38    50     35.0    0.469    33
+Total extinctions: 0
+Generation time: 68.469 sec (59.067 average)
+dumped generation to GA_package_[1, 2, 3, 4, 5, 6, 7, 8]_4/last_generation.pkl
+
+ ****** Running generation 39 ****** 
+
+Population's average fitness: 6.58170 stdev: 14.07465
+Best fitness: 44.40755 - size: (15, 203) - species 1 - id 1991
+Average adjusted fitness: 0.325
+Mean genetic distance 1.615, standard deviation 0.216
+Population of 50 members in 1 species:
+   ID   age  size  fitness  adj fit  stag
+  ====  ===  ====  =======  =======  ====
+     1   39    50     44.4    0.325    34
+Total extinctions: 0
+Generation time: 56.081 sec (58.312 average)
+dumped generation to GA_package_[1, 2, 3, 4, 5, 6, 7, 8]_4/last_generation.pkl
+
+ ****** Running generation 40 ****** 
+
+Population's average fitness: 8.63091 stdev: 13.98910
+Best fitness: 48.90088 - size: (15, 206) - species 1 - id 2021
+Average adjusted fitness: 0.399
+Mean genetic distance 1.622, standard deviation 0.195
+Population of 50 members in 1 species:
+   ID   age  size  fitness  adj fit  stag
+  ====  ===  ====  =======  =======  ====
+     1   40    50     48.9    0.399    35
+Total extinctions: 0
+Generation time: 62.625 sec (58.882 average)
+dumped generation to GA_package_[1, 2, 3, 4, 5, 6, 7, 8]_4/last_generation.pkl
+
+ ****** Running generation 41 ****** 
+
+Population's average fitness: 2.90559 stdev: 14.66091
+Best fitness: 55.95767 - size: (15, 211) - species 1 - id 2089
+Average adjusted fitness: 0.284
+Mean genetic distance 1.462, standard deviation 0.251
+Population of 50 members in 1 species:
+   ID   age  size  fitness  adj fit  stag
+  ====  ===  ====  =======  =======  ====
+     1   41    50     56.0    0.284    36
+Total extinctions: 0
+Generation time: 63.323 sec (59.841 average)
+dumped generation to GA_package_[1, 2, 3, 4, 5, 6, 7, 8]_4/last_generation.pkl
+
+ ****** Running generation 42 ****** 
+
+Population's average fitness: 5.28986 stdev: 10.72620
+Best fitness: 31.85957 - size: (15, 209) - species 1 - id 2139
+Average adjusted fitness: 0.411
+Mean genetic distance 1.596, standard deviation 0.190
+Population of 50 members in 1 species:
+   ID   age  size  fitness  adj fit  stag
+  ====  ===  ====  =======  =======  ====
+     1   42    50     31.9    0.411    37
+Total extinctions: 0
+Generation time: 53.685 sec (58.327 average)
+dumped generation to GA_package_[1, 2, 3, 4, 5, 6, 7, 8]_4/last_generation.pkl
+
+ ****** Running generation 43 ****** 
+
+Population's average fitness: 13.45361 stdev: 14.68017
+Best fitness: 44.86411 - size: (15, 212) - species 1 - id 2186
+Average adjusted fitness: 0.454
+Mean genetic distance 1.623, standard deviation 0.272
+Population of 50 members in 1 species:
+   ID   age  size  fitness  adj fit  stag
+  ====  ===  ====  =======  =======  ====
+     1   43    50     44.9    0.454    38
+Total extinctions: 0
+Generation time: 51.458 sec (56.857 average)
+dumped generation to GA_package_[1, 2, 3, 4, 5, 6, 7, 8]_4/last_generation.pkl
+
+ ****** Running generation 44 ****** 
+
+Population's average fitness: 14.11923 stdev: 14.01845
+Best fitness: 35.00171 - size: (15, 207) - species 1 - id 2248
+Average adjusted fitness: 0.529
+Mean genetic distance 1.572, standard deviation 0.200
+Population of 50 members in 1 species:
+   ID   age  size  fitness  adj fit  stag
+  ====  ===  ====  =======  =======  ====
+     1   44    50     35.0    0.529    39
+Total extinctions: 0
+Generation time: 54.512 sec (56.937 average)
+dumped generation to GA_package_[1, 2, 3, 4, 5, 6, 7, 8]_4/last_generation.pkl
+
+ ****** Running generation 45 ****** 
+
+Population's average fitness: 6.58688 stdev: 8.72577
+Best fitness: 23.34788 - size: (15, 210) - species 1 - id 2263
+Average adjusted fitness: 0.440
+Mean genetic distance 1.513, standard deviation 0.217
+Population of 50 members in 1 species:
+   ID   age  size  fitness  adj fit  stag
+  ====  ===  ====  =======  =======  ====
+     1   45    50     23.3    0.440    40
+Total extinctions: 0
+Generation time: 53.298 sec (57.061 average)
+dumped generation to GA_package_[1, 2, 3, 4, 5, 6, 7, 8]_4/last_generation.pkl
+
+ ****** Running generation 46 ****** 
+
+Population's average fitness: 8.36753 stdev: 14.67628
+Best fitness: 40.98437 - size: (15, 199) - species 1 - id 2304
+Average adjusted fitness: 0.379
+Mean genetic distance 1.542, standard deviation 0.201
+Population of 50 members in 1 species:
+   ID   age  size  fitness  adj fit  stag
+  ====  ===  ====  =======  =======  ====
+     1   46    50     41.0    0.379    41
+Total extinctions: 0
+Generation time: 57.804 sec (56.930 average)
+dumped generation to GA_package_[1, 2, 3, 4, 5, 6, 7, 8]_4/last_generation.pkl
+
+ ****** Running generation 47 ****** 
+
+Population's average fitness: 16.50992 stdev: 15.95718
+Best fitness: 53.69235 - size: (15, 207) - species 1 - id 2397
+Average adjusted fitness: 0.411
+Mean genetic distance 1.599, standard deviation 0.194
+Population of 50 members in 1 species:
+   ID   age  size  fitness  adj fit  stag
+  ====  ===  ====  =======  =======  ====
+     1   47    50     53.7    0.411    42
+Total extinctions: 0
+Generation time: 62.110 sec (58.337 average)
+dumped generation to GA_package_[1, 2, 3, 4, 5, 6, 7, 8]_4/last_generation.pkl
+
+ ****** Running generation 48 ****** 
+
+Population's average fitness: 12.43953 stdev: 14.64444
+Best fitness: 36.54218 - size: (15, 203) - species 1 - id 2404
+Average adjusted fitness: 0.563
+Mean genetic distance 1.369, standard deviation 0.253
+Population of 50 members in 1 species:
+   ID   age  size  fitness  adj fit  stag
+  ====  ===  ====  =======  =======  ====
+     1   48    50     36.5    0.563    43
+Total extinctions: 0
+Generation time: 55.264 sec (57.016 average)
+dumped generation to GA_package_[1, 2, 3, 4, 5, 6, 7, 8]_4/last_generation.pkl
+
+ ****** Running generation 49 ****** 
+
+Population's average fitness: 8.47883 stdev: 8.73142
+Best fitness: 26.31400 - size: (15, 198) - species 1 - id 2454
+Average adjusted fitness: 0.490
+Mean genetic distance 1.617, standard deviation 0.185
+Population of 50 members in 1 species:
+   ID   age  size  fitness  adj fit  stag
+  ====  ===  ====  =======  =======  ====
+     1   49    50     26.3    0.490    44
+Total extinctions: 0
+Generation time: 52.915 sec (56.699 average)
+dumped generation to GA_package_[1, 2, 3, 4, 5, 6, 7, 8]_4/last_generation.pkl
+
+Best individual in generation 49 meets fitness threshold - complexity: (15, 239)
+
+Best genome:
+Key: 290
+Fitness: 84.40733725479299
+Nodes:
+	0 DefaultNodeGene(key=0, bias=0.32629808360411316, response=1.0, activation=sigmoid, aggregation=sum)
+	1 DefaultNodeGene(key=1, bias=-0.29529431484190977, response=1.0, activation=sigmoid, aggregation=sum)
+	2 DefaultNodeGene(key=2, bias=1.331872437691962, response=1.0, activation=sigmoid, aggregation=sum)
+	3 DefaultNodeGene(key=3, bias=-0.09458966019512834, response=1.0, activation=sigmoid, aggregation=sum)
+	4 DefaultNodeGene(key=4, bias=2.3179888152988726, response=1.0, activation=sigmoid, aggregation=sum)
+	485 DefaultNodeGene(key=485, bias=0.3535342527633219, response=1.0, activation=sigmoid, aggregation=sum)
+	486 DefaultNodeGene(key=486, bias=-0.5577404091835219, response=1.0, activation=sigmoid, aggregation=sum)
+	487 DefaultNodeGene(key=487, bias=1.1796720943555874, response=1.0, activation=sigmoid, aggregation=sum)
+	488 DefaultNodeGene(key=488, bias=-0.5417191169733163, response=1.0, activation=sigmoid, aggregation=sum)
+	489 DefaultNodeGene(key=489, bias=0.5055959161550898, response=1.0, activation=sigmoid, aggregation=sum)
+	490 DefaultNodeGene(key=490, bias=0.8304311678406575, response=1.0, activation=sigmoid, aggregation=sum)
+	491 DefaultNodeGene(key=491, bias=-1.204333339462271, response=1.0, activation=sigmoid, aggregation=sum)
+	492 DefaultNodeGene(key=492, bias=0.7234708309970851, response=1.0, activation=sigmoid, aggregation=sum)
+	493 DefaultNodeGene(key=493, bias=0.08484512715265435, response=1.0, activation=sigmoid, aggregation=sum)
+	494 DefaultNodeGene(key=494, bias=1.7887699668644066, response=1.0, activation=sigmoid, aggregation=sum)
+Connections:
+	DefaultConnectionGene(key=(-20, 485), weight=0.22180474799739103, enabled=True)
+	DefaultConnectionGene(key=(-20, 486), weight=-1.0336508723706654, enabled=True)
+	DefaultConnectionGene(key=(-20, 487), weight=-0.9339745951697903, enabled=True)
+	DefaultConnectionGene(key=(-20, 488), weight=-1.0642070184826764, enabled=True)
+	DefaultConnectionGene(key=(-20, 489), weight=-0.3139324853741188, enabled=True)
+	DefaultConnectionGene(key=(-20, 490), weight=0.06689578064783275, enabled=True)
+	DefaultConnectionGene(key=(-20, 491), weight=-3.1053090034529376, enabled=True)
+	DefaultConnectionGene(key=(-20, 492), weight=-3.3034913626051345, enabled=True)
+	DefaultConnectionGene(key=(-20, 493), weight=-0.3831599536322361, enabled=True)
+	DefaultConnectionGene(key=(-20, 494), weight=0.3219804830895762, enabled=True)
+	DefaultConnectionGene(key=(-19, 485), weight=-0.4238387731347358, enabled=True)
+	DefaultConnectionGene(key=(-19, 486), weight=-1.735878516006425, enabled=True)
+	DefaultConnectionGene(key=(-19, 487), weight=-0.6114120145656374, enabled=True)
+	DefaultConnectionGene(key=(-19, 488), weight=0.07110379340828601, enabled=True)
+	DefaultConnectionGene(key=(-19, 489), weight=-2.1307058734552458, enabled=True)
+	DefaultConnectionGene(key=(-19, 490), weight=-2.0228996137830104, enabled=False)
+	DefaultConnectionGene(key=(-19, 491), weight=2.0321894789350368, enabled=True)
+	DefaultConnectionGene(key=(-19, 492), weight=-0.979187599605506, enabled=True)
+	DefaultConnectionGene(key=(-19, 493), weight=2.180635216908799, enabled=True)
+	DefaultConnectionGene(key=(-19, 494), weight=-0.4391278913701267, enabled=True)
+	DefaultConnectionGene(key=(-18, 485), weight=-0.18465163352255196, enabled=True)
+	DefaultConnectionGene(key=(-18, 486), weight=0.42750988355135666, enabled=True)
+	DefaultConnectionGene(key=(-18, 487), weight=0.7904387662996248, enabled=True)
+	DefaultConnectionGene(key=(-18, 488), weight=-0.15052123610859947, enabled=True)
+	DefaultConnectionGene(key=(-18, 489), weight=-1.2823479406129157, enabled=True)
+	DefaultConnectionGene(key=(-18, 490), weight=0.9157793047288904, enabled=True)
+	DefaultConnectionGene(key=(-18, 491), weight=1.5295464386087863, enabled=True)
+	DefaultConnectionGene(key=(-18, 492), weight=0.9994355963772434, enabled=True)
+	DefaultConnectionGene(key=(-18, 493), weight=-1.8255015238736103, enabled=True)
+	DefaultConnectionGene(key=(-18, 494), weight=-1.6350251082878593, enabled=True)
+	DefaultConnectionGene(key=(-17, 485), weight=-1.4023790913993288, enabled=True)
+	DefaultConnectionGene(key=(-17, 486), weight=0.22189069248732796, enabled=True)
+	DefaultConnectionGene(key=(-17, 487), weight=-1.7157883004237782, enabled=True)
+	DefaultConnectionGene(key=(-17, 488), weight=-0.7973256269443546, enabled=True)
+	DefaultConnectionGene(key=(-17, 489), weight=-2.546682279899155, enabled=True)
+	DefaultConnectionGene(key=(-17, 490), weight=0.3590589994037215, enabled=False)
+	DefaultConnectionGene(key=(-17, 491), weight=0.7205059005127046, enabled=True)
+	DefaultConnectionGene(key=(-17, 492), weight=1.0661972190542304, enabled=True)
+	DefaultConnectionGene(key=(-17, 493), weight=0.33475664175045233, enabled=True)
+	DefaultConnectionGene(key=(-17, 494), weight=-0.0397728848994261, enabled=True)
+	DefaultConnectionGene(key=(-16, 485), weight=-0.39710053969358405, enabled=True)
+	DefaultConnectionGene(key=(-16, 486), weight=2.32414518322709, enabled=True)
+	DefaultConnectionGene(key=(-16, 487), weight=0.5222561802241159, enabled=True)
+	DefaultConnectionGene(key=(-16, 488), weight=0.32071680018771465, enabled=True)
+	DefaultConnectionGene(key=(-16, 489), weight=1.078652934767336, enabled=True)
+	DefaultConnectionGene(key=(-16, 490), weight=1.845650122695021, enabled=True)
+	DefaultConnectionGene(key=(-16, 491), weight=-0.517604854376263, enabled=True)
+	DefaultConnectionGene(key=(-16, 492), weight=-0.3071726352596976, enabled=True)
+	DefaultConnectionGene(key=(-16, 493), weight=0.3296724983102065, enabled=False)
+	DefaultConnectionGene(key=(-16, 494), weight=0.6890114705781042, enabled=True)
+	DefaultConnectionGene(key=(-15, 485), weight=0.9552497068377394, enabled=True)
+	DefaultConnectionGene(key=(-15, 486), weight=-0.8472618049192994, enabled=True)
+	DefaultConnectionGene(key=(-15, 487), weight=-0.5966135714920828, enabled=True)
+	DefaultConnectionGene(key=(-15, 488), weight=-1.970084730200277, enabled=True)
+	DefaultConnectionGene(key=(-15, 489), weight=1.1024019526565585, enabled=True)
+	DefaultConnectionGene(key=(-15, 490), weight=2.4142237189224844, enabled=True)
+	DefaultConnectionGene(key=(-15, 491), weight=-0.8352115973293733, enabled=True)
+	DefaultConnectionGene(key=(-15, 492), weight=-0.3440342807087152, enabled=True)
+	DefaultConnectionGene(key=(-15, 493), weight=0.21126426813969018, enabled=True)
+	DefaultConnectionGene(key=(-15, 494), weight=-2.0490626677086645, enabled=True)
+	DefaultConnectionGene(key=(-14, 485), weight=-1.5862043254199345, enabled=True)
+	DefaultConnectionGene(key=(-14, 486), weight=2.1895390535857038, enabled=True)
+	DefaultConnectionGene(key=(-14, 487), weight=0.8680243564243357, enabled=True)
+	DefaultConnectionGene(key=(-14, 488), weight=0.3015912603223677, enabled=True)
+	DefaultConnectionGene(key=(-14, 489), weight=1.0903648276546178, enabled=True)
+	DefaultConnectionGene(key=(-14, 490), weight=1.1897142624073997, enabled=True)
+	DefaultConnectionGene(key=(-14, 491), weight=0.7542742943584219, enabled=True)
+	DefaultConnectionGene(key=(-14, 492), weight=1.4518024453213587, enabled=True)
+	DefaultConnectionGene(key=(-14, 493), weight=1.3600656407793554, enabled=True)
+	DefaultConnectionGene(key=(-14, 494), weight=1.0041117033268971, enabled=True)
+	DefaultConnectionGene(key=(-13, 485), weight=0.19095216308346386, enabled=False)
+	DefaultConnectionGene(key=(-13, 486), weight=0.8482211390649245, enabled=True)
+	DefaultConnectionGene(key=(-13, 487), weight=-1.1672808504514545, enabled=True)
+	DefaultConnectionGene(key=(-13, 488), weight=-3.092699230541268, enabled=True)
+	DefaultConnectionGene(key=(-13, 489), weight=-0.3356232891590101, enabled=True)
+	DefaultConnectionGene(key=(-13, 490), weight=0.031730376036840036, enabled=True)
+	DefaultConnectionGene(key=(-13, 491), weight=-0.20616856174711973, enabled=True)
+	DefaultConnectionGene(key=(-13, 492), weight=-2.4425565308658235, enabled=True)
+	DefaultConnectionGene(key=(-13, 493), weight=-0.4637482026002958, enabled=True)
+	DefaultConnectionGene(key=(-13, 494), weight=-0.7233296747786434, enabled=True)
+	DefaultConnectionGene(key=(-12, 485), weight=-0.8789509107565945, enabled=False)
+	DefaultConnectionGene(key=(-12, 486), weight=0.3694611100134184, enabled=True)
+	DefaultConnectionGene(key=(-12, 487), weight=0.7807470683359061, enabled=True)
+	DefaultConnectionGene(key=(-12, 488), weight=-0.8106523058717929, enabled=True)
+	DefaultConnectionGene(key=(-12, 489), weight=-0.7003090958784924, enabled=True)
+	DefaultConnectionGene(key=(-12, 490), weight=2.5311005451658324, enabled=True)
+	DefaultConnectionGene(key=(-12, 491), weight=0.7071513381886227, enabled=True)
+	DefaultConnectionGene(key=(-12, 492), weight=-0.4403251106021063, enabled=True)
+	DefaultConnectionGene(key=(-12, 493), weight=-2.5144478567515702, enabled=True)
+	DefaultConnectionGene(key=(-12, 494), weight=-2.336067318210237, enabled=True)
+	DefaultConnectionGene(key=(-11, 485), weight=0.9844603011227604, enabled=True)
+	DefaultConnectionGene(key=(-11, 486), weight=-0.2827129444745842, enabled=True)
+	DefaultConnectionGene(key=(-11, 487), weight=-0.5551062322157296, enabled=True)
+	DefaultConnectionGene(key=(-11, 488), weight=-1.0049812221980137, enabled=True)
+	DefaultConnectionGene(key=(-11, 489), weight=-0.12296371356947294, enabled=True)
+	DefaultConnectionGene(key=(-11, 490), weight=0.2845045707684543, enabled=True)
+	DefaultConnectionGene(key=(-11, 491), weight=2.46065525074727, enabled=True)
+	DefaultConnectionGene(key=(-11, 492), weight=0.3337292378800874, enabled=True)
+	DefaultConnectionGene(key=(-11, 493), weight=-0.8832231862092399, enabled=True)
+	DefaultConnectionGene(key=(-11, 494), weight=-2.1977584416870752, enabled=True)
+	DefaultConnectionGene(key=(-10, 485), weight=1.4680429701333368, enabled=True)
+	DefaultConnectionGene(key=(-10, 486), weight=0.09660971165426102, enabled=True)
+	DefaultConnectionGene(key=(-10, 487), weight=-1.95857438885436, enabled=True)
+	DefaultConnectionGene(key=(-10, 488), weight=-0.9774393858560944, enabled=True)
+	DefaultConnectionGene(key=(-10, 489), weight=0.07907649380530482, enabled=True)
+	DefaultConnectionGene(key=(-10, 490), weight=0.39296515603410564, enabled=True)
+	DefaultConnectionGene(key=(-10, 491), weight=0.18137834666041808, enabled=True)
+	DefaultConnectionGene(key=(-10, 492), weight=-0.3199192020088307, enabled=True)
+	DefaultConnectionGene(key=(-10, 493), weight=-4.527894137680812, enabled=True)
+	DefaultConnectionGene(key=(-10, 494), weight=2.7321179041804178, enabled=True)
+	DefaultConnectionGene(key=(-9, 485), weight=1.0205559423133055, enabled=True)
+	DefaultConnectionGene(key=(-9, 486), weight=-1.337377845080029, enabled=True)
+	DefaultConnectionGene(key=(-9, 487), weight=-0.6467309151985462, enabled=True)
+	DefaultConnectionGene(key=(-9, 488), weight=0.06864222795940296, enabled=True)
+	DefaultConnectionGene(key=(-9, 489), weight=-0.7715667437464546, enabled=True)
+	DefaultConnectionGene(key=(-9, 490), weight=0.07589596155744904, enabled=True)
+	DefaultConnectionGene(key=(-9, 491), weight=-1.5885628713948359, enabled=True)
+	DefaultConnectionGene(key=(-9, 492), weight=-1.4178325238712257, enabled=False)
+	DefaultConnectionGene(key=(-9, 493), weight=-2.641708812930365, enabled=True)
+	DefaultConnectionGene(key=(-9, 494), weight=-0.4020393742782112, enabled=True)
+	DefaultConnectionGene(key=(-8, 485), weight=-0.25231846729182783, enabled=True)
+	DefaultConnectionGene(key=(-8, 486), weight=-0.07353450033941768, enabled=True)
+	DefaultConnectionGene(key=(-8, 487), weight=0.3164436241405987, enabled=True)
+	DefaultConnectionGene(key=(-8, 488), weight=2.4029861065285814, enabled=True)
+	DefaultConnectionGene(key=(-8, 489), weight=-0.46019289232894667, enabled=True)
+	DefaultConnectionGene(key=(-8, 490), weight=-0.5867565688019429, enabled=True)
+	DefaultConnectionGene(key=(-8, 491), weight=1.5685885371561625, enabled=True)
+	DefaultConnectionGene(key=(-8, 492), weight=-1.0858247864186819, enabled=True)
+	DefaultConnectionGene(key=(-8, 493), weight=0.8150342598072365, enabled=True)
+	DefaultConnectionGene(key=(-8, 494), weight=0.9269531469395872, enabled=True)
+	DefaultConnectionGene(key=(-7, 485), weight=-1.256538511455846, enabled=True)
+	DefaultConnectionGene(key=(-7, 486), weight=1.8274383210151308, enabled=True)
+	DefaultConnectionGene(key=(-7, 487), weight=0.2918872021661304, enabled=True)
+	DefaultConnectionGene(key=(-7, 488), weight=1.8170229367545694, enabled=True)
+	DefaultConnectionGene(key=(-7, 489), weight=-1.1631591589336618, enabled=True)
+	DefaultConnectionGene(key=(-7, 490), weight=-0.34942161003922306, enabled=True)
+	DefaultConnectionGene(key=(-7, 491), weight=2.077174402557509, enabled=True)
+	DefaultConnectionGene(key=(-7, 492), weight=1.247871354992914, enabled=True)
+	DefaultConnectionGene(key=(-7, 493), weight=-1.5764566571676144, enabled=True)
+	DefaultConnectionGene(key=(-7, 494), weight=1.9316575495652222, enabled=True)
+	DefaultConnectionGene(key=(-6, 485), weight=-1.0386926973450965, enabled=True)
+	DefaultConnectionGene(key=(-6, 486), weight=-1.7057814738520576, enabled=True)
+	DefaultConnectionGene(key=(-6, 487), weight=1.9392183026649676, enabled=True)
+	DefaultConnectionGene(key=(-6, 488), weight=-2.9351113961583355, enabled=True)
+	DefaultConnectionGene(key=(-6, 489), weight=0.5447603068612688, enabled=True)
+	DefaultConnectionGene(key=(-6, 490), weight=2.2588965669527923, enabled=True)
+	DefaultConnectionGene(key=(-6, 491), weight=0.2839690984967956, enabled=True)
+	DefaultConnectionGene(key=(-6, 492), weight=0.516835134742201, enabled=True)
+	DefaultConnectionGene(key=(-6, 493), weight=0.3257874955341965, enabled=False)
+	DefaultConnectionGene(key=(-6, 494), weight=-0.9127037268614724, enabled=True)
+	DefaultConnectionGene(key=(-5, 485), weight=-0.0448065563682103, enabled=True)
+	DefaultConnectionGene(key=(-5, 486), weight=-0.5467081911945461, enabled=True)
+	DefaultConnectionGene(key=(-5, 487), weight=0.8499471236916877, enabled=True)
+	DefaultConnectionGene(key=(-5, 488), weight=-0.15518379239574576, enabled=True)
+	DefaultConnectionGene(key=(-5, 489), weight=-0.5026045001004265, enabled=True)
+	DefaultConnectionGene(key=(-5, 490), weight=-1.511815413013993, enabled=True)
+	DefaultConnectionGene(key=(-5, 491), weight=0.6521702585440694, enabled=True)
+	DefaultConnectionGene(key=(-5, 492), weight=2.1031651762721717, enabled=True)
+	DefaultConnectionGene(key=(-5, 493), weight=2.277629367932632, enabled=True)
+	DefaultConnectionGene(key=(-5, 494), weight=-1.4185426012714968, enabled=True)
+	DefaultConnectionGene(key=(-4, 485), weight=-2.1784065875736616, enabled=True)
+	DefaultConnectionGene(key=(-4, 486), weight=0.6460736027619208, enabled=True)
+	DefaultConnectionGene(key=(-4, 487), weight=0.9505552882416712, enabled=True)
+	DefaultConnectionGene(key=(-4, 488), weight=1.8187184393357096, enabled=True)
+	DefaultConnectionGene(key=(-4, 489), weight=0.8381168749013843, enabled=True)
+	DefaultConnectionGene(key=(-4, 490), weight=-0.04061585642872898, enabled=False)
+	DefaultConnectionGene(key=(-4, 491), weight=-1.4114741357142342, enabled=True)
+	DefaultConnectionGene(key=(-4, 492), weight=0.48070870436629887, enabled=True)
+	DefaultConnectionGene(key=(-4, 493), weight=-1.5139861169095443, enabled=True)
+	DefaultConnectionGene(key=(-4, 494), weight=-0.4030825240179896, enabled=True)
+	DefaultConnectionGene(key=(-3, 485), weight=0.8770583319447419, enabled=True)
+	DefaultConnectionGene(key=(-3, 486), weight=-0.46325330855426283, enabled=True)
+	DefaultConnectionGene(key=(-3, 487), weight=-0.2831320313185848, enabled=True)
+	DefaultConnectionGene(key=(-3, 488), weight=0.5122183640386422, enabled=True)
+	DefaultConnectionGene(key=(-3, 489), weight=1.1288861077145702, enabled=True)
+	DefaultConnectionGene(key=(-3, 490), weight=-0.24631734886033568, enabled=True)
+	DefaultConnectionGene(key=(-3, 491), weight=-0.25295265350466445, enabled=True)
+	DefaultConnectionGene(key=(-3, 492), weight=-0.6204186575061844, enabled=True)
+	DefaultConnectionGene(key=(-3, 493), weight=1.1854760521241519, enabled=True)
+	DefaultConnectionGene(key=(-3, 494), weight=1.0493970187462482, enabled=True)
+	DefaultConnectionGene(key=(-2, 485), weight=-2.0174140853783, enabled=True)
+	DefaultConnectionGene(key=(-2, 486), weight=0.4351286631733957, enabled=True)
+	DefaultConnectionGene(key=(-2, 487), weight=1.3928587093201976, enabled=True)
+	DefaultConnectionGene(key=(-2, 488), weight=-2.074852680453712, enabled=True)
+	DefaultConnectionGene(key=(-2, 489), weight=0.9723933926807173, enabled=True)
+	DefaultConnectionGene(key=(-2, 490), weight=-1.2754654437369293, enabled=True)
+	DefaultConnectionGene(key=(-2, 491), weight=0.028193850722824737, enabled=True)
+	DefaultConnectionGene(key=(-2, 492), weight=0.9869082319923219, enabled=True)
+	DefaultConnectionGene(key=(-2, 493), weight=-1.2535911566703544, enabled=True)
+	DefaultConnectionGene(key=(-2, 494), weight=0.9463098915176658, enabled=True)
+	DefaultConnectionGene(key=(-1, 485), weight=-1.3966903355801277, enabled=True)
+	DefaultConnectionGene(key=(-1, 486), weight=-1.1841786949473145, enabled=True)
+	DefaultConnectionGene(key=(-1, 487), weight=-3.5008782228642925, enabled=True)
+	DefaultConnectionGene(key=(-1, 488), weight=2.209207956903962, enabled=True)
+	DefaultConnectionGene(key=(-1, 489), weight=-2.4216242844578257, enabled=True)
+	DefaultConnectionGene(key=(-1, 490), weight=1.5814338191519408, enabled=True)
+	DefaultConnectionGene(key=(-1, 491), weight=1.3112186051592087, enabled=True)
+	DefaultConnectionGene(key=(-1, 492), weight=-0.4012937919489422, enabled=True)
+	DefaultConnectionGene(key=(-1, 493), weight=-0.4980444693380287, enabled=True)
+	DefaultConnectionGene(key=(-1, 494), weight=-1.8334835602115702, enabled=True)
+	DefaultConnectionGene(key=(485, 0), weight=1.4567939574213395, enabled=False)
+	DefaultConnectionGene(key=(485, 1), weight=0.21411717982538558, enabled=True)
+	DefaultConnectionGene(key=(485, 2), weight=0.06517419662994173, enabled=True)
+	DefaultConnectionGene(key=(485, 3), weight=1.1778363802043148, enabled=True)
+	DefaultConnectionGene(key=(485, 4), weight=-0.07332231053416682, enabled=True)
+	DefaultConnectionGene(key=(486, 0), weight=-1.0332358566644277, enabled=False)
+	DefaultConnectionGene(key=(486, 1), weight=1.4627090686613902, enabled=True)
+	DefaultConnectionGene(key=(486, 2), weight=-0.8155333073781965, enabled=True)
+	DefaultConnectionGene(key=(486, 3), weight=-1.034601960897557, enabled=True)
+	DefaultConnectionGene(key=(486, 4), weight=-0.7052091333044224, enabled=True)
+	DefaultConnectionGene(key=(487, 0), weight=2.250649090750213, enabled=True)
+	DefaultConnectionGene(key=(487, 1), weight=1.9532277148941832, enabled=True)
+	DefaultConnectionGene(key=(487, 2), weight=0.9964845645264715, enabled=True)
+	DefaultConnectionGene(key=(487, 3), weight=0.2629065309877771, enabled=True)
+	DefaultConnectionGene(key=(487, 4), weight=0.12719709684819924, enabled=True)
+	DefaultConnectionGene(key=(488, 0), weight=-0.7292867861419091, enabled=True)
+	DefaultConnectionGene(key=(488, 1), weight=-0.9122228400744135, enabled=True)
+	DefaultConnectionGene(key=(488, 2), weight=0.20203437752755682, enabled=True)
+	DefaultConnectionGene(key=(488, 3), weight=1.0631821141250035, enabled=True)
+	DefaultConnectionGene(key=(488, 4), weight=-0.4215218713044128, enabled=True)
+	DefaultConnectionGene(key=(489, 0), weight=-0.19195989260883775, enabled=True)
+	DefaultConnectionGene(key=(489, 1), weight=0.9728915342231346, enabled=True)
+	DefaultConnectionGene(key=(489, 2), weight=-2.1526928181200367, enabled=True)
+	DefaultConnectionGene(key=(489, 3), weight=0.25458671250555115, enabled=True)
+	DefaultConnectionGene(key=(489, 4), weight=1.642147887114318, enabled=True)
+	DefaultConnectionGene(key=(490, 0), weight=-1.552351543379259, enabled=True)
+	DefaultConnectionGene(key=(490, 1), weight=-1.9691646918288903, enabled=True)
+	DefaultConnectionGene(key=(490, 2), weight=2.1497558957107694, enabled=True)
+	DefaultConnectionGene(key=(490, 3), weight=2.0139818329401775, enabled=True)
+	DefaultConnectionGene(key=(490, 4), weight=0.06286760383512321, enabled=True)
+	DefaultConnectionGene(key=(491, 0), weight=-0.3578576540707148, enabled=True)
+	DefaultConnectionGene(key=(491, 1), weight=0.03861652743797328, enabled=True)
+	DefaultConnectionGene(key=(491, 2), weight=-0.7901642670543092, enabled=True)
+	DefaultConnectionGene(key=(491, 3), weight=0.9495258397002236, enabled=True)
+	DefaultConnectionGene(key=(491, 4), weight=1.653697405949687, enabled=False)
+	DefaultConnectionGene(key=(492, 0), weight=0.3798590835877885, enabled=True)
+	DefaultConnectionGene(key=(492, 1), weight=0.14482585151833471, enabled=True)
+	DefaultConnectionGene(key=(492, 2), weight=1.0399134775916417, enabled=True)
+	DefaultConnectionGene(key=(492, 3), weight=2.4286775119664643, enabled=True)
+	DefaultConnectionGene(key=(492, 4), weight=1.634525777728471, enabled=True)
+	DefaultConnectionGene(key=(493, 0), weight=-2.123920279084885, enabled=True)
+	DefaultConnectionGene(key=(493, 1), weight=-0.7694488670464944, enabled=True)
+	DefaultConnectionGene(key=(493, 2), weight=-0.843066555269364, enabled=True)
+	DefaultConnectionGene(key=(493, 3), weight=-0.04101435731556213, enabled=True)
+	DefaultConnectionGene(key=(493, 4), weight=-0.403912428813282, enabled=True)
+	DefaultConnectionGene(key=(494, 0), weight=-3.4985662380134794, enabled=True)
+	DefaultConnectionGene(key=(494, 1), weight=2.153122025026258, enabled=True)
+	DefaultConnectionGene(key=(494, 2), weight=0.8044431365257736, enabled=True)
+	DefaultConnectionGene(key=(494, 3), weight=1.930559317195737, enabled=True)
+	DefaultConnectionGene(key=(494, 4), weight=-2.408564968744754, enabled=True)
+
+MESSAGE: Pygame initialized for simulation.
+Fitness trained against enemy [3, 4, 1, 2, 7, 8, 5, 6], tested against enemy 1 is 30.801502968734173.
+
+MESSAGE: Pygame initialized for simulation.
+Fitness trained against enemy [3, 4, 1, 2, 7, 8, 5, 6], tested against enemy 2 is 91.38936470590374.
+
+MESSAGE: Pygame initialized for simulation.
+Fitness trained against enemy [3, 4, 1, 2, 7, 8, 5, 6], tested against enemy 3 is 12.409013019489144.
+
+MESSAGE: Pygame initialized for simulation.
+Fitness trained against enemy [3, 4, 1, 2, 7, 8, 5, 6], tested against enemy 4 is 85.83282822853991.
+
+MESSAGE: Pygame initialized for simulation.
+Fitness trained against enemy [3, 4, 1, 2, 7, 8, 5, 6], tested against enemy 5 is 87.69288973525116.
+
+MESSAGE: Pygame initialized for simulation.
+Fitness trained against enemy [3, 4, 1, 2, 7, 8, 5, 6], tested against enemy 6 is -5.568344503761097.
+
+MESSAGE: Pygame initialized for simulation.
+Fitness trained against enemy [3, 4, 1, 2, 7, 8, 5, 6], tested against enemy 7 is 66.61092827018349.
+
+MESSAGE: Pygame initialized for simulation.
+Fitness trained against enemy [3, 4, 1, 2, 7, 8, 5, 6], tested against enemy 8 is 84.55129244001466.
