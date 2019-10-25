@@ -105,7 +105,7 @@ class PlotResults:
 					for i, generation in enumerate(trial_data):
 						if algorithm=='Island':
 							if i%3==0:
-								combined_data[i//3] += [g/8 for g in generation]
+								combined_data[i//3] += [g for g in generation]
 						else:
 							if i < 50:
 								combined_data[i] += generation
@@ -121,6 +121,7 @@ class PlotResults:
 					std_minus_data.append(calculated_mean - calculated_std)
 					std_plus_data.append(calculated_mean + calculated_std)
 
+				print('best_data=',best_data)
 				plt.plot(mean_data, label=algorithm)
 				plt.plot(std_minus_data, linestyle='--', color=algorithm_color)
 				plt.plot(std_plus_data, linestyle='--', color=algorithm_color)
