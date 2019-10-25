@@ -4,7 +4,7 @@
 # imports framework
 import sys, os
 sys.path.insert(0, 'evoman')
-from environment_without_rendering import Environment
+from environment import Environment
 
 experiment_name = 'test_code'
 if not os.path.exists(experiment_name):

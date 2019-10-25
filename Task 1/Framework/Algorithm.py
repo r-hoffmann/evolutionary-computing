@@ -3,7 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 sys.path.insert(0, 'evoman')
 sys.path.insert(0, '..')
-from environment_without_rendering import Environment
+from environment import Environment
 
 class Algorithm:
     def __init__(self, parameters):
