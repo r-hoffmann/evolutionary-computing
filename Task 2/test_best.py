@@ -19,7 +19,7 @@ enemy = sys.argv[2]
 enemy = [int(s) for s in enemy.split(',')]
 
 best_genomes = []
-for en in range(1, 8+1):
+for trial in range(1, 11):
     fitness_list = []
     gains_list = []
     player_lifes_all = []
@@ -29,7 +29,7 @@ for en in range(1, 8+1):
     gains_enemy_list = []
     player_lifes = []
     enemy_lifes_list = []
-    for trial in range(1, 11):
+    for en in range(1, 8+1):
         experiment_name = '{}_{}_{}'.format(algorithm, enemy, trial)
 
         best_model = pickle.load(
